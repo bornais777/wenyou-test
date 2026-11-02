@@ -25,7 +25,7 @@
 <style>:root, :host{--font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue",
       "Noto Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
       "Segoe UI Symbol", "Noto Color Emoji";--font-serif: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;--font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
-      "Courier New", monospace;--color-black: #000;--color-white: #fff;--spacing: 0.25rem;--container-sm: 24rem;--container-md: 28rem;--container-lg: 32rem;--container-xl: 36rem;--container-2xl: 42rem;--container-4xl: 56rem;--container-5xl: 64rem;--text-xs: 0.75rem;--text-xs--line-height: calc(1 / 0.75);--text-sm: 0.875rem;--text-sm--line-height: calc(1.25 / 0.875);--text-base: 1rem;--text-base--line-height: calc(1.5 / 1);--text-lg: 1.125rem;--text-lg--line-height: calc(1.75 / 1.125);--text-xl: 1.25rem;--text-xl--line-height: calc(1.75 / 1.25);--text-2xl: 1.5rem;--text-2xl--line-height: calc(2 / 1.5);--text-3xl: 1.875rem;--text-3xl--line-height: calc(2.25 / 1.875);--text-4xl: 2.25rem;--text-4xl--line-height: calc(2.5 / 2.25);--text-5xl: 3rem;--text-5xl--line-height: 1;--text-6xl: 3.75rem;--text-6xl--line-height: 1;--font-weight-light: 300;--font-weight-medium: 500;--font-weight-bold: 700;--tracking-tight: -0.025em;--tracking-wide: 0.025em;--tracking-wider: 0.05em;--tracking-widest: 0.1em;--leading-tight: 1.25;--leading-snug: 1.375;--leading-relaxed: 1.625;--radius-sm: 0.25rem;--radius-md: 0.375rem;--radius-lg: 0.5rem;--radius-xl: 0.75rem;--radius-2xl: 1rem;--radius-3xl: 1.5rem;--ease-out: cubic-bezier(0, 0, 0.2, 1);--animate-spin: spin 1s linear infinite;--animate-pulse: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;--default-transition-duration: 150ms;--default-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);--default-font-family: var(--font-sans);--default-mono-font-family: var(--font-mono)}
+      "Courier New", monospace;--color-black: #000;--color-white: #fff;--spacing: 0.25rem;--container-sm: 24rem;--container-md: 28rem;--container-lg: 32rem;--container-xl: 36rem;--container-2xl: 42rem;--container-4xl: 56rem;--container-5xl: 64rem;--text-xs: 0.75rem;--text-xs--line-height: calc(1 / 0.75);--text-sm: 0.875rem;--text-sm--line-height: calc(1.25 / 0.875);--text-base: 1rem;--text-base--line-height: calc(1.5 / 1);--text-lg: 1.125rem;--text-lg--line-height: calc(1.75 / 1.125);--text-xl: 1.25rem;--text-xl--line-height: calc(1.75 / 1.25);--text-2xl: 1.5rem;--text-2xl--line-height: calc(2 / 1.5);--text-3xl: 1.875rem;--text-3xl--line-height: calc(2.25 / 1.875);--text-4xl: 2.25rem;--text-4xl--line-height: calc(2.5 / 2.25);--text-5xl: 3rem;--text-5xl--line-height: 1;--text-6xl: 3.75rem;--text-6xl--line-height: 1;--font-weight-light: 300;--font-weight-normal: 400;--font-weight-medium: 500;--font-weight-bold: 700;--tracking-tight: -0.025em;--tracking-wide: 0.025em;--tracking-wider: 0.05em;--tracking-widest: 0.1em;--leading-tight: 1.25;--leading-snug: 1.375;--leading-relaxed: 1.625;--radius-sm: 0.25rem;--radius-md: 0.375rem;--radius-lg: 0.5rem;--radius-xl: 0.75rem;--radius-2xl: 1rem;--radius-3xl: 1.5rem;--ease-out: cubic-bezier(0, 0, 0.2, 1);--animate-spin: spin 1s linear infinite;--animate-pulse: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;--blur-2xl: 40px;--default-transition-duration: 150ms;--default-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);--default-font-family: var(--font-sans);--default-mono-font-family: var(--font-mono)}
 *, ::after, ::before, ::backdrop, ::file-selector-button{box-sizing: border-box;margin: 0;padding: 0;border: 0 solid}
 html, :host{line-height: 1.5;-webkit-text-size-adjust: 100%;tab-size: 4;font-family: var(--default-font-family, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji");font-feature-settings: var(--default-font-feature-settings, normal);font-variation-settings: var(--default-font-variation-settings, normal);-webkit-tap-highlight-color: transparent}
 hr{height: 0;color: inherit;border-top-width: 1px}
@@ -77,6 +77,7 @@ button, input:where([type="button"], [type="reset"], [type="submit"]), ::file-se
 .-top-1{top: calc(var(--spacing) * -1)}
 .-top-1\.5{top: calc(var(--spacing) * -1.5)}
 .top-0{top: 0px}
+.top-1{top: var(--spacing)}
 .top-1\.5{top: calc(var(--spacing) * 1.5)}
 .top-1\/2{top: calc(1 / 2 * 100%)}
 .top-2{top: calc(var(--spacing) * 2)}
@@ -100,6 +101,7 @@ button, input:where([type="button"], [type="reset"], [type="submit"]), ::file-se
 .right-16{right: calc(var(--spacing) * 16)}
 .right-\[5px\]{right: 5px}
 .bottom-0{bottom: 0px}
+.bottom-1{bottom: var(--spacing)}
 .bottom-1\.5{bottom: calc(var(--spacing) * 1.5)}
 .bottom-3{bottom: calc(var(--spacing) * 3)}
 .bottom-4{bottom: calc(var(--spacing) * 4)}
@@ -107,6 +109,8 @@ button, input:where([type="button"], [type="reset"], [type="submit"]), ::file-se
 .bottom-\[84px\]{bottom: 84px}
 .bottom-\[calc\(30vh\+96px\)\]{bottom: calc(30vh + 96px)}
 .bottom-full{bottom: 100%}
+.-left-5{left: calc(var(--spacing) * -5)}
+.-left-\[17px\]{left: calc(17px * -1)}
 .left-0{left: 0px}
 .left-1\/2{left: calc(1 / 2 * 100%)}
 .left-2{left: calc(var(--spacing) * 2)}
@@ -114,6 +118,7 @@ button, input:where([type="button"], [type="reset"], [type="submit"]), ::file-se
 .left-4{left: calc(var(--spacing) * 4)}
 .left-16{left: calc(var(--spacing) * 16)}
 .left-\[2px\]{left: 2px}
+.left-\[7px\]{left: 7px}
 .left-\[18px\]{left: 18px}
 .left-\[64\%\]{left: 64%}
 .z-10{z-index: 10}
@@ -130,7 +135,9 @@ button, input:where([type="button"], [type="reset"], [type="submit"]), ::file-se
 .z-\[60\]{z-index: 60}
 .z-\[70\]{z-index: 70}
 .col-span-2{grid-column: span 2 / span 2}
+.-mx-1{margin-left:calc(var(--spacing) * -1);margin-right:calc(var(--spacing) * -1)}
 .mx-auto{margin-left:auto;margin-right:auto}
+.-my-1{margin-top:calc(var(--spacing) * -1);margin-bottom:calc(var(--spacing) * -1)}
 .my-3{margin-top:calc(var(--spacing) * 3);margin-bottom:calc(var(--spacing) * 3)}
 .-mt-8{margin-top: calc(var(--spacing) * -8)}
 .mt-0\.5{margin-top: calc(var(--spacing) * 0.5)}
@@ -168,6 +175,7 @@ button, input:where([type="button"], [type="reset"], [type="submit"]), ::file-se
 .inline{display: inline}
 .inline-block{display: inline-block}
 .inline-flex{display: inline-flex}
+.table{display: table}
 .aspect-\[3\/4\]{aspect-ratio: 3/4}
 .aspect-\[4\/3\]{aspect-ratio: 4/3}
 .h-1{height: var(--spacing)}
@@ -216,6 +224,7 @@ button, input:where([type="button"], [type="reset"], [type="submit"]), ::file-se
 .max-h-\[88vh\]{max-height: 88vh}
 .max-h-full{max-height: 100%}
 .min-h-0{min-height: 0px}
+.min-h-\[1\.4em\]{min-height: 1.4em}
 .min-h-\[2\.4em\]{min-height: 2.4em}
 .min-h-\[3\.6em\]{min-height: 3.6em}
 .min-h-\[28vh\]{min-height: 28vh}
@@ -267,6 +276,7 @@ button, input:where([type="button"], [type="reset"], [type="submit"]), ::file-se
 .max-w-5xl{max-width: var(--container-5xl)}
 .max-w-\[4\.5rem\]{max-width: 4.5rem}
 .max-w-\[9rem\]{max-width: 9rem}
+.max-w-\[12rem\]{max-width: 12rem}
 .max-w-\[40vw\]{max-width: 40vw}
 .max-w-\[50vw\]{max-width: 50vw}
 .max-w-\[60vw\]{max-width: 60vw}
@@ -290,7 +300,7 @@ button, input:where([type="button"], [type="reset"], [type="submit"]), ::file-se
 .translate-x-0{--tw-translate-x: 0px;transform: translate(var(--tw-translate-x), var(--tw-translate-y))}
 .translate-x-full{--tw-translate-x: 100%;transform: translate(var(--tw-translate-x), var(--tw-translate-y))}
 .-translate-y-1\/2{--tw-translate-y: calc(calc(1 / 2 * 100%) * -1);transform: translate(var(--tw-translate-x), var(--tw-translate-y))}
-.-scale-x-100{--tw-scale-x: calc(100% * -1);transform: scale(var(--tw-scale-x), var(--tw-scale-y))}
+.scale-110{--tw-scale-x: 110%;--tw-scale-y: 110%;--tw-scale-z: 110%;transform: scale(var(--tw-scale-x), var(--tw-scale-y))}
 .-rotate-90{transform: rotate(calc(90deg * -1))}
 .rotate-90{transform: rotate(90deg)}
 .rotate-180{transform: rotate(180deg)}
@@ -337,6 +347,7 @@ button, input:where([type="button"], [type="reset"], [type="submit"]), ::file-se
 :where(.space-y-2\.5 > :not(:last-child)){--tw-space-y-reverse: 0;margin-block-start: calc(calc(var(--spacing) * 2.5) * var(--tw-space-y-reverse));margin-block-end: calc(calc(var(--spacing) * 2.5) * calc(1 - var(--tw-space-y-reverse)))}
 :where(.space-y-3 > :not(:last-child)){--tw-space-y-reverse: 0;margin-block-start: calc(calc(var(--spacing) * 3) * var(--tw-space-y-reverse));margin-block-end: calc(calc(var(--spacing) * 3) * calc(1 - var(--tw-space-y-reverse)))}
 :where(.space-y-4 > :not(:last-child)){--tw-space-y-reverse: 0;margin-block-start: calc(calc(var(--spacing) * 4) * var(--tw-space-y-reverse));margin-block-end: calc(calc(var(--spacing) * 4) * calc(1 - var(--tw-space-y-reverse)))}
+:where(.space-y-5 > :not(:last-child)){--tw-space-y-reverse: 0;margin-block-start: calc(calc(var(--spacing) * 5) * var(--tw-space-y-reverse));margin-block-end: calc(calc(var(--spacing) * 5) * calc(1 - var(--tw-space-y-reverse)))}
 .gap-y-1{row-gap: var(--spacing)}
 .self-center{align-self: center}
 .self-start{align-self: flex-start}
@@ -401,9 +412,12 @@ button, input:where([type="button"], [type="reset"], [type="submit"]), ::file-se
 .bg-white\/25{background-color: rgba(255, 255, 255, 0.25)}
 .bg-white\/30{background-color: rgba(255, 255, 255, 0.3)}
 .bg-white\/60{background-color: rgba(255, 255, 255, 0.6)}
+.bg-white\/70{background-color: rgba(255, 255, 255, 0.7)}
 .bg-white\/80{background-color: rgba(255, 255, 255, 0.8)}
 .bg-white\/85{background-color: rgba(255, 255, 255, 0.85)}
 .bg-white\/\[0\.02\]{background-color: rgba(255, 255, 255, 0.02)}
+.bg-white\/\[0\.04\]{background-color: rgba(255, 255, 255, 0.04)}
+.bg-white\/\[0\.05\]{background-color: rgba(255, 255, 255, 0.05)}
 .bg-white\/\[0\.08\]{background-color: rgba(255, 255, 255, 0.08)}
 .bg-white\/\[0\.14\]{background-color: rgba(255, 255, 255, 0.14)}
 .bg-gradient-to-b{--tw-gradient-position: to bottom in oklab;background-image: linear-gradient(var(--tw-gradient-stops))}
@@ -429,6 +443,7 @@ button, input:where([type="button"], [type="reset"], [type="submit"]), ::file-se
 .p-2{padding: calc(var(--spacing) * 2)}
 .p-2\.5{padding: calc(var(--spacing) * 2.5)}
 .p-3{padding: calc(var(--spacing) * 3)}
+.p-3\.5{padding: calc(var(--spacing) * 3.5)}
 .p-4{padding: calc(var(--spacing) * 4)}
 .p-5{padding: calc(var(--spacing) * 5)}
 .p-6{padding: calc(var(--spacing) * 6)}
@@ -437,6 +452,7 @@ button, input:where([type="button"], [type="reset"], [type="submit"]), ::file-se
 .px-2{padding-left:calc(var(--spacing) * 2);padding-right:calc(var(--spacing) * 2)}
 .px-2\.5{padding-left:calc(var(--spacing) * 2.5);padding-right:calc(var(--spacing) * 2.5)}
 .px-3{padding-left:calc(var(--spacing) * 3);padding-right:calc(var(--spacing) * 3)}
+.px-3\.5{padding-left:calc(var(--spacing) * 3.5);padding-right:calc(var(--spacing) * 3.5)}
 .px-4{padding-left:calc(var(--spacing) * 4);padding-right:calc(var(--spacing) * 4)}
 .px-5{padding-left:calc(var(--spacing) * 5);padding-right:calc(var(--spacing) * 5)}
 .px-6{padding-left:calc(var(--spacing) * 6);padding-right:calc(var(--spacing) * 6)}
@@ -451,6 +467,7 @@ button, input:where([type="button"], [type="reset"], [type="submit"]), ::file-se
 .py-6{padding-top:calc(var(--spacing) * 6);padding-bottom:calc(var(--spacing) * 6)}
 .py-8{padding-top:calc(var(--spacing) * 8);padding-bottom:calc(var(--spacing) * 8)}
 .py-10{padding-top:calc(var(--spacing) * 10);padding-bottom:calc(var(--spacing) * 10)}
+.py-16{padding-top:calc(var(--spacing) * 16);padding-bottom:calc(var(--spacing) * 16)}
 .pt-0\.5{padding-top: calc(var(--spacing) * 0.5)}
 .pt-1{padding-top: var(--spacing)}
 .pt-2{padding-top: calc(var(--spacing) * 2)}
@@ -475,6 +492,7 @@ button, input:where([type="button"], [type="reset"], [type="submit"]), ::file-se
 .pl-2\.5{padding-left: calc(var(--spacing) * 2.5)}
 .pl-3{padding-left: calc(var(--spacing) * 3)}
 .pl-4{padding-left: calc(var(--spacing) * 4)}
+.pl-5{padding-left: calc(var(--spacing) * 5)}
 .pl-\[0\.3em\]{padding-left: 0.3em}
 .pl-\[0\.4em\]{padding-left: 0.4em}
 .pl-\[0\.5em\]{padding-left: 0.5em}
@@ -482,6 +500,7 @@ button, input:where([type="button"], [type="reset"], [type="submit"]), ::file-se
 .text-left{text-align: left}
 .text-right{text-align: right}
 .align-\[-1px\]{vertical-align: -1px}
+.align-top{vertical-align: top}
 .font-mono{font-family: var(--font-mono)}
 .font-sans{font-family: var(--font-sans)}
 .font-serif{font-family: var(--font-serif)}
@@ -509,6 +528,7 @@ button, input:where([type="button"], [type="reset"], [type="submit"]), ::file-se
 .font-bold{--tw-font-weight: var(--font-weight-bold);font-weight: var(--font-weight-bold)}
 .font-light{--tw-font-weight: var(--font-weight-light);font-weight: var(--font-weight-light)}
 .font-medium{--tw-font-weight: var(--font-weight-medium);font-weight: var(--font-weight-medium)}
+.font-normal{--tw-font-weight: var(--font-weight-normal);font-weight: var(--font-weight-normal)}
 .tracking-\[0\.2em\]{--tw-tracking: 0.2em;letter-spacing: 0.2em}
 .tracking-\[0\.3em\]{--tw-tracking: 0.3em;letter-spacing: 0.3em}
 .tracking-\[0\.4em\]{--tw-tracking: 0.4em;letter-spacing: 0.4em}
@@ -547,14 +567,17 @@ button, input:where([type="button"], [type="reset"], [type="submit"]), ::file-se
 .underline{text-decoration-line: underline}
 .accent-white{accent-color: var(--color-white)}
 .opacity-0{opacity: 0%}
+.opacity-30{opacity: 30%}
 .opacity-35{opacity: 35%}
 .opacity-40{opacity: 40%}
 .opacity-45{opacity: 45%}
 .opacity-50{opacity: 50%}
 .opacity-55{opacity: 55%}
 .opacity-60{opacity: 60%}
+.opacity-70{opacity: 70%}
+.opacity-100{opacity: 100%}
 .mix-blend-multiply{mix-blend-mode: multiply}
-.shadow-2xl{--tw-shadow: 0 25px 50px -12px var(--tw-shadow-color, rgb(0 0 0 / 0.25));box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow)}
+.shadow-\[0_0_12px_rgba\(255\,255\,255\,\.6\)\]{--tw-shadow: 0 0 12px var(--tw-shadow-color, rgba(255,255,255,.6));box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow)}
 .shadow-\[0_0_14px_rgba\(255\,255\,255\,\.9\)\]{--tw-shadow: 0 0 14px var(--tw-shadow-color, rgba(255,255,255,.9));box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow)}
 .shadow-\[0_0_30px_rgba\(255\,255\,255\,\.5\)\]{--tw-shadow: 0 0 30px var(--tw-shadow-color, rgba(255,255,255,.5));box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow)}
 .shadow-\[0_30px_80px_rgba\(0\,0\,0\,\.6\)\]{--tw-shadow: 0 30px 80px var(--tw-shadow-color, rgba(0,0,0,.6));box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow)}
@@ -562,7 +585,10 @@ button, input:where([type="button"], [type="reset"], [type="submit"]), ::file-se
 .ring-2{--tw-ring-shadow: var(--tw-ring-inset,) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color, currentcolor);box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow)}
 .ring-white{--tw-ring-color: var(--color-white)}
 .blur{--tw-blur: blur(8px);filter: var(--tw-blur,) var(--tw-brightness,) var(--tw-contrast,) var(--tw-grayscale,) var(--tw-hue-rotate,) var(--tw-invert,) var(--tw-saturate,) var(--tw-sepia,) var(--tw-drop-shadow,)}
+.blur-2xl{--tw-blur: blur(var(--blur-2xl));filter: var(--tw-blur,) var(--tw-brightness,) var(--tw-contrast,) var(--tw-grayscale,) var(--tw-hue-rotate,) var(--tw-invert,) var(--tw-saturate,) var(--tw-sepia,) var(--tw-drop-shadow,)}
+.grayscale{--tw-grayscale: grayscale(100%);filter: var(--tw-blur,) var(--tw-brightness,) var(--tw-contrast,) var(--tw-grayscale,) var(--tw-hue-rotate,) var(--tw-invert,) var(--tw-saturate,) var(--tw-sepia,) var(--tw-drop-shadow,)}
 .filter{filter: var(--tw-blur,) var(--tw-brightness,) var(--tw-contrast,) var(--tw-grayscale,) var(--tw-hue-rotate,) var(--tw-invert,) var(--tw-saturate,) var(--tw-sepia,) var(--tw-drop-shadow,)}
+.transition{transition-property: color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to, opacity, box-shadow, transform, translate, scale, rotate, filter, -webkit-backdrop-filter, backdrop-filter, display, content-visibility, overlay, pointer-events;transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));transition-duration: var(--tw-duration, var(--default-transition-duration))}
 .transition-all{transition-property: all;transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));transition-duration: var(--tw-duration, var(--default-transition-duration))}
 .transition-colors{transition-property: color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to;transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));transition-duration: var(--tw-duration, var(--default-transition-duration))}
 .transition-opacity{transition-property: opacity;transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));transition-duration: var(--tw-duration, var(--default-transition-duration))}
@@ -595,9 +621,11 @@ button, input:where([type="button"], [type="reset"], [type="submit"]), ::file-se
 @media (hover: hover){.hover\:text-black:hover{color: var(--color-black)}}
 @media (hover: hover){.hover\:text-white:hover{color: var(--color-white)}}
 @media (hover: hover){.hover\:underline:hover{text-decoration-line: underline}}
+@media (hover: hover){.hover\:opacity-80:hover{opacity: 80%}}
 @media (hover: hover){.hover\:opacity-100:hover{opacity: 100%}}
 .focus\:border-white\/50:focus{border-color: rgba(255, 255, 255, 0.5)}
 .focus\:bg-black\/40:focus{background-color: rgba(0, 0, 0, 0.4)}
+.active\:scale-95:active{--tw-scale-x: 95%;--tw-scale-y: 95%;--tw-scale-z: 95%;transform: scale(var(--tw-scale-x), var(--tw-scale-y))}
 .active\:cursor-grabbing:active{cursor: grabbing}
 .disabled\:opacity-20:disabled{opacity: 20%}
 .disabled\:opacity-30:disabled{opacity: 30%}
@@ -614,6 +642,7 @@ button, input:where([type="button"], [type="reset"], [type="submit"]), ::file-se
 @media (width >= 40rem){.sm\:left-6{left: calc(var(--spacing) * 6)}}
 @media (width >= 40rem){.sm\:inline{display: inline}}
 @media (width >= 40rem){.sm\:h-\[88vh\]{height: 88vh}}
+@media (width >= 40rem){.sm\:h-\[90vh\]{height: 90vh}}
 @media (width >= 40rem){.sm\:h-auto{height: auto}}
 @media (width >= 40rem){.sm\:max-h-none{max-height: none}}
 @media (width >= 40rem){.sm\:w-40{width: calc(var(--spacing) * 40)}}
@@ -628,6 +657,7 @@ button, input:where([type="button"], [type="reset"], [type="submit"]), ::file-se
 @media (width >= 40rem){.sm\:items-center{align-items: center}}
 @media (width >= 40rem){.sm\:overflow-visible{overflow: visible}}
 @media (width >= 40rem){.sm\:rounded-3xl{border-radius: var(--radius-3xl)}}
+@media (width >= 40rem){.sm\:p-5{padding: calc(var(--spacing) * 5)}}
 @media (width >= 40rem){.sm\:p-6{padding: calc(var(--spacing) * 6)}}
 @media (width >= 40rem){.sm\:p-7{padding: calc(var(--spacing) * 7)}}
 @media (width >= 40rem){.sm\:p-8{padding: calc(var(--spacing) * 8)}}
@@ -1868,9 +1898,9 @@ function ApiSection({ db, update }) {
     update((d) => {
       d.settings.nai.ucPreset = v;
     });
-  } }, [[0, "\u91CD\u5EA6"], [1, "\u8F7B\u5EA6"], [2, "\u4EBA\u7269 / \u9ED8\u8BA4"], [3, "\u65E0"]].map(([k, l]) => /* @__PURE__ */ React.createElement("option", { key: k, value: k }, k, " \xB7 ", l)))))), /* @__PURE__ */ React.createElement(Btn, { className: "w-full py-1.5 text-xs", onClick: testNAI, disabled: !naiFilled || test.image && test.image.state === "run" }, /* @__PURE__ */ React.createElement(Icon, { name: "image", size: 14 }), "\u6D4B\u8BD5\u751F\u56FE\uFF08\u4F1A\u6D88\u8017 1 \u6B21\uFF09"), /* @__PURE__ */ React.createElement(TestLine, { k: "image" })), /* @__PURE__ */ React.createElement("div", { className: "rounded-xl border border-white/10 p-3 space-y-2" }, /* @__PURE__ */ React.createElement("div", { className: "text-sm" }, "\u751F\u6210\u8BBE\u7F6E"), /* @__PURE__ */ React.createElement("div", { className: "grid grid-cols-2 gap-2" }, num("\u6BCF\u6B21\u56DE\u590D\u5B57\u6570", "maxChars", 100, 3e3, 50), num("\u6BCF\u6761\u63D2\u56FE\u6570", "illusCount", 0, 5), num("\u6BCF\u6BB5\u5B57\u6570\u4E0A\u9650", "segMax", 30, 300, 10), num("\u6253\u5B57\u95F4\u9694(\u6BEB\u79D2)", "typeSpeed", 5, 200, 5), num("\u76F4\u64AD\u6BCF\u6BB5\u753B\u9762\u6570", "liveScenes", 0, 3)), /* @__PURE__ */ React.createElement(Field, { label: "\u56DE\u590D\u5448\u73B0\u65B9\u5F0F", hint: "\u56FE\u6587\u540C\u6B65" }, /* @__PURE__ */ React.createElement("select", { className: inputCls, value: st.gen.syncMode, onChange: setGen("syncMode") }, /* @__PURE__ */ React.createElement("option", { value: "gate" }, "\u7FFB\u5230\u518D\u7B49\uFF1A\u8BFB\u5230\u6709\u56FE\u7684\u6BB5\u843D\uFF0C\u56FE\u6CA1\u597D\u5C31\u5148\u7B49\uFF08\u63A8\u8350\uFF09"), /* @__PURE__ */ React.createElement("option", { value: "all" }, "\u4E00\u8D77\u51FA\u73B0\uFF1A\u6587\u5B57\u548C\u5168\u90E8\u63D2\u56FE\u90FD\u597D\u4E86\u624D\u663E\u793A"), /* @__PURE__ */ React.createElement("option", { value: "free" }, "\u5148\u51FA\u6587\u5B57\uFF1A\u6700\u5FEB\uFF0C\u56FE\u53EF\u80FD\u8DDF\u4E0D\u4E0A"))), /* @__PURE__ */ React.createElement("label", { className: "flex items-center gap-2 text-xs text-white/70 pt-1" }, /* @__PURE__ */ React.createElement(Switch, { on: st.gen.autoMemory, label: "\u81EA\u52A8\u63D0\u53D6\u8BB0\u5FC6\u6C60", onChange: (v) => update((d) => {
-    d.settings.gen.autoMemory = v;
-  }) }), "\u6BCF\u8F6E\u5BF9\u8BDD\u540E\u81EA\u52A8\u63D0\u53D6\u8BB0\u5FC6\u6C60\uFF08\u591A\u8C03\u7528\u4E00\u6B21 LLM\uFF09")), /* @__PURE__ */ React.createElement(VoiceSettings, { db, update }), /* @__PURE__ */ React.createElement("div", { className: "rounded-xl border border-white/10 p-3" }, /* @__PURE__ */ React.createElement("div", { className: "flex items-center mb-2" }, /* @__PURE__ */ React.createElement("span", { className: "text-sm" }, "\u7528\u91CF\u7EDF\u8BA1"), /* @__PURE__ */ React.createElement("button", { type: "button", className: "ml-auto text-[11px] text-white/40 hover:text-white", onClick: () => update((d) => {
+  } }, [[0, "\u91CD\u5EA6"], [1, "\u8F7B\u5EA6"], [2, "\u4EBA\u7269 / \u9ED8\u8BA4"], [3, "\u65E0"]].map(([k, l]) => /* @__PURE__ */ React.createElement("option", { key: k, value: k }, k, " \xB7 ", l)))))), /* @__PURE__ */ React.createElement(Btn, { className: "w-full py-1.5 text-xs", onClick: testNAI, disabled: !naiFilled || test.image && test.image.state === "run" }, /* @__PURE__ */ React.createElement(Icon, { name: "image", size: 14 }), "\u6D4B\u8BD5\u751F\u56FE\uFF08\u4F1A\u6D88\u8017 1 \u6B21\uFF09"), /* @__PURE__ */ React.createElement(TestLine, { k: "image" })), /* @__PURE__ */ React.createElement("div", { className: "rounded-xl border border-white/10 p-3 space-y-2" }, /* @__PURE__ */ React.createElement("div", { className: "text-sm" }, "\u751F\u6210\u8BBE\u7F6E"), /* @__PURE__ */ React.createElement("div", { className: "grid grid-cols-2 gap-2" }, num("\u6BCF\u6B21\u56DE\u590D\u5B57\u6570", "maxChars", 100, 3e3, 50), num("\u6BCF\u6761\u63D2\u56FE\u6570", "illusCount", 0, 5), num("\u6BCF\u6BB5\u5B57\u6570\u4E0A\u9650", "segMax", 30, 300, 10), num("\u6253\u5B57\u95F4\u9694(\u6BEB\u79D2)", "typeSpeed", 5, 200, 5), num("\u76F4\u64AD\u6BCF\u6BB5\u753B\u9762\u6570", "liveScenes", 0, 3)), /* @__PURE__ */ React.createElement(Field, { label: "\u56DE\u590D\u5448\u73B0\u65B9\u5F0F", hint: "\u56FE\u6587\u540C\u6B65" }, /* @__PURE__ */ React.createElement("select", { className: inputCls, value: st.gen.syncMode, onChange: setGen("syncMode") }, /* @__PURE__ */ React.createElement("option", { value: "gate" }, "\u7FFB\u5230\u518D\u7B49\uFF1A\u8BFB\u5230\u6709\u56FE\u7684\u6BB5\u843D\uFF0C\u56FE\u6CA1\u597D\u5C31\u5148\u7B49\uFF08\u63A8\u8350\uFF09"), /* @__PURE__ */ React.createElement("option", { value: "all" }, "\u4E00\u8D77\u51FA\u73B0\uFF1A\u6587\u5B57\u548C\u5168\u90E8\u63D2\u56FE\u90FD\u597D\u4E86\u624D\u663E\u793A"), /* @__PURE__ */ React.createElement("option", { value: "free" }, "\u5148\u51FA\u6587\u5B57\uFF1A\u6700\u5FEB\uFF0C\u56FE\u53EF\u80FD\u8DDF\u4E0D\u4E0A"))), /* @__PURE__ */ React.createElement("label", { className: "flex items-center gap-2 text-xs text-white/70 pt-1" }, /* @__PURE__ */ React.createElement(Switch, { on: memSettings(st).on, label: "\u81EA\u52A8\u6574\u7406\u8BB0\u5FC6\u6C60", onChange: (v) => update((d) => {
+    d.settings.memory = { ...memSettings(d.settings), on: v };
+  }) }), "\u8BB0\u5FC6\u6C60\uFF1A\u6BCF\u8FC7\u51E0\u697C\u5728\u540E\u53F0\u505A\u4E00\u6B21\u5C0F\u603B\u7ED3\u3001\u586B\u8BB0\u5FC6\u8868\uFF08\u8BE6\u7EC6\u8BBE\u7F6E\u5728\u8BB0\u5FC6\u6C60\u91CC\uFF09")), /* @__PURE__ */ React.createElement(VoiceSettings, { db, update }), /* @__PURE__ */ React.createElement("div", { className: "rounded-xl border border-white/10 p-3" }, /* @__PURE__ */ React.createElement("div", { className: "flex items-center mb-2" }, /* @__PURE__ */ React.createElement("span", { className: "text-sm" }, "\u7528\u91CF\u7EDF\u8BA1"), /* @__PURE__ */ React.createElement("button", { type: "button", className: "ml-auto text-[11px] text-white/40 hover:text-white", onClick: () => update((d) => {
     d.settings.stats = { calls: 0, prompt: 0, completion: 0, images: 0 };
   }) }, "\u6E05\u96F6")), /* @__PURE__ */ React.createElement("div", { className: "grid grid-cols-2 gap-y-1 text-xs text-white/60" }, /* @__PURE__ */ React.createElement("span", null, "LLM \u8C03\u7528"), /* @__PURE__ */ React.createElement("span", { className: "text-right font-mono text-white" }, st.stats.calls), /* @__PURE__ */ React.createElement("span", null, "\u8F93\u5165 tokens"), /* @__PURE__ */ React.createElement("span", { className: "text-right font-mono text-white" }, st.stats.prompt), /* @__PURE__ */ React.createElement("span", null, "\u8F93\u51FA tokens"), /* @__PURE__ */ React.createElement("span", { className: "text-right font-mono text-white" }, st.stats.completion), /* @__PURE__ */ React.createElement("span", null, "\u751F\u56FE\u5F20\u6570"), /* @__PURE__ */ React.createElement("span", { className: "text-right font-mono text-white" }, st.stats.images)), /* @__PURE__ */ React.createElement("p", { className: "text-[11px] text-white/30 mt-2" }, "\u4E2D\u8F6C\u7AD9\u6CA1\u8FD4\u56DE\u7528\u91CF\u65F6\u6309\u5B57\u6570\u4F30\u7B97\u3002Key \u53EA\u5B58\u5728\u8FD9\u53F0\u7535\u8111\u7684\u6D4F\u89C8\u5668\u91CC\u3002")));
 }
@@ -2016,7 +2046,7 @@ const LIGHT_TILES = [
   { k: "wardrobe", name: "\u8863\u6A71", icon: "shirt", open: "wardrobe" },
   { k: "phone", name: "\u624B\u673A", icon: "phone", open: "phone" },
   { k: "gallery", name: "\u56FE\u533A", icon: "image", open: "gallery" },
-  { k: "memory", name: "\u8BB0\u5FC6\u6C60", icon: "pool", stage: "\u9636\u6BB5\u4E8C" },
+  { k: "memory", name: "\u8BB0\u5FC6\u6C60", icon: "pool", open: "memory" },
   { k: "cards", name: "\u89D2\u8272\u5361\u518C", icon: "cards", open: "cards" },
   { k: "regex", name: "\u6B63\u5219", icon: "regex", jump: "regex" },
   { k: "worldbook", name: "\u4E16\u754C\u4E66", icon: "book", jump: "worldbook" }
@@ -2131,6 +2161,15 @@ function App() {
   const [compare, setCompare] = useState(null);
   const [phoneInit, setPhoneInit] = useState(null);
   const [wardrobeInit, setWardrobeInit] = useState(null);
+  const [memInit, setMemInit] = useState(null);
+  useEffect(() => {
+    const h = (e) => {
+      setMemInit(e.detail || {});
+      setGlobalModal("memory");
+    };
+    window.addEventListener("wenyou:memory", h);
+    return () => window.removeEventListener("wenyou:memory", h);
+  }, []);
   useEffect(() => {
     const h = (e) => {
       setWardrobeInit(e.detail || {});
@@ -2517,7 +2556,10 @@ function App() {
         if (m === "live") setModal({ type: "live", charId: id });
       }
     }
-  ), globalModal === "bt" && /* @__PURE__ */ React.createElement(BluetoothPanel, { db, update, say, onClose: () => setGlobalModal(null) }), globalModal === "gallery" && /* @__PURE__ */ React.createElement(Gallery, { db, update, say, onClose: () => setGlobalModal(null) }), globalModal === "bgm" && /* @__PURE__ */ React.createElement(BgmPanel, { db, update, say, onClose: () => setGlobalModal(null) }), liveSearchTab && /* @__PURE__ */ React.createElement(
+  ), globalModal === "memory" && /* @__PURE__ */ React.createElement(MemoryPool, { db, update, say, charId: memInit && memInit.charId || db.ui.currentCharId || db.characters[0] && db.characters[0].id, chatId: memInit && memInit.chatId, onClose: () => {
+    setGlobalModal(null);
+    setMemInit(null);
+  } }), globalModal === "bt" && /* @__PURE__ */ React.createElement(BluetoothPanel, { db, update, say, onClose: () => setGlobalModal(null) }), globalModal === "gallery" && /* @__PURE__ */ React.createElement(Gallery, { db, update, say, onClose: () => setGlobalModal(null) }), globalModal === "bgm" && /* @__PURE__ */ React.createElement(BgmPanel, { db, update, say, onClose: () => setGlobalModal(null) }), liveSearchTab && /* @__PURE__ */ React.createElement(
     LiveSearch,
     {
       db,
@@ -2998,13 +3040,9 @@ function InteractView({ db, update, char, chat, say, onExit, onLive, leftOpen, r
       }
       setPhase("reading");
       if (module === "world") runWorld(history2.concat([msg]));
-      if (engine.memory && dbRef.current.settings.gen.autoMemory) {
-        const full = history2.concat([msg]);
-        engine.memory({ char, history: full }).then((add) => update((d) => {
-          d.memory[char.id] = mergeMemory(d.memory[char.id], add);
-        })).catch(() => {
-        });
-      }
+      if (memSettings(dbRef.current.settings).on) setTimeout(() => runMemory(() => dbRef.current, update, chat.id).then((r) => {
+        if (r && r.did && !/不够/.test(r.did)) notify([{ icon: "pool", title: "\u8BB0\u5FC6\u6C60", text: r.did }]);
+      }), 400);
     } catch (e) {
       setErrorInfo({ message: e.message, history: history2, replaceId });
       setPhase("error");
@@ -3252,7 +3290,10 @@ function InteractView({ db, update, char, chat, say, onExit, onLive, leftOpen, r
       say("\u5DF2\u5F00\u59CB\u65B0\u804A\u5929");
     }],
     ["save", "\u5B9A\u70B9\u5B58\u6863", () => setPanel("save")],
-    ["pool", "\u8BB0\u5FC6\u6C60", () => setPanel("memory")],
+    ["pool", "\u8BB0\u5FC6\u6C60", () => {
+      setPanel(null);
+      window.dispatchEvent(new CustomEvent("wenyou:memory", { detail: { charId: char.id, chatId: chat.id } }));
+    }],
     ["x", "\u5173\u95ED\u804A\u5929", () => {
       setPanel(null);
       onExit();
@@ -4110,7 +4151,8 @@ function activeLore(db, char, history) {
 function buildReplyMessages(db, char, module, history, withLabels) {
   const s = db.settings;
   const entries = s.presetEntries && s.presetEntries[module] || defaultEntries(module);
-  const H = history.slice(-s.gen.historyTurns);
+  const memChat = getActiveChat(db, char.id, module);
+  const H = history.slice(Math.max(0, Math.min(memVisibleFrom(db, memChat), history.length - 2))).slice(-s.gen.historyTurns);
   const lore = activeLore(db, char, history);
   const vars = { char: char.name, user: s.user && s.user.name || "\u4F60", maxChars: s.gen.maxChars, minChars: Math.round(s.gen.maxChars * 0.7) };
   const loreText = (pos) => {
@@ -4123,7 +4165,7 @@ function buildReplyMessages(db, char, module, history, withLabels) {
     const v = [["\u91CD\u8981\u7269\u54C1", mem.items], ["\u65F6\u95F4\u8282\u70B9", mem.time], ["\u5173\u952E\u4E8B\u4EF6", mem.events], ["\u60C5\u611F\u951A\u70B9", mem.emotions]].filter(([, l]) => l && l.length).map(([k, l]) => `${k}\uFF1A${l.join("\u3001")}`).join("\n");
     return v || mem.summary ? "\u3010\u8BB0\u5FC6\u3011\n" + [mem.summary, v].filter(Boolean).join("\n") : "";
   };
-  const memAll = () => [memText(), phoneMemoryText(db, char)].filter(Boolean).join("\n\n");
+  const memAll = () => [memoryPromptText(db, memChat, char) || memText(), phoneMemoryText(db, char)].filter(Boolean).join("\n\n");
   const labeled = [];
   entries.forEach((en) => {
     if (!en.enabled) return;
@@ -4219,7 +4261,7 @@ async function naiGenerateRaw(settings, prompt, onProgress, seed, size, extra) {
     steps: String(n.steps),
     stream: 1,
     nocache: 1,
-    negative: n.negative,
+    negative: [n.negative, extra && extra.negAdd].filter(Boolean).join(", "),
     tag: prompt,
     addition: { imageToImageBase64: null, vibeTransferList: await vibeList(n), multiRoleList: [], characterKeep: null }
   };
@@ -4360,7 +4402,7 @@ function makeRealEngine(db, update) {
       if (!points.length && firstErr) throw firstErr;
       return points.sort((a, b) => a.at - b.at).map((p) => ({ at: p.at, prompt: compose(char, p.tags) }));
     },
-    async image({ prompt, onProgress, seed, size, char }) {
+    async image({ prompt, onProgress, seed, size, char, negAdd }) {
       let lastErr;
       for (let i = 0; i < 3; i++) {
         if (i) {
@@ -4369,7 +4411,7 @@ function makeRealEngine(db, update) {
         }
         try {
           const chars = char && s.nai.charCaptions !== false ? [lookOf(db, char.id, char.naiTags)].filter(Boolean) : [];
-          const r = await naiGenerate(s, prompt, onProgress, seed, size, { chars });
+          const r = await naiGenerate(s, prompt, onProgress, seed, size, { chars, negAdd });
           update((d) => {
             d.settings.stats.images += 1;
           });
@@ -4409,6 +4451,7 @@ function getEngine(db, update) {
     attachPhone(e, db, update);
     attachWardrobe(e, db, update);
     attachCharLook(e, db, update);
+    attachMemory(e, db, update);
     attachMirror(e, db, update);
     return e;
   }
@@ -4514,7 +4557,7 @@ function officialBody(settings, prompt, seed, size, extra, flavor) {
   const n = settings.nai;
   const model = api.model || n.model;
   const wh = NAI_SIZE_WH[size || n.size] || [832, 1216];
-  const neg = n.negative || "";
+  const neg = [n.negative, extra && extra.negAdd].filter(Boolean).join(", ");
   const s = seed != null ? seed : String(n.seed || "").trim() ? Number(n.seed) : randSeed();
   const chars = (extra && extra.chars || []).filter((c) => c && c.trim()).slice(0, 6);
   const centers = chars.length === 2 ? [{ x: 0.3, y: 0.5 }, { x: 0.7, y: 0.5 }] : chars.map(() => ({ x: 0.5, y: 0.5 }));
@@ -6952,6 +6995,9 @@ function phoneMemoryText(db, char) {
   return "\u3010\u6700\u8FD1\u7684\u624B\u673A\u77ED\u4FE1 / \u901A\u8BDD\uFF08\u5267\u60C5\u91CC\u7684\u89D2\u8272\u8BB0\u5F97\uFF09\u3011\n" + smsHistoryText(db, char, 8, uname);
 }
 function memoryBrief(db, char) {
+  const chats = Object.values(db.chats || {}).filter((c) => c.charId === char.id && c.mem).sort((a, b) => String(b.updatedAt || "").localeCompare(String(a.updatedAt || "")));
+  const t = chats[0] ? memoryPromptText(db, chats[0], char) : "";
+  if (t) return t.slice(0, 1500);
   const mem = db.memory && db.memory[char.id];
   return mem && mem.summary ? "\u3010\u8BB0\u5FC6\u3011" + mem.summary : "";
 }
@@ -7068,9 +7114,9 @@ function Phone({ db, update, say, init, onClose, onGallery }) {
       className: "relative w-[min(380px,96vw)] h-[min(780px,94vh)] rounded-[44px] border border-white/20 bg-black/70 shadow-[0_30px_80px_rgba(0,0,0,.6)] overflow-hidden pop-in flex flex-col",
       style: { backdropFilter: "blur(30px)", WebkitBackdropFilter: "blur(30px)" }
     },
-    /* @__PURE__ */ React.createElement("div", { className: "relative flex items-center justify-between px-7 pt-3 pb-1 text-[12px] text-white/80 shrink-0" }, /* @__PURE__ */ React.createElement("span", { className: "font-medium" }, now), /* @__PURE__ */ React.createElement("span", { className: "absolute left-1/2 -translate-x-1/2 top-2 w-24 h-6 rounded-full bg-black" }), /* @__PURE__ */ React.createElement("span", { className: "flex items-center gap-1 text-[10px]" }, "5G ", /* @__PURE__ */ React.createElement("span", { className: "inline-block w-5 h-2.5 rounded-sm border border-white/70 relative" }, /* @__PURE__ */ React.createElement("span", { className: "absolute inset-[1px] right-[5px] bg-white/80 rounded-[1px]" })))),
+    /* @__PURE__ */ React.createElement("div", { className: "relative flex items-center justify-between px-7 pt-3 pb-1 text-[12px] text-white/80 shrink-0" }, /* @__PURE__ */ React.createElement("span", { className: "font-medium" }, now), /* @__PURE__ */ React.createElement("span", { className: "absolute left-1/2 -translate-x-1/2 top-2 w-24 h-6 rounded-full bg-black" }), /* @__PURE__ */ React.createElement("span", { className: "flex items-center gap-1 text-[10px]" }, "5G ", /* @__PURE__ */ React.createElement("span", { className: "inline-block w-5 h-2.5 rounded-sm border border-white/70 relative" }, /* @__PURE__ */ React.createElement("span", { className: "absolute inset-[1px] right-[5px] bg-white/80 rounded-[1px]" })), app !== "call" && /* @__PURE__ */ React.createElement("button", { type: "button", title: "\u5173\u95ED\u624B\u673A", onClick: onClose, className: "ml-1.5 w-6 h-6 -my-1 rounded-full flex items-center justify-center hover:bg-white/15" }, /* @__PURE__ */ React.createElement(Icon, { name: "x", size: 13 })))),
     /* @__PURE__ */ React.createElement("div", { className: "flex-1 min-h-0 flex flex-col" }, app === "home" && /* @__PURE__ */ React.createElement(PhoneHome, { db, now, unread, onApp: setApp, onGallery, onClose }), app === "list" && /* @__PURE__ */ React.createElement(PhoneList, { db, onOpen: (id) => open(id, "sms"), onBack: home }), app === "recents" && /* @__PURE__ */ React.createElement(PhoneRecents, { db, onCall: (id) => open(id, "call"), onBack: home }), app === "sms" && char && /* @__PURE__ */ React.createElement(PhoneSms, { db, update, char, onBack: () => setApp("list"), onCall: () => setApp("call") }), app === "call" && char && /* @__PURE__ */ React.createElement(PhoneCall, { db, update, char, say, onEnd: () => setApp("sms") })),
-    /* @__PURE__ */ React.createElement("button", { type: "button", title: app === "call" ? "\u901A\u8BDD\u4E2D" : "\u56DE\u5230\u4E3B\u5C4F", onClick: home, className: "shrink-0 h-6 flex items-center justify-center" }, /* @__PURE__ */ React.createElement("span", { className: "w-32 h-1 rounded-full bg-white/60" }))
+    /* @__PURE__ */ React.createElement("div", { className: "shrink-0 flex flex-col items-center pb-2 pt-1 gap-1.5" }, app === "home" && /* @__PURE__ */ React.createElement("button", { type: "button", title: "\u6536\u8D77\u624B\u673A", onClick: onClose, className: "w-11 h-11 rounded-full border border-white/25 flex items-center justify-center text-white/70 hover:bg-white/10 active:scale-95 transition" }, /* @__PURE__ */ React.createElement("svg", { width: "22", height: "22", viewBox: "0 0 24 24", fill: "none", stroke: "currentColor", strokeWidth: "1.4", strokeLinecap: "round" }, /* @__PURE__ */ React.createElement("path", { d: "M12 11v4" }), /* @__PURE__ */ React.createElement("path", { d: "M8.5 9.5a3.5 3.5 0 017 0v5a3.5 3.5 0 01-1.2 2.6" }), /* @__PURE__ */ React.createElement("path", { d: "M6 10a6 6 0 0112 0v3.5" }), /* @__PURE__ */ React.createElement("path", { d: "M5.2 15.5c.5 1.6 1.4 3 2.6 4" }), /* @__PURE__ */ React.createElement("path", { d: "M9.5 19.8c-.6-1.2-1-2.5-1-4" }), /* @__PURE__ */ React.createElement("path", { d: "M4 8.5A8.5 8.5 0 0119 6" }))), /* @__PURE__ */ React.createElement("button", { type: "button", title: app === "call" ? "\u901A\u8BDD\u4E2D" : app === "home" ? "\u6536\u8D77\u624B\u673A" : "\u56DE\u5230\u4E3B\u5C4F", onClick: () => app === "home" ? onClose() : home(), className: "h-4 flex items-center justify-center" }, /* @__PURE__ */ React.createElement("span", { className: "w-32 h-1 rounded-full bg-white/60" })))
   ));
 }
 function PhoneHome({ db, now, unread, onApp, onGallery, onClose }) {
@@ -7418,6 +7464,52 @@ function SfxLibrary({ db, update, say }) {
       say(`\u5DF2\u52A0\u5165 ${items.length} \u4E2A\u97F3\u6548`);
     }
   };
+  const packRef = useRef(null);
+  const exportPack = async () => {
+    const items = [];
+    for (const i of x.items || []) {
+      const b = await ImageStore.get(i.blobId);
+      if (!b) continue;
+      items.push({ name: i.name, keys: i.keys || [], vol: i.vol != null ? i.vol : 1, type: b.type || "audio/mpeg", data: await blobToB64(b) });
+    }
+    saveBlob(new Blob([JSON.stringify({ kind: "wenyou-sfx-pack", version: 1, items })], { type: "application/json" }), `\u6587\u6E38\u97F3\u6548\u5305_${items.length}\u4E2A.json`);
+    say(`\u5DF2\u5BFC\u51FA ${items.length} \u4E2A\u97F3\u6548`);
+  };
+  const importPack = async (e) => {
+    const f = e.target.files && e.target.files[0];
+    e.target.value = "";
+    if (!f) return;
+    let j;
+    try {
+      j = JSON.parse(await f.text());
+    } catch (err) {
+      say("\u4E0D\u662F\u6709\u6548\u7684\u97F3\u6548\u5305\u6587\u4EF6");
+      return;
+    }
+    if (!j || j.kind !== "wenyou-sfx-pack" || !Array.isArray(j.items)) {
+      say("\u4E0D\u662F\u6587\u6E38\u7684\u97F3\u6548\u5305");
+      return;
+    }
+    const have = new Set((x.items || []).map((i) => i.name));
+    const added = [];
+    for (const it of j.items) {
+      if (!it || !it.data || !it.name) continue;
+      const bin = atob(it.data);
+      const u8 = new Uint8Array(bin.length);
+      for (let k = 0; k < bin.length; k++) u8[k] = bin.charCodeAt(k);
+      const blobId = uid("sfx");
+      await ImageStore.put(blobId, new Blob([u8], { type: it.type || "audio/mpeg" }));
+      let name = String(it.name).slice(0, 12);
+      let n = 2;
+      while (have.has(name)) name = String(it.name).slice(0, 10) + n++;
+      have.add(name);
+      added.push({ id: uid("sx"), name, keys: Array.isArray(it.keys) ? it.keys.slice(0, 8).map(String) : [], blobId, vol: Number(it.vol) || 1 });
+    }
+    if (added.length) setX((s) => {
+      s.items = (s.items || []).concat(added);
+    });
+    say(added.length ? `\u5DF2\u5BFC\u5165 ${added.length} \u4E2A\u97F3\u6548` : "\u97F3\u6548\u5305\u662F\u7A7A\u7684");
+  };
   const patchI = (id, fn) => setX((s) => {
     const i = (s.items || []).find((y) => y.id === id);
     if (i) fn(i);
@@ -7445,7 +7537,7 @@ function SfxLibrary({ db, update, say }) {
     });
   } })), /* @__PURE__ */ React.createElement("button", { type: "button", title: "\u5220\u9664", onClick: () => setX((s) => {
     s.items = s.items.filter((y) => y.id !== i.id);
-  }), className: "text-white/40 hover:text-white" }, /* @__PURE__ */ React.createElement(Icon, { name: "trash", size: 13 }))))), /* @__PURE__ */ React.createElement(Btn, { className: "w-full py-1.5 text-xs", onClick: () => ref.current.click() }, /* @__PURE__ */ React.createElement(Icon, { name: "upload", size: 13 }), "\u4E0A\u4F20\u97F3\u6548\uFF08\u53EF\u4EE5\u4E00\u6B21\u9009\u591A\u4E2A\uFF09"), /* @__PURE__ */ React.createElement("input", { ref, type: "file", accept: "audio/*", multiple: true, className: "hidden", onChange: add }), /* @__PURE__ */ React.createElement("p", { className: "text-[11px] text-white/35 leading-relaxed" }, "\u97F3\u6548\u6587\u4EF6\u5B58\u5728\u8FD9\u53F0\u7535\u8111\u7684\u6D4F\u89C8\u5668\u91CC\uFF0C\u4E0D\u4E0A\u4F20\u5230\u4EFB\u4F55\u5730\u65B9\uFF1B\u6362\u6D4F\u89C8\u5668\u6216\u6E05\u7406\u6D4F\u89C8\u5668\u6570\u636E\u4F1A\u4E22\u5931\uFF0C\u5BFC\u51FA\u5907\u4EFD\u4E0D\u5305\u542B\u97F3\u6548\u6587\u4EF6\u3002\u6587\u4EF6\u540D\u4F1A\u5F53\u6210\u97F3\u6548\u540D\u5B57\uFF0C\u53EF\u4EE5\u6539\u3002")));
+  }), className: "text-white/40 hover:text-white" }, /* @__PURE__ */ React.createElement(Icon, { name: "trash", size: 13 }))))), /* @__PURE__ */ React.createElement(Btn, { className: "w-full py-1.5 text-xs", onClick: () => ref.current.click() }, /* @__PURE__ */ React.createElement(Icon, { name: "upload", size: 13 }), "\u4E0A\u4F20\u97F3\u6548\uFF08\u53EF\u4EE5\u4E00\u6B21\u9009\u591A\u4E2A\uFF09"), /* @__PURE__ */ React.createElement("input", { ref, type: "file", accept: "audio/*", multiple: true, className: "hidden", onChange: add }), /* @__PURE__ */ React.createElement("div", { className: "grid grid-cols-2 gap-2" }, /* @__PURE__ */ React.createElement(Btn, { className: "py-1.5 text-xs", onClick: exportPack, disabled: !(x.items || []).length }, /* @__PURE__ */ React.createElement(Icon, { name: "download", size: 13 }), "\u5BFC\u51FA\u97F3\u6548\u5305"), /* @__PURE__ */ React.createElement(Btn, { className: "py-1.5 text-xs", onClick: () => packRef.current.click() }, /* @__PURE__ */ React.createElement(Icon, { name: "upload", size: 13 }), "\u5BFC\u5165\u97F3\u6548\u5305")), /* @__PURE__ */ React.createElement("input", { ref: packRef, type: "file", accept: ".json,application/json", className: "hidden", onChange: importPack }), /* @__PURE__ */ React.createElement("p", { className: "text-[11px] text-white/35 leading-relaxed" }, "\u97F3\u6548\u6587\u4EF6\u5B58\u5728\u8FD9\u53F0\u7535\u8111\u7684\u6D4F\u89C8\u5668\u91CC\uFF0C\u4E0D\u4E0A\u4F20\u5230\u4EFB\u4F55\u5730\u65B9\uFF1B\u6362\u6D4F\u89C8\u5668\u6216\u6E05\u7406\u6D4F\u89C8\u5668\u6570\u636E\u4F1A\u4E22\u5931\uFF0C\u5BFC\u51FA\u5907\u4EFD\u4E0D\u5305\u542B\u97F3\u6548\u6587\u4EF6\u3002\u6587\u4EF6\u540D\u4F1A\u5F53\u6210\u97F3\u6548\u540D\u5B57\uFF0C\u53EF\u4EE5\u6539\u3002")));
 }
 DEFAULT_PROMPTS.outfit = {
   name: "\u8863\u6A71 \xB7 \u5199\u670D\u88C5 tag",
@@ -7664,6 +7756,406 @@ function LookAiButton({ db, update, name, desc, onTags, className }) {
   };
   return /* @__PURE__ */ React.createElement("span", { className: cx("inline-flex flex-col gap-1", className) }, /* @__PURE__ */ React.createElement("button", { type: "button", onClick: go, disabled: busy, className: "self-start text-[11px] rounded-full border border-white/25 px-2.5 py-0.5 text-white/75 hover:bg-white hover:text-black transition-colors disabled:opacity-40" }, busy ? "AI \u5728\u5199\u2026" : "\u2726 AI \u6839\u636E\u8BBE\u5B9A\u5199"), note && /* @__PURE__ */ React.createElement("span", { className: "text-[10px] text-white/50 leading-snug" }, note));
 }
+DEFAULT_PROMPTS.memSmall = {
+  name: "\u8BB0\u5FC6 \xB7 \u5C0F\u603B\u7ED3 + \u586B\u8868",
+  desc: "\u6BCF\u8FC7 N \u697C\u8FD0\u884C\u4E00\u6B21\uFF1A\u628A\u8FD9\u51E0\u697C\u538B\u6210\u5C0F\u603B\u7ED3\uFF0C\u540C\u65F6\u628A\u5173\u952E\u4FE1\u606F\u586B\u8FDB\u8BB0\u5FC6\u8868\u3002",
+  vars: "{{char}} {{user}} {{prev}} \u4E4B\u524D\u7684\u603B\u7ED3\u3000{{from}} {{to}} \u697C\u5C42\u3000{{floors}} \u5267\u60C5\u539F\u6587\u3000{{tables}} \u8BB0\u5FC6\u8868\u8BF4\u660E",
+  system: "\u4F60\u662F\u4E92\u52A8\u5C0F\u8BF4\u7684\u8BB0\u5FC6\u6574\u7406\u5458\uFF1A\u628A\u4E00\u6BB5\u5267\u60C5\u538B\u7F29\u6210\u5C0F\u603B\u7ED3\uFF0C\u5E76\u628A\u5173\u952E\u4FE1\u606F\u586B\u8FDB\u8BB0\u5FC6\u8868\u3002\u5B81\u53EF\u5177\u4F53\uFF0C\u4E0D\u8981\u7A7A\u6CDB\u3002" + JSON_ONLY,
+  user: '\u89D2\u8272\uFF1A{{char}}\u3000\u73A9\u5BB6\uFF1A{{user}}\uFF08\u6B63\u6587\u91CC\u7684\u201C\u4F60\u201D\uFF09\n\n\u3010\u4E4B\u524D\u7684\u603B\u7ED3\uFF08\u53C2\u8003\uFF0C\u4E0D\u8981\u91CD\u590D\u5199\uFF09\u3011\n{{prev}}\n\n\u3010\u8981\u6574\u7406\u7684\u5267\u60C5\uFF1A\u7B2C {{from}}\u2013{{to}} \u697C\u3011\n{{floors}}\n\n\u3010\u8BB0\u5FC6\u8868\u3011\uFF08\u6BCF\u5F20\uFF1A\u8868 id \uFF5C \u8868\u540D \uFF5C \u8981\u8BB0\u4EC0\u4E48 \uFF5C \u5217\u540D\uFF0C\u7B2C\u4E00\u5217\u662F\u4E3B\u952E\uFF1B\u5DF2\u6709\u7684\u884C\u53EA\u5217\u4E3B\u952E\uFF09\n{{tables}}\n\n\u4EFB\u52A1\uFF1A\n1. summary\uFF1A\u8FD9\u6BB5\u5267\u60C5\u7684\u5C0F\u603B\u7ED3\uFF0C150\u2013300 \u5B57\uFF0C\u6309\u65F6\u95F4\u987A\u5E8F\u3002\u5FC5\u987B\u4FDD\u7559\uFF1A\u53D1\u751F\u4E86\u4EC0\u4E48\u3001\u8C01\u8BF4\u4E86\u4EC0\u4E48\u5173\u952E\u7684\u8BDD\uFF08\u5C3D\u91CF\u7528\u539F\u8BDD\uFF09\u3001\u505A\u51FA\u7684\u51B3\u5B9A\u4E0E\u7EA6\u5B9A\u3001\u60C5\u7EEA\u548C\u5173\u7CFB\u7684\u8F6C\u6298\u3001\u7559\u4E0B\u7684\u60AC\u5FF5\uFF1B\u53BB\u6389\u666F\u7269\u63CF\u5199\u548C\u91CD\u590D\u5185\u5BB9\u3002\n2. tables\uFF1A\u53EA\u586B\u8FD9\u6BB5\u91CC\u771F\u7684\u51FA\u73B0\u7684\u65B0\u4FE1\u606F\u3002\u683C\u5F0F {"\u8868id":{"rows":[{"\u5217\u540D":"\u503C"}]}}\uFF1A\u4E3B\u952E\uFF08\u7B2C\u4E00\u5217\uFF09\u548C\u5DF2\u6709\u884C\u76F8\u540C = \u66F4\u65B0\u90A3\u4E00\u884C\uFF08\u53EA\u5199\u6709\u53D8\u5316\u7684\u5217\uFF09\uFF0C\u4E0D\u540C = \u65B0\u589E\uFF1B\u67D0\u884C\u5DF2\u7ECF\u5931\u6548\uFF08\u4EFB\u52A1\u5B8C\u6210\u540E\u4E0D\u518D\u91CD\u8981\u3001\u4E1C\u897F\u4E22\u4E86\uFF09\u5C31\u52A0 "_delete":true\u3002\u6BCF\u4E2A\u683C\u5B50 30 \u5B57\u4EE5\u5185\uFF0C\u5199\u5177\u4F53\uFF08\u4EBA\u540D\u3001\u7269\u54C1\u540D\u3001\u539F\u8BDD\uFF09\uFF0C\u4E0D\u5199\u201C\u5F88\u5F00\u5FC3\u201D\u8FD9\u7C7B\u7A7A\u8BDD\u3002\u6CA1\u6709\u65B0\u4FE1\u606F\u7684\u8868\u4E0D\u8981\u5199\u3002\n\u53EA\u8F93\u51FA\uFF1A{"summary":"","tables":{}}'
+};
+DEFAULT_PROMPTS.memBig = {
+  name: "\u8BB0\u5FC6 \xB7 \u5927\u603B\u7ED3 + \u538B\u7F29\u8868",
+  desc: "\u5C0F\u603B\u7ED3\u6512\u591F\u6570\u91CF\u65F6\u8FD0\u884C\uFF1A\u5408\u5E76\u6210\u4E00\u6BB5\u5927\u603B\u7ED3\uFF1B\u884C\u6570\u8D85\u6807\u7684\u8BB0\u5FC6\u8868\u4E00\u8D77\u538B\u7F29\u3002",
+  vars: "{{char}} {{user}} {{smalls}} \u8981\u5408\u5E76\u7684\u5C0F\u603B\u7ED3\u3000{{prev}} \u4E4B\u524D\u7684\u5927\u603B\u7ED3\u3000{{tables}} \u9700\u8981\u538B\u7F29\u7684\u8868",
+  system: "\u4F60\u662F\u4E92\u52A8\u5C0F\u8BF4\u7684\u8BB0\u5FC6\u6574\u7406\u5458\uFF0C\u8D1F\u8D23\u628A\u96F6\u6563\u7684\u8BB0\u5F55\u5408\u5E76\u3001\u538B\u7F29\uFF0C\u4F46\u7EDD\u4E0D\u80FD\u4E22\u6389\u4E4B\u540E\u5267\u60C5\u4F1A\u7528\u5230\u7684\u4FE1\u606F\u3002" + JSON_ONLY,
+  user: '\u89D2\u8272\uFF1A{{char}}\u3000\u73A9\u5BB6\uFF1A{{user}}\n\n\u3010\u4E4B\u524D\u7684\u5927\u603B\u7ED3\uFF08\u53EA\u4F5C\u53C2\u8003\uFF09\u3011\n{{prev}}\n\n\u3010\u8981\u5408\u5E76\u7684\u5C0F\u603B\u7ED3\uFF08\u6309\u65F6\u95F4\u987A\u5E8F\uFF09\u3011\n{{smalls}}\n\n\u3010\u9700\u8981\u538B\u7F29\u7684\u8BB0\u5FC6\u8868\u3011\n{{tables}}\n\n\u4EFB\u52A1\uFF1A\n1. summary\uFF1A\u628A\u8FD9\u4E9B\u5C0F\u603B\u7ED3\u5408\u5E76\u6210\u4E00\u6BB5\u5927\u603B\u7ED3\uFF08\u50CF\u5C0F\u8BF4\u7684\u4E00\u7AE0\u6897\u6982\uFF09\uFF0C300\u2013600 \u5B57\uFF0C\u6309\u65F6\u95F4\u987A\u5E8F\uFF1B\u4FDD\u7559\u4E3B\u7EBF\u3001\u5173\u952E\u539F\u8BDD\u3001\u51B3\u5B9A\u4E0E\u7EA6\u5B9A\u3001\u5173\u7CFB\u53D8\u5316\u3001\u672A\u89E3\u51B3\u7684\u60AC\u5FF5\u3002\n2. tables\uFF1A\u5BF9\u4E0A\u9762\u6BCF\u5F20\u9700\u8981\u538B\u7F29\u7684\u8868\uFF0C\u8F93\u51FA\u538B\u7F29\u540E\u7684\u5168\u90E8\u884C {"\u8868id":{"rows":[...]}}\uFF0C\u884C\u6570\u4E0D\u8D85\u8FC7\u8981\u6C42\u3002\u538B\u7F29\u89C4\u5219\uFF1A\u540C\u4E00\u4EF6\u4E8B\u7684\u591A\u884C\u5408\u5E76\u6210\u4E00\u884C\uFF1B\u5DF2\u7ECF\u5B8C\u6210\u4E14\u4E4B\u540E\u4E0D\u518D\u91CD\u8981\u7684\u53EF\u4EE5\u5220\uFF1B\u7EA6\u5B9A / \u627F\u8BFA / \u79D8\u5BC6 / \u5BF9\u65B9\u5728\u610F\u6216\u8BF4\u8FC7\u7684\u5173\u952E\u8BDD / \u5173\u7CFB\u8F6C\u6298 / \u672A\u5B8C\u6210\u7684\u4EFB\u52A1 / \u91CD\u8981\u7269\u54C1 \u4E00\u5F8B\u4FDD\u7559\u539F\u610F\uFF0C\u80FD\u7559\u539F\u8BDD\u5C31\u7559\u539F\u8BDD\u3002\u6CA1\u6709\u9700\u8981\u538B\u7F29\u7684\u8868\u5C31\u7ED9\u7A7A\u5BF9\u8C61\u3002\n\u53EA\u8F93\u51FA\uFF1A{"summary":"","tables":{}}'
+};
+PROMPT_KEYS.push("memSmall", "memBig");
+const MEM_PRESETS = {
+  \u901A\u7528: [
+    { id: "t_event", name: "\u91CD\u8981\u4E8B\u4EF6", desc: "\u63A8\u52A8\u5267\u60C5\u7684\u4E8B\u4EF6\u4E0E\u8F6C\u6298", cols: ["\u4E8B\u4EF6", "\u65F6\u95F4 / \u5730\u70B9", "\u6D89\u53CA\u4EBA\u7269", "\u540E\u679C"], scope: "chat", max: 20 },
+    { id: "t_promise", name: "\u7EA6\u5B9A\u4E0E\u4F0F\u7B14", desc: "\u627F\u8BFA\u3001\u7EA6\u5B9A\u3001\u6CA1\u89E3\u5F00\u7684\u60AC\u5FF5", cols: ["\u5185\u5BB9", "\u8C01\u5BF9\u8C01", "\u72B6\u6001"], scope: "chat", max: 12 },
+    { id: "t_profile", name: "\u4EBA\u7269\u6863\u6848", desc: "\u51FA\u573A\u4EBA\u7269\u7684\u5916\u8C8C\u3001\u6027\u683C\u3001\u62E5\u6709\u7684\u4E1C\u897F\u3001\u5BF9\u4F60\u7684\u770B\u6CD5\uFF08\u4F1A\u968F\u5267\u60C5\u66F4\u65B0\uFF09", cols: ["\u4EBA\u7269", "\u5916\u8C8C", "\u6027\u683C", "\u62E5\u6709\u7684\u4E1C\u897F", "\u5BF9\u4F60\u7684\u770B\u6CD5"], scope: "char", max: 12 }
+  ],
+  \u604B\u7231: [
+    { id: "t_moment", name: "\u4E92\u52A8\u8BB0\u5F55", desc: "\u4E24\u4EBA\u4E4B\u95F4\u503C\u5F97\u8BB0\u4F4F\u7684\u4E92\u52A8", cols: ["\u4E92\u52A8", "\u7EC6\u8282", "\u65F6\u95F4"], scope: "chat", max: 20 },
+    { id: "t_promise", name: "\u7EA6\u5B9A\u4E0E\u4F0F\u7B14", desc: "\u627F\u8BFA\u3001\u7EA6\u5B9A\u3001\u6CA1\u89E3\u5F00\u7684\u60AC\u5FF5", cols: ["\u5185\u5BB9", "\u8C01\u5BF9\u8C01", "\u72B6\u6001"], scope: "chat", max: 12 },
+    { id: "t_heart", name: "TA \u6697\u81EA\u5728\u610F\u7684\u8BDD", desc: "\u4F60\u8BF4\u8FC7\u7684\u3001TA \u6084\u6084\u8BB0\u5728\u5FC3\u4E0A\u7684\u8BDD\uFF0C\u4EE5\u53CA TA \u7684\u53CD\u5E94", cols: ["\u4F60\u8BF4\u7684\u8BDD", "TA \u7684\u53CD\u5E94", "\u4E3A\u4EC0\u4E48\u5728\u610F"], scope: "char", max: 15 },
+    { id: "t_feel", name: "\u611F\u60C5\u8FDB\u5C55", desc: "TA \u5BF9\u4F60\u7684\u770B\u6CD5\u4E0E\u6001\u5EA6\u53D8\u5316", cols: ["\u9636\u6BB5", "TA \u600E\u4E48\u770B\u4F60", "\u8F6C\u6298\u70B9"], scope: "char", max: 8 },
+    { id: "t_profile", name: "\u4EBA\u7269\u6863\u6848", desc: "\u51FA\u573A\u4EBA\u7269\u7684\u5916\u8C8C\u3001\u6027\u683C\u3001\u62E5\u6709\u7684\u4E1C\u897F", cols: ["\u4EBA\u7269", "\u5916\u8C8C", "\u6027\u683C", "\u62E5\u6709\u7684\u4E1C\u897F", "\u5BF9\u4F60\u7684\u770B\u6CD5"], scope: "char", max: 12 }
+  ],
+  \u8DD1\u56E2\u4EFB\u52A1: [
+    { id: "t_quest", name: "\u4EFB\u52A1", desc: "\u63A5\u5230\u7684\u4EFB\u52A1\u548C\u8FDB\u5EA6", cols: ["\u4EFB\u52A1", "\u72B6\u6001", "\u59D4\u6258\u4EBA / \u4EA4\u4E92\u5BF9\u8C61", "\u8FDB\u5C55", "\u5956\u52B1"], scope: "chat", max: 15 },
+    { id: "t_npc", name: "NPC", desc: "\u9047\u5230\u7684\u4EBA\u7269", cols: ["\u540D\u5B57", "\u8EAB\u4EFD", "\u6001\u5EA6", "\u6240\u5728\u4F4D\u7F6E", "\u4EA4\u6613 / \u60C5\u62A5"], scope: "char", max: 20 },
+    { id: "t_item", name: "\u7269\u54C1\u4E0E\u7EBF\u7D22", desc: "\u83B7\u5F97\u7684\u7269\u54C1\u3001\u7EBF\u7D22", cols: ["\u540D\u79F0", "\u6765\u6E90", "\u7528\u9014 / \u610F\u4E49"], scope: "chat", max: 20 },
+    { id: "t_event", name: "\u91CD\u8981\u4E8B\u4EF6", desc: "\u63A8\u52A8\u5267\u60C5\u7684\u4E8B\u4EF6\u4E0E\u8F6C\u6298", cols: ["\u4E8B\u4EF6", "\u65F6\u95F4 / \u5730\u70B9", "\u6D89\u53CA\u4EBA\u7269", "\u540E\u679C"], scope: "chat", max: 20 }
+  ]
+};
+function memSettings(s) {
+  return { on: true, smallEvery: 10, keepRecent: 4, bigEvery: 5, injectTables: true, ...s.memory || {} };
+}
+function memTables(s) {
+  return s.memTables || MEM_PRESETS.\u901A\u7528.map((t) => ({ ...t, on: true }));
+}
+function ensureChatMem(chat) {
+  chat.mem = chat.mem || { smalls: [], bigs: [], coveredTo: 0, tables: {} };
+  chat.mem.tables = chat.mem.tables || {};
+  return chat.mem;
+}
+const chatMem = (chat) => chat && chat.mem || { smalls: [], bigs: [], coveredTo: 0, tables: {} };
+const charMemOf = (db, charId) => (db.charMem || {})[charId] || {};
+const rowsOf = (db, chat, t, charId) => (t.scope === "char" ? charMemOf(db, charId)[t.id] : chatMem(chat).tables[t.id]) || [];
+function memoryPromptText(db, chat, char) {
+  const ms = memSettings(db.settings);
+  const m = chatMem(chat);
+  const parts = [];
+  if (m.bigs.length) parts.push("\u3010\u524D\u60C5 \xB7 \u5927\u603B\u7ED3\u3011\n" + m.bigs.map((b) => `\uFF08\u7B2C ${b.from}\u2013${b.to} \u697C\uFF09${b.text}`).join("\n"));
+  const smalls = m.smalls.filter((x) => !x.merged);
+  if (smalls.length) parts.push("\u3010\u524D\u60C5 \xB7 \u8FD1\u671F\u5C0F\u603B\u7ED3\u3011\n" + smalls.map((b) => `\uFF08\u7B2C ${b.from}\u2013${b.to} \u697C\uFF09${b.text}`).join("\n"));
+  if (ms.injectTables) {
+    memTables(db.settings).filter((t) => t.on !== false).forEach((t) => {
+      const rows = rowsOf(db, chat, t, char.id);
+      if (!rows.length) return;
+      const sorted = rows.filter((r) => r._pin).concat(rows.filter((r) => !r._pin));
+      parts.push(`\u3010\u8BB0\u5FC6\u8868 \xB7 ${t.name}\u3011\uFF08${t.cols.join("\uFF5C")}\uFF09
+` + sorted.slice(0, 30).map((r) => "- " + t.cols.map((c) => r[c] || "").join("\uFF5C")).join("\n"));
+    });
+  }
+  return parts.length ? parts.join("\n\n") : "";
+}
+function memVisibleFrom(db, chat) {
+  const ms = memSettings(db.settings);
+  return ms.on && chat ? chatMem(chat).coveredTo || 0 : 0;
+}
+MockEngineAdapter.memSmall = async ({ floors, tables }) => {
+  await sleep(600);
+  const first = (floors.find((f) => f.role === "char") || floors[0] || { text: "" }).text.replace(/\s+/g, "").slice(0, 60);
+  const t = {};
+  const ev = tables.find((x) => x.cols[0] === "\u4E8B\u4EF6" || x.id === "t_event" || x.id === "t_moment");
+  if (ev) t[ev.id] = { rows: [{ [ev.cols[0]]: "\u96E8\u591C\u5728\u4E66\u5E97\u7FFB\u5F00\u65E0\u540D\u4E4B\u4E66", [ev.cols[1]]: "\u6816\u6728\u4E66\u5E97", [ev.cols[2]]: "\u6797\u6816" }] };
+  const pr = tables.find((x) => x.id === "t_promise");
+  if (pr) t[pr.id] = { rows: [{ \u5185\u5BB9: "\u4E0B\u4E2A\u96E8\u5929\u518D\u6765\u4E66\u5E97", \u8C01\u5BF9\u8C01: "\u6797\u6816\u5BF9\u4F60", \u72B6\u6001: "\u672A\u5B8C\u6210" }] };
+  return { summary: `\uFF08\u6F14\u793A\uFF09\u8FD9\u51E0\u697C\u91CC\uFF1A${first}\u2026\u2026\u4F60\u4EEC\u7EA6\u597D\u4E86\u4E0B\u6B21\u518D\u89C1\u3002`, tables: t };
+};
+MockEngineAdapter.memBig = async ({ smalls }) => {
+  await sleep(600);
+  return { summary: "\uFF08\u6F14\u793A\u5927\u603B\u7ED3\uFF09" + smalls.map((x) => x.text.slice(0, 30)).join(" \u2192 "), tables: {} };
+};
+function attachMemory(e, db, update) {
+  const s = db.settings;
+  const onUsage = (u) => update((d) => {
+    const st = d.settings.stats;
+    st.calls += 1;
+    st.prompt += u.prompt;
+    st.completion += u.completion;
+  });
+  const uname = s.user && s.user.name || "\u73A9\u5BB6";
+  const tableDesc = (tables, existing) => tables.map((t) => `${t.id} \uFF5C ${t.name} \uFF5C ${t.desc || ""} \uFF5C ${t.cols.join("\u3001")}` + ((existing[t.id] || []).length ? `
+  \u5DF2\u6709\uFF1A${existing[t.id].map((r) => r[t.cols[0]]).filter(Boolean).slice(0, 40).join("\uFF1B")}` : "")).join("\n");
+  e.memSmall = async ({ char, floors, from, to, prev, tables, existing }) => llmJson(s, {
+    tag: "\u8BB0\u5FC6 \xB7 \u5C0F\u603B\u7ED3",
+    route: "sub",
+    temperature: 0.3,
+    maxTokens: 2e3,
+    onUsage,
+    messages: tplMessages(s, "memSmall", {
+      char: char.name,
+      user: uname,
+      prev: prev || "\uFF08\u8FD9\u662F\u7B2C\u4E00\u6BB5\uFF09",
+      from,
+      to,
+      tables: tableDesc(tables, existing) || "\uFF08\u6CA1\u6709\u542F\u7528\u8BB0\u5FC6\u8868\uFF09",
+      floors: floors.map((m, i) => `[${from + i}\u697C] ${m.role === "user" ? uname : char.name}\uFF1A${String(m.raw || m.text || "").slice(0, 1500)}`).join("\n")
+    })
+  }, (x) => {
+    if (!x || typeof x.summary !== "string") throw new Error("\u7F3A\u5C11 summary");
+  });
+  e.memBig = async ({ char, smalls, prev, compress }) => llmJson(s, {
+    tag: "\u8BB0\u5FC6 \xB7 \u5927\u603B\u7ED3",
+    route: "sub",
+    temperature: 0.3,
+    maxTokens: 3e3,
+    onUsage,
+    messages: tplMessages(s, "memBig", {
+      char: char.name,
+      user: uname,
+      prev: prev || "\uFF08\u8FD9\u662F\u7B2C\u4E00\u7AE0\uFF09",
+      smalls: smalls.map((x) => `\uFF08\u7B2C ${x.from}\u2013${x.to} \u697C\uFF09${x.text}`).join("\n"),
+      tables: compress.length ? compress.map((c) => `${c.t.id} \uFF5C ${c.t.name} \uFF5C \u5217\uFF1A${c.t.cols.join("\u3001")} \uFF5C \u73B0\u5728 ${c.rows.length} \u884C\uFF0C\u538B\u5230 ${Math.max(3, Math.round(c.t.max * 0.6))} \u884C\u4EE5\u5185
+${JSON.stringify(c.rows.map((r) => {
+        const o = {};
+        c.t.cols.forEach((k) => {
+          if (r[k]) o[k] = r[k];
+        });
+        if (r._pin) o["\uFF08\u7F6E\u9876\uFF09"] = true;
+        return o;
+      }))}`).join("\n\n") : "\uFF08\u6CA1\u6709\uFF09"
+    })
+  }, (x) => {
+    if (!x || typeof x.summary !== "string") throw new Error("\u7F3A\u5C11 summary");
+  });
+}
+const memRunning = {};
+function applyTableRows(rows, add, cols) {
+  const out = (rows || []).map((r) => ({ ...r }));
+  (add || []).forEach((r) => {
+    if (!r || typeof r !== "object") return;
+    const key = String(r[cols[0]] || "").trim();
+    if (!key) return;
+    const i = out.findIndex((x) => String(x[cols[0]] || "").trim() === key);
+    if (r._delete) {
+      if (i >= 0 && !out[i]._pin) out.splice(i, 1);
+      return;
+    }
+    const clean = {};
+    cols.forEach((c) => {
+      if (r[c] != null && String(r[c]).trim()) clean[c] = String(r[c]).trim().slice(0, 80);
+    });
+    if (i >= 0) Object.assign(out[i], clean, { _at: nowStr() });
+    else out.push({ ...clean, _id: uid("r"), _at: nowStr() });
+  });
+  return out;
+}
+async function runMemory(getDb, update, chatId, opts) {
+  opts = opts || {};
+  if (memRunning[chatId]) return { skipped: "\u6B63\u5728\u6574\u7406" };
+  const db = getDb();
+  const chat = db.chats[chatId];
+  if (!chat) return { skipped: "\u6CA1\u6709\u804A\u5929" };
+  const char = db.characters.find((c) => c.id === chat.charId);
+  if (!char) return { skipped: "\u6CA1\u6709\u89D2\u8272" };
+  const ms = memSettings(db.settings);
+  if (!ms.on && !opts.force && !opts.big) return { skipped: "\u8BB0\u5FC6\u6C60\u5DF2\u5173\u95ED" };
+  const m = chatMem(chat);
+  const total = chat.messages.length;
+  const end = total - (opts.force ? Math.min(ms.keepRecent, 2) : ms.keepRecent);
+  const from = (m.coveredTo || 0) + 1;
+  const engine = getEngine(db, update);
+  if (!engine.memSmall) return { skipped: "\u5F15\u64CE\u4E0D\u652F\u6301" };
+  memRunning[chatId] = true;
+  update((d) => {
+    const c = d.chats[chatId];
+    if (c) ensureChatMem(c).busy = opts.big ? "\u6B63\u5728\u5408\u5E76\u5927\u603B\u7ED3\u2026" : "\u6B63\u5728\u505A\u5C0F\u603B\u7ED3\u2026";
+  });
+  try {
+    let did = "";
+    if (!opts.big && end - from + 1 >= (opts.force ? 1 : ms.smallEvery)) {
+      const to = end;
+      const floors = chat.messages.slice(from - 1, to);
+      const tables = memTables(db.settings).filter((t) => t.on !== false);
+      const existing = {};
+      tables.forEach((t) => {
+        existing[t.id] = rowsOf(db, chat, t, char.id);
+      });
+      const prev = m.smalls.filter((x) => !x.merged).slice(-2).map((x) => x.text).join("\n") || (m.bigs.length ? m.bigs[m.bigs.length - 1].text : "");
+      const out = await engine.memSmall({ char, floors, from, to, prev, tables, existing });
+      update((d) => {
+        const c = d.chats[chatId];
+        if (!c) return;
+        const mm = ensureChatMem(c);
+        mm.smalls.push({ id: uid("ms"), from, to, text: String(out.summary || "").slice(0, 1200), at: nowStr() });
+        mm.coveredTo = to;
+        const outT = out && out.tables || {};
+        tables.forEach((t) => {
+          const add = outT[t.id] && (Array.isArray(outT[t.id]) ? outT[t.id] : outT[t.id].rows);
+          if (!add || !add.length) return;
+          if (t.scope === "char") {
+            d.charMem = d.charMem || {};
+            const cm = d.charMem[char.id] = d.charMem[char.id] || {};
+            cm[t.id] = applyTableRows(cm[t.id], add, t.cols);
+          } else mm.tables[t.id] = applyTableRows(mm.tables[t.id], add, t.cols);
+        });
+      });
+      did = `\u7B2C ${from}\u2013${to} \u697C\u5DF2\u505A\u6210\u5C0F\u603B\u7ED3`;
+    }
+    const db2 = getDb();
+    const chat2 = db2.chats[chatId];
+    const m2 = chatMem(chat2);
+    const open = m2.smalls.filter((x) => !x.merged);
+    if (open.length && (opts.big || open.length >= ms.bigEvery)) {
+      const tables = memTables(db2.settings).filter((t) => t.on !== false);
+      const compress = tables.map((t) => ({ t, rows: rowsOf(db2, chat2, t, char.id) })).filter((c) => c.rows.length > c.t.max);
+      const out = await engine.memBig({ char, smalls: open, prev: m2.bigs.length ? m2.bigs[m2.bigs.length - 1].text : "", compress });
+      update((d) => {
+        const c = d.chats[chatId];
+        if (!c) return;
+        const mm = ensureChatMem(c);
+        const ids = new Set(open.map((x) => x.id));
+        mm.smalls.forEach((x) => {
+          if (ids.has(x.id)) x.merged = true;
+        });
+        mm.bigs.push({ id: uid("mb"), from: open[0].from, to: open[open.length - 1].to, text: String(out.summary || "").slice(0, 2400), at: nowStr() });
+        const outT = out && out.tables || {};
+        compress.forEach(({ t, rows }) => {
+          const nr = outT[t.id] && (Array.isArray(outT[t.id]) ? outT[t.id] : outT[t.id].rows);
+          if (!nr || !nr.length) return;
+          const pinned = rows.filter((r) => r._pin);
+          const next = applyTableRows([], nr, t.cols);
+          pinned.forEach((p) => {
+            if (!next.some((r) => r[t.cols[0]] === p[t.cols[0]])) next.unshift(p);
+            else next.forEach((r) => {
+              if (r[t.cols[0]] === p[t.cols[0]]) r._pin = true;
+            });
+          });
+          if (t.scope === "char") {
+            d.charMem = d.charMem || {};
+            (d.charMem[char.id] = d.charMem[char.id] || {})[t.id] = next;
+          } else mm.tables[t.id] = next;
+        });
+      });
+      did = (did ? did + "\uFF1B" : "") + `\u5408\u5E76\u6210\u7B2C ${m2.bigs.length + 1} \u7AE0\u5927\u603B\u7ED3`;
+    }
+    return { did: did || "\u697C\u5C42\u8FD8\u4E0D\u591F\uFF0C\u4E0D\u9700\u8981\u603B\u7ED3" };
+  } catch (e) {
+    return { error: e.message };
+  } finally {
+    memRunning[chatId] = false;
+    update((d) => {
+      const c = d.chats[chatId];
+      if (c && c.mem) delete c.mem.busy;
+    });
+  }
+}
+function MemCell({ value, onSave, wide }) {
+  const [v, setV] = useState(value || "");
+  const [edit, setEdit] = useState(false);
+  useEffect(() => {
+    if (!edit) setV(value || "");
+  }, [value]);
+  if (!edit) return /* @__PURE__ */ React.createElement("button", { type: "button", onClick: () => setEdit(true), title: "\u70B9\u51FB\u4FEE\u6539", className: cx("text-left w-full rounded-md px-1 -mx-1 hover:bg-white/10 min-h-[1.4em] break-words", !value && "text-white/25") }, value || "\u2014");
+  return /* @__PURE__ */ React.createElement(
+    "textarea",
+    {
+      autoFocus: true,
+      rows: wide ? 3 : 2,
+      className: "w-full rounded-md bg-black/40 border border-white/30 px-1.5 py-1 text-xs resize-y",
+      value: v,
+      onChange: (e) => setV(e.target.value),
+      onBlur: () => {
+        setEdit(false);
+        if (v !== (value || "")) onSave(v.trim());
+      },
+      onKeyDown: (e) => {
+        if (e.key === "Enter" && !e.shiftKey) {
+          e.preventDefault();
+          e.target.blur();
+        }
+        if (e.key === "Escape") {
+          setV(value || "");
+          setEdit(false);
+        }
+      }
+    }
+  );
+}
+function MemoryPool({ db, update, say, charId, chatId: chatId0, onClose }) {
+  const char = db.characters.find((c) => c.id === charId) || db.characters[0];
+  const chats = char ? Object.values(db.chats).filter((c) => c.charId === char.id).sort((a, b) => String(b.updatedAt || "").localeCompare(String(a.updatedAt || ""))) : [];
+  const [chatId, setChatId] = useState(chatId0 && db.chats[chatId0] ? chatId0 : chats[0] && chats[0].id);
+  const chat = db.chats[chatId];
+  const [tab, setTab] = useState("summary");
+  const [open, setOpen] = useState({});
+  const [msg, setMsg] = useState("");
+  const dbRef = useRef(db);
+  dbRef.current = db;
+  const ms = memSettings(db.settings);
+  const tables = memTables(db.settings);
+  const m = chatMem(chat);
+  const total = chat ? chat.messages.length : 0;
+  const setMs = (k, v) => update((d) => {
+    d.settings.memory = { ...memSettings(d.settings), [k]: v };
+  });
+  const setTables = (fn) => update((d) => {
+    d.settings.memTables = memTables(d.settings).map((t) => ({ ...t, cols: t.cols.slice() }));
+    fn(d.settings.memTables);
+  });
+  const run = async (opts) => {
+    if (!chat) return;
+    setMsg("");
+    const r = await runMemory(() => dbRef.current, update, chat.id, opts);
+    setMsg(r.error ? "\u5931\u8D25\uFF1A" + r.error : r.skipped || r.did);
+  };
+  const patchMem = (fn) => update((d) => {
+    const c = d.chats[chatId];
+    if (c) fn(ensureChatMem(c));
+  });
+  const patchRows = (t, fn) => update((d) => {
+    if (t.scope === "char") {
+      d.charMem = d.charMem || {};
+      const cm = d.charMem[char.id] = d.charMem[char.id] || {};
+      cm[t.id] = fn((cm[t.id] || []).map((r) => ({ ...r })));
+    } else {
+      const c = d.chats[chatId];
+      if (c) {
+        const mm = ensureChatMem(c);
+        mm.tables[t.id] = fn((mm.tables[t.id] || []).map((r) => ({ ...r })));
+      }
+    }
+  });
+  const openSmalls = m.smalls.filter((x) => !x.merged);
+  const pct = total ? Math.round((m.coveredTo || 0) / total * 100) : 0;
+  return /* @__PURE__ */ React.createElement("div", { className: "fixed inset-0 z-50 flex items-center justify-center p-0 sm:p-6" }, /* @__PURE__ */ React.createElement("div", { className: "absolute inset-0 bg-black/70 modal-backdrop", onClick: onClose }), /* @__PURE__ */ React.createElement("div", { className: "glass-strong relative w-full max-w-5xl h-full sm:h-[90vh] sm:rounded-3xl flex flex-col pop-in overflow-hidden" }, /* @__PURE__ */ React.createElement("div", { className: "px-5 pt-5 pb-3 border-b border-white/10" }, /* @__PURE__ */ React.createElement("div", { className: "flex items-center gap-3" }, /* @__PURE__ */ React.createElement(Icon, { name: "pool", size: 18 }), /* @__PURE__ */ React.createElement("div", { className: "text-base tracking-wide" }, "\u8BB0\u5FC6\u6C60"), char && /* @__PURE__ */ React.createElement("div", { className: "flex items-center gap-1.5 text-sm text-white/70" }, /* @__PURE__ */ React.createElement(Avatar, { char, size: 22 }), char.name), chats.length > 1 && /* @__PURE__ */ React.createElement("select", { className: "bg-transparent border border-white/15 rounded-lg text-xs px-1.5 py-1 max-w-[12rem]", value: chatId || "", onChange: (e) => setChatId(e.target.value) }, chats.map((c) => /* @__PURE__ */ React.createElement("option", { key: c.id, value: c.id, className: "bg-black" }, MODULE_NAME[c.module] || c.module, " \xB7 ", String(c.updatedAt || c.createdAt || "").slice(5, 16), " \xB7 ", c.messages.length, " \u697C"))), /* @__PURE__ */ React.createElement(IconBtn, { icon: "x", title: "\u5173\u95ED", onClick: onClose, className: "w-8 h-8 ml-auto", size: 16 })), chat && /* @__PURE__ */ React.createElement("div", { className: "mt-3" }, /* @__PURE__ */ React.createElement("div", { className: "flex justify-between text-[11px] text-white/50 mb-1" }, /* @__PURE__ */ React.createElement("span", null, "\u5DF2\u603B\u7ED3\u5230\u7B2C ", m.coveredTo || 0, " \u697C\uFF08AI \u53EA\u770B\u603B\u7ED3\uFF09"), /* @__PURE__ */ React.createElement("span", null, "AI \u80FD\u770B\u5230\u539F\u6587\uFF1A\u7B2C ", (m.coveredTo || 0) + 1, "\u2013", total, " \u697C")), /* @__PURE__ */ React.createElement("div", { className: "h-1.5 rounded-full bg-white/10 overflow-hidden" }, /* @__PURE__ */ React.createElement("div", { className: "h-full bg-white/70 transition-all", style: { width: pct + "%" } }))), /* @__PURE__ */ React.createElement("div", { className: "flex flex-wrap items-center gap-1.5 mt-3" }, [["summary", `\u603B\u7ED3 \xB7 ${m.bigs.length} \u7AE0 ${openSmalls.length} \u6BB5`], ["tables", `\u8BB0\u5FC6\u8868 \xB7 ${tables.filter((t) => t.on !== false).length}`], ["settings", "\u8BBE\u7F6E"]].map(([k, l]) => /* @__PURE__ */ React.createElement("button", { key: k, type: "button", onClick: () => setTab(k), className: cx("text-xs rounded-full px-3 py-1 border", tab === k ? "bg-white text-black border-white" : "border-white/15 text-white/60 hover:text-white") }, l)), /* @__PURE__ */ React.createElement("div", { className: "ml-auto flex gap-1.5" }, m.busy ? /* @__PURE__ */ React.createElement("span", { className: "text-xs text-white/60 flex items-center gap-1.5" }, /* @__PURE__ */ React.createElement("span", { className: "spin w-3 h-3 rounded-full border border-white/30 border-t-white" }), m.busy) : /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement(Btn, { className: "text-xs py-1", onClick: () => run({ force: true }), disabled: !chat || total - (m.coveredTo || 0) <= 2 }, "\u7ACB\u5373\u5C0F\u603B\u7ED3"), /* @__PURE__ */ React.createElement(Btn, { className: "text-xs py-1", onClick: () => run({ big: true }), disabled: !openSmalls.length }, "\u5408\u5E76\u4E3A\u5927\u603B\u7ED3")))), msg && /* @__PURE__ */ React.createElement("div", { className: "text-[11px] text-white/60 mt-2" }, msg)), /* @__PURE__ */ React.createElement("div", { className: "flex-1 overflow-y-auto thin-scroll p-4 sm:p-5" }, !chat && /* @__PURE__ */ React.createElement("div", { className: "text-sm text-white/40 text-center py-16" }, "\u8FD9\u4E2A\u89D2\u8272\u8FD8\u6CA1\u6709\u804A\u5929\u8BB0\u5F55\u3002"), chat && tab === "summary" && /* @__PURE__ */ React.createElement("div", { className: "relative pl-5" }, /* @__PURE__ */ React.createElement("div", { className: "absolute left-[7px] top-1 bottom-1 w-px bg-white/15" }), !m.bigs.length && !m.smalls.length && /* @__PURE__ */ React.createElement("div", { className: "text-sm text-white/40 py-10" }, "\u8FD8\u6CA1\u6709\u603B\u7ED3\u3002\u6BCF\u8FC7 ", ms.smallEvery, " \u697C\u4F1A\u81EA\u52A8\u505A\u4E00\u6B21\uFF1B\u4E5F\u53EF\u4EE5\u70B9\u4E0A\u9762\u300C\u7ACB\u5373\u5C0F\u603B\u7ED3\u300D\u3002"), m.bigs.map((b, i) => /* @__PURE__ */ React.createElement("div", { key: b.id, className: "relative mb-4" }, /* @__PURE__ */ React.createElement("span", { className: "absolute -left-5 top-1.5 w-3.5 h-3.5 rounded-full bg-white shadow-[0_0_12px_rgba(255,255,255,.6)]" }), /* @__PURE__ */ React.createElement("div", { className: "rounded-2xl border border-white/20 bg-white/[0.04] p-3.5" }, /* @__PURE__ */ React.createElement("div", { className: "flex items-center gap-2 text-xs" }, /* @__PURE__ */ React.createElement("span", { className: "font-serif text-sm" }, "\u7B2C ", i + 1, " \u7AE0"), /* @__PURE__ */ React.createElement("span", { className: "text-white/40" }, "\u7B2C ", b.from, "\u2013", b.to, " \u697C \xB7 ", b.at), /* @__PURE__ */ React.createElement("button", { type: "button", className: "ml-auto text-white/40 hover:text-white", title: "\u5220\u9664\u8FD9\u7AE0", onClick: () => patchMem((mm) => {
+    mm.bigs = mm.bigs.filter((x) => x.id !== b.id);
+    mm.smalls.forEach((x) => {
+      if (x.from >= b.from && x.to <= b.to) x.merged = false;
+    });
+  }) }, /* @__PURE__ */ React.createElement(Icon, { name: "trash", size: 13 }))), /* @__PURE__ */ React.createElement("div", { className: "text-sm leading-relaxed text-white/85 mt-1.5" }, /* @__PURE__ */ React.createElement(MemCell, { wide: true, value: b.text, onSave: (v) => patchMem((mm) => {
+    const x = mm.bigs.find((y) => y.id === b.id);
+    if (x) x.text = v;
+  }) })), m.smalls.some((x) => x.merged && x.from >= b.from && x.to <= b.to) && /* @__PURE__ */ React.createElement("button", { type: "button", className: "text-[11px] text-white/45 underline mt-2", onClick: () => setOpen((o) => ({ ...o, [b.id]: !o[b.id] })) }, open[b.id] ? "\u6536\u8D77" : "\u5C55\u5F00", "\u8FD9\u4E00\u7AE0\u7684\u5C0F\u603B\u7ED3"), open[b.id] && m.smalls.filter((x) => x.merged && x.from >= b.from && x.to <= b.to).map((x) => /* @__PURE__ */ React.createElement("div", { key: x.id, className: "mt-2 text-xs text-white/55 border-l border-white/15 pl-2.5" }, /* @__PURE__ */ React.createElement("span", { className: "text-white/35" }, "\u7B2C ", x.from, "\u2013", x.to, " \u697C\u3000"), x.text))))), openSmalls.map((x) => /* @__PURE__ */ React.createElement("div", { key: x.id, className: "relative mb-3" }, /* @__PURE__ */ React.createElement("span", { className: "absolute -left-[17px] top-2 w-2 h-2 rounded-full bg-white/60" }), /* @__PURE__ */ React.createElement("div", { className: "rounded-xl border border-white/10 p-3" }, /* @__PURE__ */ React.createElement("div", { className: "flex items-center gap-2 text-[11px] text-white/40" }, /* @__PURE__ */ React.createElement("span", null, "\u5C0F\u603B\u7ED3 \xB7 \u7B2C ", x.from, "\u2013", x.to, " \u697C"), /* @__PURE__ */ React.createElement("span", null, x.at), /* @__PURE__ */ React.createElement("button", { type: "button", className: "ml-auto hover:text-white", title: "\u5220\u9664\uFF08\u8FD9\u4E9B\u697C\u5C42\u4F1A\u91CD\u65B0\u7ED9 AI \u770B\u539F\u6587\uFF09", onClick: () => patchMem((mm) => {
+    mm.smalls = mm.smalls.filter((y) => y.id !== x.id);
+    if (mm.coveredTo === x.to) mm.coveredTo = x.from - 1;
+  }) }, /* @__PURE__ */ React.createElement(Icon, { name: "trash", size: 12 }))), /* @__PURE__ */ React.createElement("div", { className: "text-sm leading-relaxed text-white/80 mt-1" }, /* @__PURE__ */ React.createElement(MemCell, { wide: true, value: x.text, onSave: (v) => patchMem((mm) => {
+    const y = mm.smalls.find((z) => z.id === x.id);
+    if (y) y.text = v;
+  }) }))))), total - (m.coveredTo || 0) > 0 && /* @__PURE__ */ React.createElement("div", { className: "relative" }, /* @__PURE__ */ React.createElement("span", { className: "absolute -left-[17px] top-2 w-2 h-2 rounded-full border border-white/40" }), /* @__PURE__ */ React.createElement("div", { className: "text-[11px] text-white/35 pt-1" }, "\u7B2C ", (m.coveredTo || 0) + 1, "\u2013", total, " \u697C\u8FD8\u662F\u539F\u6587\uFF08", Math.max(0, ms.smallEvery + ms.keepRecent - (total - (m.coveredTo || 0))), " \u697C\u540E\u81EA\u52A8\u603B\u7ED3\uFF09"))), chat && tab === "tables" && /* @__PURE__ */ React.createElement("div", { className: "space-y-4" }, tables.filter((t) => t.on !== false).map((t) => {
+    const rows = rowsOf(db, chat, t, char.id);
+    return /* @__PURE__ */ React.createElement("div", { key: t.id, className: "rounded-2xl border border-white/10 overflow-hidden" }, /* @__PURE__ */ React.createElement("div", { className: "flex items-center gap-2 px-3.5 py-2.5 bg-white/[0.04] border-b border-white/10" }, /* @__PURE__ */ React.createElement("span", { className: "text-sm" }, t.name), /* @__PURE__ */ React.createElement("span", { className: "text-[10px] rounded-full border border-white/20 px-1.5 text-white/50" }, t.scope === "char" ? "\u8DDF\u7740\u89D2\u8272" : "\u8FD9\u6BB5\u804A\u5929"), /* @__PURE__ */ React.createElement("span", { className: cx("text-[11px]", rows.length > t.max ? "text-white" : "text-white/40") }, rows.length, " / ", t.max, " \u884C"), /* @__PURE__ */ React.createElement("span", { className: "text-[11px] text-white/35 truncate hidden sm:inline" }, t.desc), /* @__PURE__ */ React.createElement("button", { type: "button", className: "ml-auto text-[11px] underline text-white/55", onClick: () => patchRows(t, (r) => r.concat([{ _id: uid("r"), _at: nowStr() }])) }, "+ \u52A0\u4E00\u884C")), rows.length ? /* @__PURE__ */ React.createElement("div", { className: "overflow-x-auto" }, /* @__PURE__ */ React.createElement("table", { className: "w-full text-xs" }, /* @__PURE__ */ React.createElement("thead", null, /* @__PURE__ */ React.createElement("tr", { className: "text-white/45" }, t.cols.map((c) => /* @__PURE__ */ React.createElement("th", { key: c, className: "text-left font-normal px-3 py-1.5 whitespace-nowrap" }, c)), /* @__PURE__ */ React.createElement("th", { className: "w-14" }))), /* @__PURE__ */ React.createElement("tbody", null, rows.map((r, ri) => /* @__PURE__ */ React.createElement("tr", { key: r._id || ri, className: cx("border-t border-white/5 align-top", r._pin && "bg-white/[0.05]") }, t.cols.map((c, ci) => /* @__PURE__ */ React.createElement("td", { key: c, className: cx("px-3 py-1.5", ci === 0 && "text-white/90"), style: { minWidth: ci === 0 ? 90 : 110 } }, /* @__PURE__ */ React.createElement(MemCell, { value: r[c], onSave: (v) => patchRows(t, (rs) => {
+      rs[ri][c] = v;
+      rs[ri]._at = nowStr();
+      return rs;
+    }) }))), /* @__PURE__ */ React.createElement("td", { className: "px-2 py-1.5 whitespace-nowrap text-right" }, /* @__PURE__ */ React.createElement("button", { type: "button", title: r._pin ? "\u53D6\u6D88\u7F6E\u9876\uFF08\u538B\u7F29\u65F6\u53EF\u80FD\u88AB\u5408\u5E76\uFF09" : "\u7F6E\u9876\uFF08\u538B\u7F29\u65F6\u4E00\u5B9A\u4FDD\u7559\uFF09", className: cx("mr-1.5 grayscale", r._pin ? "opacity-100" : "opacity-30 hover:opacity-80"), onClick: () => patchRows(t, (rs) => {
+      rs[ri]._pin = !rs[ri]._pin;
+      return rs;
+    }) }, "\u{1F4CC}"), /* @__PURE__ */ React.createElement("button", { type: "button", title: "\u5220\u9664", className: "text-white/30 hover:text-white", onClick: () => patchRows(t, (rs) => rs.filter((_, k) => k !== ri)) }, /* @__PURE__ */ React.createElement(Icon, { name: "trash", size: 12 })))))))) : /* @__PURE__ */ React.createElement("div", { className: "px-3.5 py-4 text-xs text-white/30" }, "\u8FD8\u6CA1\u6709\u8BB0\u5F55\uFF0C\u505A\u5C0F\u603B\u7ED3\u65F6 AI \u4F1A\u81EA\u52A8\u586B\u3002"));
+  }), /* @__PURE__ */ React.createElement("p", { className: "text-[11px] text-white/35 leading-relaxed" }, "\u70B9\u683C\u5B50\u53EF\u4EE5\u76F4\u63A5\u6539\u3002\u{1F4CC} \u7F6E\u9876\u7684\u884C\u538B\u7F29\u65F6\u4E00\u5B9A\u4FDD\u7559\u3002\u300C\u8DDF\u7740\u89D2\u8272\u300D\u7684\u8868\u5728\u8FD9\u4E2A\u89D2\u8272\u7684\u6240\u6709\u804A\u5929\u91CC\u5171\u7528\uFF08\u6362\u65B0\u804A\u5929\u4E5F\u8BB0\u5F97\uFF09\uFF0C\u300C\u8FD9\u6BB5\u804A\u5929\u300D\u7684\u8868\u53EA\u5C5E\u4E8E\u5F53\u524D\u8FD9\u6BB5\u3002")), tab === "settings" && /* @__PURE__ */ React.createElement("div", { className: "space-y-5 max-w-2xl" }, /* @__PURE__ */ React.createElement("div", { className: "rounded-2xl border border-white/10 p-3.5 space-y-3" }, /* @__PURE__ */ React.createElement("label", { className: "flex items-center gap-2 text-sm" }, /* @__PURE__ */ React.createElement(Switch, { on: ms.on, label: "\u8BB0\u5FC6\u6C60", onChange: (v) => setMs("on", v) }), "\u81EA\u52A8\u6574\u7406\u8BB0\u5FC6\uFF08\u5173\u6389\u5C31\u548C\u4EE5\u524D\u4E00\u6837\uFF1AAI \u53EA\u770B\u6700\u8FD1\u7684\u539F\u6587\uFF09"), /* @__PURE__ */ React.createElement("div", { className: "grid grid-cols-3 gap-2" }, /* @__PURE__ */ React.createElement(Field, { label: "\u6BCF\u51E0\u697C\u505A\u4E00\u6B21\u5C0F\u603B\u7ED3" }, /* @__PURE__ */ React.createElement("input", { type: "number", min: 4, max: 60, className: inputCls, value: ms.smallEvery, onChange: (e) => setMs("smallEvery", Math.max(4, Number(e.target.value) || 10)) })), /* @__PURE__ */ React.createElement(Field, { label: "\u6700\u8FD1\u51E0\u697C\u59CB\u7EC8\u7ED9\u539F\u6587" }, /* @__PURE__ */ React.createElement("input", { type: "number", min: 2, max: 20, className: inputCls, value: ms.keepRecent, onChange: (e) => setMs("keepRecent", Math.max(2, Number(e.target.value) || 4)) })), /* @__PURE__ */ React.createElement(Field, { label: "\u51E0\u6BB5\u5C0F\u603B\u7ED3\u5408\u6210\u4E00\u7AE0" }, /* @__PURE__ */ React.createElement("input", { type: "number", min: 2, max: 20, className: inputCls, value: ms.bigEvery, onChange: (e) => setMs("bigEvery", Math.max(2, Number(e.target.value) || 5)) }))), /* @__PURE__ */ React.createElement("label", { className: "flex items-center gap-2 text-xs text-white/75" }, /* @__PURE__ */ React.createElement(Switch, { on: ms.injectTables, label: "\u53D1\u9001\u8BB0\u5FC6\u8868", onChange: (v) => setMs("injectTables", v) }), "\u628A\u8BB0\u5FC6\u8868\u4E5F\u53D1\u7ED9\u5267\u60C5 AI\uFF08\u5173\u6389\u53EA\u53D1\u603B\u7ED3\uFF0C\u66F4\u7701 token\uFF09"), /* @__PURE__ */ React.createElement("p", { className: "text-[11px] text-white/40 leading-relaxed" }, "\u697C = \u4E00\u6761\u6D88\u606F\uFF08\u4F60\u7684\u4E00\u53E5\u6216 AI \u7684\u4E00\u6BB5\uFF09\u3002\u4E00\u6B21\u5C0F\u603B\u7ED3 / \u5927\u603B\u7ED3\u5404\u53EA\u5360 1 \u6B21\u8BF7\u6C42\uFF0C\u8D70\u526F API\uFF08\u6CA1\u5F00\u526F API \u5C31\u8D70\u4E3B API\uFF09\uFF0C\u5728\u540E\u53F0\u8DD1\uFF0C\u4E0D\u6321\u5267\u60C5\u3002")), /* @__PURE__ */ React.createElement("div", { className: "rounded-2xl border border-white/10 p-3.5" }, /* @__PURE__ */ React.createElement("div", { className: "flex items-center gap-2 mb-2" }, /* @__PURE__ */ React.createElement("span", { className: "text-sm flex-1" }, "\u8BB0\u5FC6\u8868"), /* @__PURE__ */ React.createElement("span", { className: "text-[11px] text-white/45" }, "\u6309\u73A9\u6CD5\u6362\u4E00\u5957\uFF1A"), Object.keys(MEM_PRESETS).map((k) => /* @__PURE__ */ React.createElement("button", { key: k, type: "button", className: "text-[11px] rounded-full border border-white/20 px-2.5 py-0.5 hover:bg-white hover:text-black", onClick: () => {
+    update((d) => {
+      d.settings.memTables = MEM_PRESETS[k].map((t) => ({ ...t, cols: t.cols.slice(), on: true }));
+    });
+    say(`\u5DF2\u6362\u6210\u300C${k}\u300D\u8868`);
+  } }, k))), /* @__PURE__ */ React.createElement("div", { className: "space-y-2" }, tables.map((t, ti) => /* @__PURE__ */ React.createElement("div", { key: t.id + ti, className: cx("rounded-xl border border-white/10 p-2.5 space-y-1.5", t.on === false && "opacity-45") }, /* @__PURE__ */ React.createElement("div", { className: "flex items-center gap-2" }, /* @__PURE__ */ React.createElement("input", { className: "flex-1 min-w-0 rounded-lg bg-black/30 border border-white/10 px-2 py-1 text-sm", value: t.name, onChange: (e) => {
+    const v = e.target.value;
+    setTables((l) => {
+      l[ti].name = v;
+    });
+  } }), /* @__PURE__ */ React.createElement("select", { className: "bg-transparent border border-white/15 rounded-lg text-[11px] px-1 py-1", value: t.scope, onChange: (e) => {
+    const v = e.target.value;
+    setTables((l) => {
+      l[ti].scope = v;
+    });
+  } }, /* @__PURE__ */ React.createElement("option", { value: "chat", className: "bg-black" }, "\u8FD9\u6BB5\u804A\u5929"), /* @__PURE__ */ React.createElement("option", { value: "char", className: "bg-black" }, "\u8DDF\u7740\u89D2\u8272")), /* @__PURE__ */ React.createElement("input", { type: "number", min: 3, max: 60, title: "\u884C\u6570\u4E0A\u9650\uFF1A\u8D85\u8FC7\u65F6\u5927\u603B\u7ED3\u4F1A\u538B\u7F29", className: "w-14 rounded-lg bg-black/30 border border-white/10 px-1.5 py-1 text-xs", value: t.max, onChange: (e) => {
+    const v = Math.max(3, Number(e.target.value) || 10);
+    setTables((l) => {
+      l[ti].max = v;
+    });
+  } }), /* @__PURE__ */ React.createElement(Switch, { on: t.on !== false, label: "\u542F\u7528", onChange: (v) => setTables((l) => {
+    l[ti].on = v;
+  }) }), /* @__PURE__ */ React.createElement("button", { type: "button", className: "text-white/40 hover:text-white", title: "\u5220\u9664\u8FD9\u5F20\u8868", onClick: () => setTables((l) => {
+    l.splice(ti, 1);
+  }) }, /* @__PURE__ */ React.createElement(Icon, { name: "trash", size: 13 }))), /* @__PURE__ */ React.createElement("input", { className: "w-full rounded-lg bg-black/30 border border-white/10 px-2 py-1 text-xs", value: t.desc || "", placeholder: "\u8FD9\u5F20\u8868\u8BB0\u4EC0\u4E48\uFF08AI \u7167\u8FD9\u4E2A\u586B\uFF09", onChange: (e) => {
+    const v = e.target.value;
+    setTables((l) => {
+      l[ti].desc = v;
+    });
+  } }), /* @__PURE__ */ React.createElement("input", { className: "w-full rounded-lg bg-black/30 border border-white/10 px-2 py-1 text-xs font-mono", value: t.cols.join("\uFF0C"), placeholder: "\u5217\u540D\uFF0C\u7528\u9017\u53F7\u9694\u5F00\uFF1B\u7B2C\u4E00\u5217\u662F\u4E3B\u952E", onChange: (e) => {
+    const v = e.target.value.split(/[,，、]/).map((x) => x.trim()).filter(Boolean).slice(0, 8);
+    setTables((l) => {
+      l[ti].cols = v.length ? v : ["\u5185\u5BB9"];
+    });
+  } })))), /* @__PURE__ */ React.createElement(Btn, { className: "mt-2 text-xs py-1.5", onClick: () => setTables((l) => {
+    l.push({ id: uid("t"), name: "\u65B0\u8868", desc: "", cols: ["\u5185\u5BB9", "\u5907\u6CE8"], scope: "chat", max: 15, on: true });
+  }) }, /* @__PURE__ */ React.createElement(Icon, { name: "plus", size: 13 }), "\u65B0\u5EFA\u4E00\u5F20\u8868"))))));
+}
 function exportCardJson(db, c) {
   const book = (db.settings.worldbook || []).filter((e) => e.scope === c.id).map((e, i) => ({
     id: i + 1,
@@ -7738,12 +8230,12 @@ DEFAULT_PROMPTS.mirror = {
   desc: "\u6B21\u5143\u58C1\uFF08AR \u5408\u7167\uFF09\uFF1A\u770B\u73A9\u5BB6\u6444\u50CF\u5934\u91CC\u7684\u771F\u5B9E\u573A\u666F\uFF0C\u51B3\u5B9A\u89D2\u8272\u5728\u505A\u4EC0\u4E48\u3001\u8BF4\u4EC0\u4E48\uFF0C\u5E76\u5199 NAI tag\u3002",
   vars: "{{char}} \u89D2\u8272\u540D\u3000{{desc}} \u89D2\u8272\u8BBE\u5B9A\u3000{{player}} \u73A9\u5BB6\u8BBE\u5B9A\u3000{{story}} \u5267\u60C5\u8FD1\u51B5\u3000{{scene}} \u573A\u666F\u3000{{history}} \u521A\u624D\u5728\u6B21\u5143\u58C1\u91CC\u3000{{input}} \u73A9\u5BB6\u8BF4\u7684\u3000{{mode}} \u6A21\u5F0F",
   system: "\u4F60\u662F AR \u5408\u7167\u5E94\u7528\u91CC\u7684\u89D2\u8272\u5BFC\u6F14\uFF1A\u6839\u636E\u73A9\u5BB6\u6444\u50CF\u5934\u62CD\u5230\u7684\u771F\u5B9E\u573A\u666F\uFF0C\u51B3\u5B9A\u89D2\u8272\u300C{{char}}\u300D\u51FA\u73B0\u5728\u753B\u9762\u91CC\u65F6\u5728\u505A\u4EC0\u4E48\u3001\u8BF4\u4EC0\u4E48\u3002" + JSON_ONLY,
-  user: '\u3010{{char}} \u7684\u8BBE\u5B9A\u3011\n{{desc}}\n{{player}}\n\u3010\u4F60\u4EEC\u6700\u8FD1\u5728\u5267\u60C5\u91CC\u3011\n{{story}}\n\n\u3010\u73A9\u5BB6\u73B0\u5728\u6240\u5728\u7684\u771F\u5B9E\u573A\u666F\u3011{{scene}}\n\u3010\u521A\u624D\u5728\u6B21\u5143\u58C1\u91CC\u3011\n{{history}}\n\n\u73A9\u5BB6\u8BF4\uFF1A{{input}}\n\u6A21\u5F0F\uFF1A{{mode}}\n\n\u8BF7\u51B3\u5B9A\uFF1A\n- scene\uFF1A\u8FD9\u662F\u4EC0\u4E48\u5730\u65B9\uFF0810 \u5B57\u5185\uFF0C\u5982\u201C\u706B\u9505\u5E97\u201D\u201C\u5367\u5BA4\u4E66\u684C\u524D\u201D\uFF09\n- action\uFF1A{{char}} \u6B64\u523B\u5728\u8FD9\u91CC\u505A\u4EC0\u4E48\uFF0820 \u5B57\u5185\uFF0C\u8981\u548C\u573A\u666F\u6709\u5173\uFF1A\u5728\u706B\u9505\u5E97\u5C31\u5939\u83DC\u3001\u4E3E\u676F\uFF0C\u5728\u4E66\u684C\u524D\u5C31\u63A2\u5934\u770B\u4F60\u7684\u4F5C\u4E1A\uFF09\n- line\uFF1A{{char}} \u5BF9\u73A9\u5BB6\u8BF4\u7684\u4E00\u53E5\u8BDD\uFF0830 \u5B57\u5185\uFF0C\u53E3\u8BED\uFF09\n- tags\uFF1A\u753B {{char}} \u7684 NovelAI \u82F1\u6587 tag\uFF1A\u52A8\u4F5C\u3001\u8868\u60C5\u3001\u59FF\u52BF\u3001\u624B\u91CC\u7684\u4E1C\u897F\u3001\u955C\u5934\uFF08\u5168\u8EAB\u6216\u534A\u8EAB\uFF09\uFF1B\u4E0D\u8981\u5199\u753B\u98CE\n- bg\uFF1A\u8FD9\u4E2A\u573A\u666F\u80CC\u666F\u7684\u82F1\u6587 tag\uFF08\u5982 hotpot restaurant, table, steam, indoor\uFF09\n- redraw\uFF1A\u52A8\u4F5C\u548C\u4E0A\u4E00\u5F20\u56FE\u660E\u663E\u4E0D\u540C\u5C31 true\uFF0C\u53EA\u662F\u63A5\u7740\u8BF4\u8BDD\u5C31 false\n\u53EA\u8F93\u51FA\uFF1A{"scene":"","action":"","line":"","tags":"","bg":"","redraw":true}'
+  user: '\u3010{{char}} \u7684\u8BBE\u5B9A\u3011\n{{desc}}\n{{player}}\n\u3010\u4F60\u4EEC\u6700\u8FD1\u5728\u5267\u60C5\u91CC\u3011\n{{story}}\n\n\u3010\u73A9\u5BB6\u73B0\u5728\u6240\u5728\u7684\u771F\u5B9E\u573A\u666F\u3011{{scene}}\n\u3010\u521A\u624D\u5728\u6B21\u5143\u58C1\u91CC\u3011\n{{history}}\n\n\u73A9\u5BB6\u8BF4\uFF1A{{input}}\n\u6A21\u5F0F\uFF1A{{mode}}\n\n\u8BF7\u51B3\u5B9A\uFF1A\n- scene\uFF1A\u8FD9\u662F\u4EC0\u4E48\u5730\u65B9\uFF0810 \u5B57\u5185\uFF0C\u5982\u201C\u706B\u9505\u5E97\u201D\u201C\u5367\u5BA4\u4E66\u684C\u524D\u201D\uFF09\n- action\uFF1A{{char}} \u6B64\u523B\u5728\u8FD9\u91CC\u505A\u4EC0\u4E48\uFF0820 \u5B57\u5185\uFF0C\u8981\u548C\u573A\u666F\u6709\u5173\uFF1A\u5728\u706B\u9505\u5E97\u5C31\u5939\u83DC\u3001\u4E3E\u676F\uFF0C\u5728\u4E66\u684C\u524D\u5C31\u63A2\u5934\u770B\u4F60\u7684\u4F5C\u4E1A\uFF09\n- line\uFF1A{{char}} \u5BF9\u73A9\u5BB6\u8BF4\u7684\u4E00\u53E5\u8BDD\uFF0830 \u5B57\u5185\uFF0C\u53E3\u8BED\uFF09\n- shot\uFF1A\u666F\u522B\uFF0C\u6309\u73A9\u5BB6\u6444\u50CF\u5934\u91CC\u4EBA\u79BB\u955C\u5934\u591A\u8FD1\u6765\u5B9A\uFF0C\u8BA9\u89D2\u8272\u548C\u73A9\u5BB6\u5DEE\u4E0D\u591A\u5927\uFF1A\u53EA\u62CD\u5230\u8138 \u2192 "portrait"\uFF1B\u80F8\u53E3\u4EE5\u4E0A \u2192 "upper body"\uFF1B\u8170\u4EE5\u4E0A \u2192 "cowboy shot"\uFF1B\u62CD\u5230\u5168\u8EAB \u2192 "full body"\n- tags\uFF1A\u753B {{char}} \u7684 NovelAI \u82F1\u6587 tag\uFF1A\u52A8\u4F5C\u3001\u8868\u60C5\u3001\u59FF\u52BF\u3001\u624B\u91CC\u62FF\u7684\u4E1C\u897F\uFF1B\u666F\u522B\u5FC5\u987B\u548C shot \u4E00\u81F4\uFF08shot \u662F upper body \u5C31\u4E0D\u8981\u5199 standing\u3001full body\u3001legs \u8FD9\u7C7B\uFF09\uFF1B\u7269\u4EF6\u53EA\u5199\u753B\u9762\u91CC\u771F\u7684\u770B\u5F97\u5230\u3001\u53C8\u548C\u52A8\u4F5C\u6709\u5173\u7684\uFF0C\u5E76\u5199\u6E05\u989C\u8272\u6750\u8D28\uFF08\u5982 black gaming chair\uFF0C\u800C\u4E0D\u662F chair\uFF09\uFF1B\u770B\u4E0D\u6E05\u5C31\u4E0D\u5199\u7269\u4EF6\uFF0C\u53EA\u5199\u52A8\u4F5C\u548C\u8868\u60C5\uFF1B\u4E0D\u8981\u5199\u753B\u98CE\u548C\u80CC\u666F\n- bg\uFF1A\u8FD9\u4E2A\u573A\u666F\u80CC\u666F\u7684\u82F1\u6587 tag\uFF08\u5982 hotpot restaurant, table, steam, indoor\uFF09\n- redraw\uFF1A\u52A8\u4F5C\u548C\u4E0A\u4E00\u5F20\u56FE\u660E\u663E\u4E0D\u540C\u5C31 true\uFF0C\u53EA\u662F\u63A5\u7740\u8BF4\u8BDD\u5C31 false\n\u53EA\u8F93\u51FA\uFF1A{"scene":"","action":"","line":"","shot":"upper body","tags":"","bg":"","redraw":true}'
 };
 PROMPT_KEYS.push("mirror");
 MockEngineAdapter.mirror = async ({ input, turn }) => {
   await sleep(700);
-  return turn === 0 ? { scene: "\u4E66\u684C\u524D", action: "\u63A2\u5934\u770B\u4F60\u5728\u5FD9\u4EC0\u4E48", line: "[chuckles] \u539F\u6765\u4F60\u5E73\u65F6\u5728\u8FD9\u79CD\u5730\u65B9\u554A\u3002", tags: "1girl, leaning forward, peeking, curious, hand on table, upper body", bg: "desk, lamp, indoor, night", redraw: true } : { scene: "\u4E66\u684C\u524D", action: pick(["\u6258\u7740\u4E0B\u5DF4\u770B\u4F60", "\u6BD4\u4E86\u4E2A\u8036"]), line: pick(["\u55EF\uFF1F\u4F60\u521A\u624D\u8BF4\u300C" + String(input || "").slice(0, 8) + "\u300D\uFF1F", "\u518D\u62CD\u4E00\u5F20\u5427\u3002"]), tags: "1girl, hand on own chin, smile, looking at viewer, upper body", bg: "desk, lamp, indoor", redraw: Math.random() < 0.5 };
+  return turn === 0 ? { scene: "\u4E66\u684C\u524D", action: "\u63A2\u5934\u770B\u4F60\u5728\u5FD9\u4EC0\u4E48", line: "[chuckles] \u539F\u6765\u4F60\u5E73\u65F6\u5728\u8FD9\u79CD\u5730\u65B9\u554A\u3002", shot: "upper body", tags: "1girl, leaning forward, peeking, curious, hand on table", bg: "desk, lamp, indoor, night", redraw: true } : { scene: "\u4E66\u684C\u524D", action: pick(["\u6258\u7740\u4E0B\u5DF4\u770B\u4F60", "\u6BD4\u4E86\u4E2A\u8036"]), line: pick(["\u55EF\uFF1F\u4F60\u521A\u624D\u8BF4\u300C" + String(input || "").slice(0, 8) + "\u300D\uFF1F", "\u518D\u62CD\u4E00\u5F20\u5427\u3002"]), tags: "1girl, hand on own chin, smile, looking at viewer, upper body", bg: "desk, lamp, indoor", redraw: Math.random() < 0.5 };
 };
 function attachMirror(e, db, update) {
   const s = db.settings;
@@ -7837,7 +8329,10 @@ async function cutoutBlob(src, tol) {
     if (p[(k - 1) * 4 + 3] === 0 || p[(k + 1) * 4 + 3] === 0 || p[(k - W) * 4 + 3] === 0 || p[(k + W) * 4 + 3] === 0) p[k * 4 + 3] = 150;
   }
   g.putImageData(data, 0, 0);
-  return new Promise((res) => c.toBlob(res, "image/png"));
+  let gone = 0;
+  for (let k = 0; k < W * H; k++) if (p[k * 4 + 3] === 0) gone++;
+  const blob = await new Promise((res) => c.toBlob(res, "image/png"));
+  return { blob, ratio: gone / (W * H) };
 }
 function mockCutout() {
   const c = document.createElement("canvas");
@@ -7870,6 +8365,7 @@ function Mirror({ db, update, say, char: defChar, onBack, rightOpen }) {
   const voice = m.voice !== false;
   const tol = m.tol || 30;
   const videoRef = useRef(null);
+  const blurRef = useRef(null);
   const boxRef = useRef(null);
   const streamRef = useRef(null);
   const [cam, setCam] = useState({ state: "off", facing: "user", err: "" });
@@ -7883,6 +8379,8 @@ function Mirror({ db, update, say, char: defChar, onBack, rightOpen }) {
   const [sceneText, setSceneText] = useState("");
   const [hist, setHist] = useState([]);
   const [panel, setPanel] = useState(false);
+  const showLine = m.bubble !== false;
+  const [camZoom, setCamZoom] = useState(1);
   const [flash, setFlash] = useState(false);
   const photoRef = useRef(null);
   const dbRef = useRef(db);
@@ -7900,7 +8398,7 @@ function Mirror({ db, update, say, char: defChar, onBack, rightOpen }) {
     setPhoto("");
     try {
       if (!navigator.mediaDevices || !navigator.mediaDevices.getUserMedia) throw new Error("\u8FD9\u4E2A\u6D4F\u89C8\u5668\u4E0D\u652F\u6301\u6444\u50CF\u5934");
-      const st = await navigator.mediaDevices.getUserMedia({ video: { facingMode: facing || "user", width: { ideal: 1280 }, height: { ideal: 720 } }, audio: false });
+      const st = await navigator.mediaDevices.getUserMedia({ video: { facingMode: { ideal: facing || "user" }, width: { ideal: 1280 }, height: { ideal: 720 } }, audio: false });
       streamRef.current = st;
       if (videoRef.current) {
         videoRef.current.srcObject = st;
@@ -7919,6 +8417,13 @@ function Mirror({ db, update, say, char: defChar, onBack, rightOpen }) {
       if (voiceCtl.current) voiceCtl.current.stop();
     };
   }, []);
+  useEffect(() => {
+    if (blurRef.current && streamRef.current) {
+      blurRef.current.srcObject = streamRef.current;
+      blurRef.current.play().catch(() => {
+      });
+    }
+  }, [camZoom < 1, cam.state]);
   const grabFrame = () => {
     const v = videoRef.current;
     let src = null, w = 0, h = 0;
@@ -7960,14 +8465,15 @@ function Mirror({ db, update, say, char: defChar, onBack, rightOpen }) {
       return;
     }
     const duo = mode === "duo";
-    const prompt = (duo ? ["2 people", lookOf(dbRef.current, "__me", s0.user && s0.user.naiTags), lookOf(dbRef.current, char.id, char.naiTags), out.tags, out.bg] : ["solo", lookOf(dbRef.current, char.id, char.naiTags), out.tags, "simple background, white background, full body"]).concat([s0.nai.artist]).map((x) => String(x || "").trim().replace(/,\s*$/, "")).filter(Boolean).join(", ");
+    const shot = /portrait|upper|cowboy|full/i.test(String(out.shot || "")) ? String(out.shot) : "upper body";
+    const prompt = (duo ? ["2 people", shot, "simple background, white background", lookOf(dbRef.current, "__me", s0.user && s0.user.naiTags), lookOf(dbRef.current, char.id, char.naiTags), out.tags] : ["solo", shot, "simple background, white background", lookOf(dbRef.current, char.id, char.naiTags), out.tags]).concat([s0.nai.artist]).map((x) => String(x || "").trim().replace(/,\s*$/, "")).filter(Boolean).join(", ");
     const imageId = uid("img");
     update((d) => {
       d.images[imageId] = { id: imageId, character: char.name, charId: char.id, module: "\u6B21\u5143\u58C1", timestamp: nowStr(), prompt, seed: 0, status: "pending", path: "", aspect: engine.aspect };
     });
     setBusy(duo ? "\u6B63\u5728\u753B\u4F60\u4EEC\u4E24\u4E2A\u2026" : `\u6B63\u5728\u753B${char.name}\u2026`);
     try {
-      const res = await engine.image({ prompt, size: duo ? "\u6A2A\u56FE" : "\u7AD6\u56FE" });
+      const res = await engine.image({ prompt, size: duo ? "\u6A2A\u56FE" : "\u7AD6\u56FE", negAdd: "scenery, detailed background, room, indoors, outdoors, furniture, gradient background" });
       update((d) => {
         const im2 = d.images[imageId];
         if (im2) {
@@ -7976,28 +8482,32 @@ function Mirror({ db, update, say, char: defChar, onBack, rightOpen }) {
           im2.status = "ready";
         }
       });
-      if (duo) {
-        setDuoImg({ imageId, res });
-        return;
-      }
+      if (duo) setDuoImg({ imageId, res });
       setBusy("\u6B63\u5728\u62A0\u56FE\u2026");
-      let blob;
+      let blob = null;
+      let ratio = 1;
+      const srcUrl = engine.name !== "real" ? null : res.path && res.path.indexOf("idb:") === 0 ? URL.createObjectURL(await ImageStore.get(res.path.slice(4))) : res.path;
       if (engine.name !== "real") blob = await mockCutout();
       else {
-        const srcUrl = res.path && res.path.indexOf("idb:") === 0 ? URL.createObjectURL(await ImageStore.get(res.path.slice(4))) : res.path;
         try {
-          blob = await cutoutBlob(srcUrl, tol);
+          const r = await cutoutBlob(srcUrl, tol);
+          blob = r.blob;
+          ratio = r.ratio;
         } catch (e) {
           blob = null;
         }
-        if (!blob) {
-          setCut({ url: srcUrl, raw: true, imageId });
-          return;
-        }
       }
+      if (!blob) {
+        const im0 = await loadImg(srcUrl).catch(() => null);
+        setCut({ url: srcUrl, raw: true, imageId, w: im0 ? im0.naturalWidth : 2, h: im0 ? im0.naturalHeight : 3 });
+        say("\u8FD9\u5F20\u56FE\u8BFB\u4E0D\u51FA\u50CF\u7D20\uFF08\u56FE\u7247\u6765\u81EA\u5916\u90E8\u7F51\u5740\uFF09\uFF0C\u6CA1\u6CD5\u62A0\u56FE");
+        return;
+      }
+      if (ratio < 0.12) say("\u8FD9\u5F20\u80CC\u666F\u4E0D\u662F\u7EAF\u8272\uFF0C\u6CA1\u62A0\u5E72\u51C0\uFF1A\u53EF\u4EE5\u628A \u2699 \u91CC\u7684\u62A0\u56FE\u5BB9\u5DEE\u8C03\u5927\uFF0C\u6216\u70B9 \u21BB \u91CD\u753B\u4E00\u5F20");
       const url = URL.createObjectURL(blob);
       const im = await loadImg(url);
-      setCut({ url, w: im.naturalWidth, h: im.naturalHeight, imageId, blob });
+      setCut({ url, w: im.naturalWidth, h: im.naturalHeight, imageId, blob, ratio });
+      setLayer((l) => ({ ...l, s: 1, x: duo ? 0.5 : l.x }));
     } catch (e) {
       update((d) => {
         const im = d.images[imageId];
@@ -8028,7 +8538,7 @@ function Mirror({ db, update, say, char: defChar, onBack, rightOpen }) {
       setHist((h) => h.concat(t ? [`${uname}\uFF1A${t}`] : []).concat([`${char.name}\uFF08${out.action || ""}\uFF09\uFF1A${stripVoiceTags(ln)}`]).slice(-12));
       speak(ln);
       setBusy("");
-      if (out.redraw !== false || !(mode === "duo" ? duoImg : cut)) await drawChar(out);
+      if (out.redraw !== false || !cut) await drawChar(out);
     } catch (e) {
       setBusy("");
       say("\u6B21\u5143\u58C1\u51FA\u9519\uFF1A" + e.message);
@@ -8044,7 +8554,7 @@ function Mirror({ db, update, say, char: defChar, onBack, rightOpen }) {
   const onMove = (e) => {
     const d = drag.current;
     if (!d) return;
-    setLayer((l) => ({ ...l, x: Math.max(0, Math.min(1, d.x + (e.clientX - d.ox) / d.r.width)), y: Math.max(0.2, Math.min(1.3, d.y + (e.clientY - d.oy) / d.r.height)) }));
+    setLayer((l) => ({ ...l, x: Math.max(-0.4, Math.min(1.4, d.x + (e.clientX - d.ox) / d.r.width)), y: Math.max(0.15, Math.min(1.8, d.y + (e.clientY - d.oy) / d.r.height)) }));
   };
   const onUp = () => {
     drag.current = null;
@@ -8057,10 +8567,6 @@ function Mirror({ db, update, say, char: defChar, onBack, rightOpen }) {
     return { W: r.width, H: r.height, w, h, left: layer.x * r.width - w / 2, top: layer.y * r.height - h };
   };
   const shoot = async () => {
-    if (mode === "duo") {
-      say(duoImg ? "\u53CC\u4EBA\u6A21\u5F0F\u7684\u56FE\u5DF2\u7ECF\u5728\u56FE\u533A\u300C\u6B21\u5143\u58C1\u300D\u91CC\u4E86" : "\u8FD8\u6CA1\u6709\u753B\u51FA\u6765");
-      return;
-    }
     const b2 = box();
     const c = document.createElement("canvas");
     c.width = Math.round(b2.W);
@@ -8072,12 +8578,20 @@ function Mirror({ db, update, say, char: defChar, onBack, rightOpen }) {
       const sw = photo ? src.naturalWidth : v.videoWidth, sh = photo ? src.naturalHeight : v.videoHeight;
       const k = Math.max(b2.W / sw, b2.H / sh);
       const dw = sw * k, dh = sh * k;
+      const z = photo ? 1 : camZoom;
       g.save();
       if (!photo && cam.facing === "user") {
         g.translate(b2.W, 0);
         g.scale(-1, 1);
       }
-      g.drawImage(src, (b2.W - dw) / 2, (b2.H - dh) / 2, dw, dh);
+      if (z < 1) {
+        g.save();
+        g.filter = "blur(24px)";
+        g.globalAlpha = 0.7;
+        g.drawImage(src, (b2.W - dw * 1.1) / 2, (b2.H - dh * 1.1) / 2, dw * 1.1, dh * 1.1);
+        g.restore();
+      }
+      g.drawImage(src, (b2.W - dw * z) / 2, (b2.H - dh * z) / 2, dw * z, dh * z);
       g.restore();
     } else {
       g.fillStyle = "#222";
@@ -8126,7 +8640,7 @@ function Mirror({ db, update, say, char: defChar, onBack, rightOpen }) {
   const duoSrc = useImageSrc(duoImg ? db.images[duoImg.imageId] : null);
   const b = box();
   const stop = (e) => e.stopPropagation();
-  return /* @__PURE__ */ React.createElement("div", { ref: boxRef, className: "relative h-full overflow-hidden select-none bg-black", onPointerMove: onMove, onPointerUp: onUp }, /* @__PURE__ */ React.createElement("video", { ref: videoRef, muted: true, playsInline: true, className: cx("absolute inset-0 w-full h-full object-cover", cam.state !== "on" && "hidden", cam.facing === "user" && "-scale-x-100") }), photo && /* @__PURE__ */ React.createElement("img", { ref: photoRef, src: photo, alt: "", className: "absolute inset-0 w-full h-full object-cover" }), cam.state !== "on" && !photo && /* @__PURE__ */ React.createElement("div", { className: "absolute inset-0" }, /* @__PURE__ */ React.createElement(SceneBackdrop, null), /* @__PURE__ */ React.createElement("div", { className: "absolute inset-0 flex items-center justify-center p-6" }, /* @__PURE__ */ React.createElement("div", { className: "glass-strong rounded-3xl p-6 max-w-sm text-center" }, /* @__PURE__ */ React.createElement(Icon, { name: "mirror", size: 26, className: "mx-auto" }), /* @__PURE__ */ React.createElement("div", { className: "mt-3 text-sm" }, cam.state === "error" ? "\u6444\u50CF\u5934\u6253\u4E0D\u5F00" : "\u6B63\u5728\u6253\u5F00\u6444\u50CF\u5934\u2026"), cam.err && /* @__PURE__ */ React.createElement("div", { className: "text-[11px] text-white/50 mt-1" }, cam.err), /* @__PURE__ */ React.createElement("div", { className: "flex gap-2 justify-center mt-4" }, /* @__PURE__ */ React.createElement(Btn, { className: "text-xs py-1.5", onClick: () => startCam(cam.facing) }, "\u91CD\u8BD5"), /* @__PURE__ */ React.createElement(Btn, { className: "text-xs py-1.5", onClick: () => document.getElementById("mirror-photo").click() }, /* @__PURE__ */ React.createElement(Icon, { name: "upload", size: 13 }), "\u7528\u7167\u7247\u4EE3\u66FF"))))), /* @__PURE__ */ React.createElement("input", { id: "mirror-photo", type: "file", accept: "image/*", className: "hidden", onChange: pickPhoto }), mode === "duo" && duoSrc && /* @__PURE__ */ React.createElement("div", { className: "absolute inset-0 flex items-center justify-center bg-black/50 p-4" }, /* @__PURE__ */ React.createElement("img", { src: duoSrc, alt: "", className: "max-w-full max-h-full rounded-2xl shadow-2xl fade-in" })), mode === "ar" && cut && /* @__PURE__ */ React.createElement(
+  return /* @__PURE__ */ React.createElement("div", { ref: boxRef, className: "relative h-full overflow-hidden select-none bg-black", onPointerMove: onMove, onPointerUp: onUp }, camZoom < 1 && cam.state === "on" && /* @__PURE__ */ React.createElement("video", { ref: blurRef, muted: true, playsInline: true, className: cx("absolute inset-0 w-full h-full object-cover blur-2xl opacity-70 scale-110") }), /* @__PURE__ */ React.createElement("video", { ref: videoRef, muted: true, playsInline: true, className: cx("absolute inset-0 w-full h-full object-cover", cam.state !== "on" && "hidden"), style: { transform: `${cam.facing === "user" ? "scaleX(-1) " : ""}scale(${camZoom})` } }), photo && /* @__PURE__ */ React.createElement("img", { ref: photoRef, src: photo, alt: "", className: "absolute inset-0 w-full h-full object-cover" }), cam.state !== "on" && !photo && /* @__PURE__ */ React.createElement("div", { className: "absolute inset-0" }, /* @__PURE__ */ React.createElement(SceneBackdrop, null), /* @__PURE__ */ React.createElement("div", { className: "absolute inset-0 flex items-center justify-center p-6" }, /* @__PURE__ */ React.createElement("div", { className: "glass-strong rounded-3xl p-6 max-w-sm text-center" }, /* @__PURE__ */ React.createElement(Icon, { name: "mirror", size: 26, className: "mx-auto" }), /* @__PURE__ */ React.createElement("div", { className: "mt-3 text-sm" }, cam.state === "error" ? "\u6444\u50CF\u5934\u6253\u4E0D\u5F00" : "\u6B63\u5728\u6253\u5F00\u6444\u50CF\u5934\u2026"), cam.err && /* @__PURE__ */ React.createElement("div", { className: "text-[11px] text-white/50 mt-1" }, cam.err), /* @__PURE__ */ React.createElement("div", { className: "flex gap-2 justify-center mt-4" }, /* @__PURE__ */ React.createElement(Btn, { className: "text-xs py-1.5", onClick: () => startCam(cam.facing) }, "\u91CD\u8BD5"), /* @__PURE__ */ React.createElement(Btn, { className: "text-xs py-1.5", onClick: () => document.getElementById("mirror-photo").click() }, /* @__PURE__ */ React.createElement(Icon, { name: "upload", size: 13 }), "\u7528\u7167\u7247\u4EE3\u66FF"))))), /* @__PURE__ */ React.createElement("input", { id: "mirror-photo", type: "file", accept: "image/*", className: "hidden", onChange: pickPhoto }), cut && /* @__PURE__ */ React.createElement(
     "img",
     {
       src: cut.url,
@@ -8139,24 +8653,28 @@ function Mirror({ db, update, say, char: defChar, onBack, rightOpen }) {
       className: cx("absolute cursor-grab active:cursor-grabbing fade-in", cut.raw && "mix-blend-multiply"),
       style: { left: b.left, top: b.top, width: b.w, height: b.h, transform: layer.flip ? "scaleX(-1)" : "none", touchAction: "none" }
     }
-  ), mode === "ar" && !cut && !busy && /* @__PURE__ */ React.createElement("div", { className: "absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-center", onClick: stop }, /* @__PURE__ */ React.createElement(Btn, { variant: "solid", className: "px-5 py-2.5", onClick: () => talk("") }, /* @__PURE__ */ React.createElement(Icon, { name: "sparkle", size: 15 }), "\u8BA9 ", char ? char.name : "TA", " \u8FC7\u6765"), /* @__PURE__ */ React.createElement("div", { className: "text-[11px] text-white/60 mt-2" }, vision ? "TA \u4F1A\u5148\u770B\u770B\u4F60\u8FD9\u8FB9\u662F\u4EC0\u4E48\u5730\u65B9" : "\u53EF\u4EE5\u5728 \u2699 \u91CC\u5199\u4E00\u53E5\u4F60\u5728\u54EA")), mode === "duo" && !duoImg && !busy && /* @__PURE__ */ React.createElement("div", { className: "absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-center", onClick: stop }, /* @__PURE__ */ React.createElement(Btn, { variant: "solid", className: "px-5 py-2.5", onClick: () => talk("") }, /* @__PURE__ */ React.createElement(Icon, { name: "sparkle", size: 15 }), "\u753B\u51FA\u6211\u4EEC\u4E24\u4E2A")), line && /* @__PURE__ */ React.createElement(
+  ), !cut && !busy && mode === "ar" && /* @__PURE__ */ React.createElement("div", { className: "absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-center", onClick: stop }, /* @__PURE__ */ React.createElement(Btn, { variant: "solid", className: "px-5 py-2.5", onClick: () => talk("") }, /* @__PURE__ */ React.createElement(Icon, { name: "sparkle", size: 15 }), "\u8BA9 ", char ? char.name : "TA", " \u8FC7\u6765"), /* @__PURE__ */ React.createElement("div", { className: "text-[11px] text-white/60 mt-2" }, vision ? "TA \u4F1A\u5148\u770B\u770B\u4F60\u8FD9\u8FB9\u662F\u4EC0\u4E48\u5730\u65B9" : "\u53EF\u4EE5\u5728 \u2699 \u91CC\u5199\u4E00\u53E5\u4F60\u5728\u54EA")), mode === "duo" && !cut && !busy && /* @__PURE__ */ React.createElement("div", { className: "absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-center", onClick: stop }, /* @__PURE__ */ React.createElement(Btn, { variant: "solid", className: "px-5 py-2.5", onClick: () => talk("") }, /* @__PURE__ */ React.createElement(Icon, { name: "sparkle", size: 15 }), "\u753B\u51FA\u6211\u4EEC\u4E24\u4E2A")), line && showLine && /* @__PURE__ */ React.createElement(
     "div",
     {
       className: "absolute z-10 max-w-[min(360px,70%)] glass-strong rounded-2xl px-4 py-2.5 text-sm leading-relaxed pop-in",
-      style: mode === "ar" && cut ? { left: Math.max(12, Math.min(b.W - 380, b.left + b.w * 0.15)), top: Math.max(70, b.top - 10) } : { left: "50%", top: 80, transform: "translateX(-50%)" }
+      style: cut ? { left: Math.max(12, Math.min(b.W - 380, b.left + b.w * 0.15)), top: Math.max(70, b.top - 10) } : { left: "50%", top: 80, transform: "translateX(-50%)" }
     },
     /* @__PURE__ */ React.createElement("span", { className: "text-[11px] text-white/50 block" }, char.name),
     line
   ), flash && /* @__PURE__ */ React.createElement("div", { className: "absolute inset-0 z-30 bg-white fx-flash pointer-events-none" }), /* @__PURE__ */ React.createElement("div", { className: "absolute top-4 left-16 z-20 flex items-center gap-2", onClick: stop }, /* @__PURE__ */ React.createElement(IconBtn, { icon: "arrowLeft", title: "\u9000\u51FA\u6B21\u5143\u58C1", onClick: () => {
     stopCam();
     onBack();
-  }, className: "glass" }), /* @__PURE__ */ React.createElement("div", { className: "glass rounded-full pl-1.5 pr-3 py-1 flex items-center gap-2" }, /* @__PURE__ */ React.createElement(Avatar, { char, size: 28 }), /* @__PURE__ */ React.createElement("span", { className: "text-sm" }, char ? char.name : "\u2014"), /* @__PURE__ */ React.createElement("span", { className: "text-[10px] text-white/50" }, mode === "duo" ? "\u53CC\u4EBA" : "AR \u5408\u7167"))), /* @__PURE__ */ React.createElement("div", { className: cx("absolute top-4 z-20 flex gap-1.5", rightOpen ? "right-4 sm:right-6" : "right-16"), onClick: stop }, cam.state === "on" && /* @__PURE__ */ React.createElement(IconBtn, { icon: "reset", title: "\u5207\u6362\u524D / \u540E\u6444\u50CF\u5934", onClick: () => startCam(cam.facing === "user" ? "environment" : "user"), className: "glass" }), /* @__PURE__ */ React.createElement("button", { type: "button", title: "\u8BBE\u7F6E", onClick: () => setPanel(!panel), className: cx("w-9 h-9 rounded-full flex items-center justify-center text-base", panel ? "bg-white text-black" : "glass") }, "\u2699")), panel && /* @__PURE__ */ React.createElement("div", { className: cx("absolute top-16 z-30 w-[min(300px,86vw)] glass-strong rounded-2xl p-4 space-y-3 pop-in", rightOpen ? "right-4 sm:right-6" : "right-16"), onClick: stop }, /* @__PURE__ */ React.createElement(Field, { label: "\u89D2\u8272" }, /* @__PURE__ */ React.createElement("select", { className: inputCls, value: char ? char.id : "", onChange: (e) => {
+  }, className: "glass" }), /* @__PURE__ */ React.createElement("div", { className: "glass rounded-full pl-1.5 pr-3 py-1 flex items-center gap-2" }, /* @__PURE__ */ React.createElement(Avatar, { char, size: 28 }), /* @__PURE__ */ React.createElement("span", { className: "text-sm" }, char ? char.name : "\u2014"), /* @__PURE__ */ React.createElement("span", { className: "text-[10px] text-white/50" }, mode === "duo" ? "\u53CC\u4EBA" : "AR \u5408\u7167"))), /* @__PURE__ */ React.createElement("div", { className: cx("absolute top-4 z-20 flex gap-1.5", rightOpen ? "right-4 sm:right-6" : "right-16"), onClick: stop }, /* @__PURE__ */ React.createElement(IconBtn, { icon: showLine ? "eye" : "eyeOff", title: showLine ? "\u9690\u85CF\u53F0\u8BCD\u6C14\u6CE1" : "\u663E\u793A\u53F0\u8BCD\u6C14\u6CE1", onClick: () => setM("bubble", !showLine), className: "glass" }), cam.state === "on" && /* @__PURE__ */ React.createElement("button", { type: "button", title: "\u5207\u6362\u524D / \u540E\u6444\u50CF\u5934", onClick: () => startCam(cam.facing === "user" ? "environment" : "user"), className: "glass rounded-full h-9 px-3 text-xs" }, cam.facing === "user" ? "\u524D\u7F6E" : "\u540E\u7F6E", " \u21C4"), /* @__PURE__ */ React.createElement("button", { type: "button", title: "\u8BBE\u7F6E", onClick: () => setPanel(!panel), className: cx("w-9 h-9 rounded-full flex items-center justify-center text-base", panel ? "bg-white text-black" : "glass") }, "\u2699")), panel && /* @__PURE__ */ React.createElement("div", { className: cx("absolute top-16 z-30 w-[min(300px,86vw)] glass-strong rounded-2xl p-4 space-y-3 pop-in", rightOpen ? "right-4 sm:right-6" : "right-16"), onClick: stop }, /* @__PURE__ */ React.createElement(Field, { label: "\u89D2\u8272" }, /* @__PURE__ */ React.createElement("select", { className: inputCls, value: char ? char.id : "", onChange: (e) => {
     setM("charId", e.target.value);
     setCut(null);
     setDuoImg(null);
     setLine("");
     setHist([]);
-  } }, db.characters.map((c) => /* @__PURE__ */ React.createElement("option", { key: c.id, value: c.id }, c.name)))), /* @__PURE__ */ React.createElement("div", { className: "grid grid-cols-2 gap-1 text-xs" }, [["ar", "AR \u5408\u7167\uFF08\u771F\u4EBA + \u89D2\u8272\uFF09"], ["duo", "\u53CC\u4EBA\uFF08\u90FD\u753B\u51FA\u6765\uFF09"]].map(([k, l]) => /* @__PURE__ */ React.createElement("button", { key: k, type: "button", onClick: () => setM("mode", k), className: cx("rounded-lg border py-1.5 px-1", mode === k ? "bg-white text-black border-white" : "border-white/15 text-white/60") }, l))), /* @__PURE__ */ React.createElement("label", { className: "flex items-center gap-2 text-xs" }, /* @__PURE__ */ React.createElement(Switch, { on: vision, label: "\u770B\u753B\u9762", onChange: (v) => setM("vision", v) }), /* @__PURE__ */ React.createElement("span", { className: "flex-1" }, "\u8BA9 AI \u770B\u6444\u50CF\u5934\u753B\u9762", /* @__PURE__ */ React.createElement("span", { className: "block text-[10px] text-white/40" }, "\u8981\u7528\u652F\u6301\u8BC6\u56FE\u7684\u6A21\u578B\uFF08\u5982 GPT-4o\u3001Claude\u3001Gemini\uFF09"))), /* @__PURE__ */ React.createElement(Field, { label: "\u4F60\u5728\u54EA\uFF08\u53EF\u9009\uFF0CAI \u770B\u4E0D\u5230\u753B\u9762\u65F6\u7528\uFF09" }, /* @__PURE__ */ React.createElement("input", { className: inputCls, value: sceneText, onChange: (e) => setSceneText(e.target.value), placeholder: "\u4F8B\uFF1A\u5728\u706B\u9505\u5E97\uFF0C\u5BF9\u9762\u7A7A\u7740" })), /* @__PURE__ */ React.createElement("label", { className: "flex items-center gap-2 text-xs" }, /* @__PURE__ */ React.createElement(Switch, { on: voice, label: "\u8BED\u97F3", onChange: (v) => setM("voice", v) }), "\u89D2\u8272\u8BF4\u8BDD\u65F6\u914D\u97F3"), mode === "ar" && /* @__PURE__ */ React.createElement(Field, { label: `\u62A0\u56FE\u5BB9\u5DEE ${tol}\uFF08\u80CC\u666F\u6CA1\u62A0\u5E72\u51C0\u5C31\u8C03\u5927\uFF09` }, /* @__PURE__ */ React.createElement("input", { type: "range", min: 8, max: 80, value: tol, className: "w-full accent-white", onChange: (e) => setM("tol", Number(e.target.value)) })), /* @__PURE__ */ React.createElement(Btn, { className: "w-full text-xs py-1.5", onClick: () => document.getElementById("mirror-photo").click() }, /* @__PURE__ */ React.createElement(Icon, { name: "upload", size: 13 }), "\u7528\u7167\u7247\u4EE3\u66FF\u6444\u50CF\u5934"), photo && /* @__PURE__ */ React.createElement(Btn, { className: "w-full text-xs py-1.5", onClick: () => startCam(cam.facing) }, "\u6362\u56DE\u6444\u50CF\u5934")), /* @__PURE__ */ React.createElement("div", { className: "absolute inset-x-3 sm:inset-x-6 bottom-4 z-20 flex items-center gap-2", onClick: stop }, mode === "ar" && cut && /* @__PURE__ */ React.createElement("div", { className: "glass rounded-2xl flex items-center h-12 px-1" }, /* @__PURE__ */ React.createElement("button", { type: "button", title: "\u7F29\u5C0F", onClick: () => zoom(0.9), className: "w-9 h-9 rounded-xl hover:bg-white/10" }, "\uFF0D"), /* @__PURE__ */ React.createElement("button", { type: "button", title: "\u653E\u5927", onClick: () => zoom(1.1), className: "w-9 h-9 rounded-xl hover:bg-white/10" }, "\uFF0B"), /* @__PURE__ */ React.createElement("button", { type: "button", title: "\u7FFB\u8F6C", onClick: () => setLayer((l) => ({ ...l, flip: !l.flip })), className: "w-9 h-9 rounded-xl hover:bg-white/10" }, "\u21CB")), /* @__PURE__ */ React.createElement("div", { className: "flex-1 glass-strong rounded-2xl flex items-center pl-4 pr-1.5 h-12 min-w-0" }, /* @__PURE__ */ React.createElement(
+  } }, db.characters.map((c) => /* @__PURE__ */ React.createElement("option", { key: c.id, value: c.id }, c.name)))), /* @__PURE__ */ React.createElement("div", { className: "grid grid-cols-2 gap-1 text-xs" }, [["ar", "AR \u5408\u7167\uFF08\u771F\u4EBA + \u89D2\u8272\uFF09"], ["duo", "\u53CC\u4EBA\uFF08\u90FD\u753B\u51FA\u6765\uFF09"]].map(([k, l]) => /* @__PURE__ */ React.createElement("button", { key: k, type: "button", onClick: () => {
+    setM("mode", k);
+    setCut(null);
+    setDuoImg(null);
+  }, className: cx("rounded-lg border py-1.5 px-1", mode === k ? "bg-white text-black border-white" : "border-white/15 text-white/60") }, l))), /* @__PURE__ */ React.createElement("label", { className: "flex items-center gap-2 text-xs" }, /* @__PURE__ */ React.createElement(Switch, { on: vision, label: "\u770B\u753B\u9762", onChange: (v) => setM("vision", v) }), /* @__PURE__ */ React.createElement("span", { className: "flex-1" }, "\u8BA9 AI \u770B\u6444\u50CF\u5934\u753B\u9762", /* @__PURE__ */ React.createElement("span", { className: "block text-[10px] text-white/40" }, "\u8981\u7528\u652F\u6301\u8BC6\u56FE\u7684\u6A21\u578B\uFF08\u5982 GPT-4o\u3001Claude\u3001Gemini\uFF09"))), /* @__PURE__ */ React.createElement(Field, { label: "\u4F60\u5728\u54EA\uFF08\u53EF\u9009\uFF0CAI \u770B\u4E0D\u5230\u753B\u9762\u65F6\u7528\uFF09" }, /* @__PURE__ */ React.createElement("input", { className: inputCls, value: sceneText, onChange: (e) => setSceneText(e.target.value), placeholder: "\u4F8B\uFF1A\u5728\u706B\u9505\u5E97\uFF0C\u5BF9\u9762\u7A7A\u7740" })), /* @__PURE__ */ React.createElement("label", { className: "flex items-center gap-2 text-xs" }, /* @__PURE__ */ React.createElement(Switch, { on: voice, label: "\u8BED\u97F3", onChange: (v) => setM("voice", v) }), "\u89D2\u8272\u8BF4\u8BDD\u65F6\u914D\u97F3"), mode === "ar" && /* @__PURE__ */ React.createElement(Field, { label: `\u62A0\u56FE\u5BB9\u5DEE ${tol}\uFF08\u80CC\u666F\u6CA1\u62A0\u5E72\u51C0\u5C31\u8C03\u5927\uFF09` }, /* @__PURE__ */ React.createElement("input", { type: "range", min: 8, max: 80, value: tol, className: "w-full accent-white", onChange: (e) => setM("tol", Number(e.target.value)) })), /* @__PURE__ */ React.createElement(Btn, { className: "w-full text-xs py-1.5", onClick: () => document.getElementById("mirror-photo").click() }, /* @__PURE__ */ React.createElement(Icon, { name: "upload", size: 13 }), "\u7528\u7167\u7247\u4EE3\u66FF\u6444\u50CF\u5934"), photo && /* @__PURE__ */ React.createElement(Btn, { className: "w-full text-xs py-1.5", onClick: () => startCam(cam.facing) }, "\u6362\u56DE\u6444\u50CF\u5934")), /* @__PURE__ */ React.createElement("div", { className: "absolute inset-x-3 sm:inset-x-6 bottom-4 z-20 flex items-center gap-2", onClick: stop }, cam.state === "on" && /* @__PURE__ */ React.createElement("div", { className: "glass rounded-2xl flex items-center h-12 px-1 text-[11px]", title: "\u955C\u5934\uFF1A\u62C9\u8FDC\u8BA9\u4F60\u5C0F\u4E00\u70B9\uFF0C\u63A8\u8FD1\u8BA9\u4F60\u5927\u4E00\u70B9\uFF08\u89D2\u8272\u4E0D\u53D8\uFF09" }, /* @__PURE__ */ React.createElement("button", { type: "button", onClick: () => setCamZoom((z) => Math.max(0.5, +(z - 0.1).toFixed(2))), className: "w-8 h-9 rounded-xl hover:bg-white/10" }, "\uFF0D"), /* @__PURE__ */ React.createElement("span", { className: "w-9 text-center text-white/70" }, "\u955C\u5934", /* @__PURE__ */ React.createElement("br", null), Math.round(camZoom * 100), "%"), /* @__PURE__ */ React.createElement("button", { type: "button", onClick: () => setCamZoom((z) => Math.min(2.5, +(z + 0.1).toFixed(2))), className: "w-8 h-9 rounded-xl hover:bg-white/10" }, "\uFF0B")), cut && /* @__PURE__ */ React.createElement("div", { className: "glass rounded-2xl flex items-center h-12 px-1" }, /* @__PURE__ */ React.createElement("button", { type: "button", title: "\u89D2\u8272\u7F29\u5C0F", onClick: () => zoom(0.9), className: "w-9 h-9 rounded-xl hover:bg-white/10" }, "\uFF0D"), /* @__PURE__ */ React.createElement("button", { type: "button", title: "\u89D2\u8272\u653E\u5927", onClick: () => zoom(1.1), className: "w-9 h-9 rounded-xl hover:bg-white/10" }, "\uFF0B"), /* @__PURE__ */ React.createElement("button", { type: "button", title: "\u7FFB\u8F6C", onClick: () => setLayer((l) => ({ ...l, flip: !l.flip })), className: "w-9 h-9 rounded-xl hover:bg-white/10" }, "\u21CB")), /* @__PURE__ */ React.createElement("div", { className: "flex-1 glass-strong rounded-2xl flex items-center pl-4 pr-1.5 h-12 min-w-0" }, /* @__PURE__ */ React.createElement(
     "input",
     {
       className: "flex-1 bg-transparent text-sm placeholder:text-white/35 min-w-0",
@@ -8168,7 +8686,7 @@ function Mirror({ db, update, say, char: defChar, onBack, rightOpen }) {
       placeholder: busy || `\u5BF9${char ? char.name : "TA"}\u8BF4\u70B9\u4EC0\u4E48\uFF08\u56DE\u8F66\uFF09`,
       disabled: !!busy
     }
-  ), busy && /* @__PURE__ */ React.createElement("span", { className: "spin w-4 h-4 rounded-full border border-white/30 border-t-white mr-2" }), /* @__PURE__ */ React.createElement("button", { type: "button", title: "\u6362\u4E2A\u52A8\u4F5C\uFF08\u91CD\u65B0\u753B\uFF09", onClick: () => talk("\u6362\u4E2A\u52A8\u4F5C\u6216\u59FF\u52BF\u5427"), disabled: !!busy || !(cut || duoImg), className: "w-9 h-9 rounded-xl flex items-center justify-center text-white/70 hover:bg-white/10 disabled:opacity-30" }, /* @__PURE__ */ React.createElement(Icon, { name: "reset", size: 16 }))), /* @__PURE__ */ React.createElement("button", { type: "button", title: "\u62CD\u7167\uFF08\u5B58\u5230\u56FE\u533A\uFF09", onClick: shoot, className: "w-14 h-14 rounded-full bg-white text-black flex items-center justify-center shrink-0 border-4 border-white/30" }, /* @__PURE__ */ React.createElement(Icon, { name: "image", size: 20 }))));
+  ), busy && /* @__PURE__ */ React.createElement("span", { className: "spin w-4 h-4 rounded-full border border-white/30 border-t-white mr-2" }), /* @__PURE__ */ React.createElement("button", { type: "button", title: "\u6362\u4E2A\u52A8\u4F5C\uFF08\u91CD\u65B0\u753B\uFF09", onClick: () => talk("\u6362\u4E2A\u52A8\u4F5C\u6216\u59FF\u52BF\u5427"), disabled: !!busy || !cut, className: "w-9 h-9 rounded-xl flex items-center justify-center text-white/70 hover:bg-white/10 disabled:opacity-30" }, /* @__PURE__ */ React.createElement(Icon, { name: "reset", size: 16 }))), /* @__PURE__ */ React.createElement("button", { type: "button", title: "\u62CD\u7167\uFF08\u5B58\u5230\u56FE\u533A\uFF09", onClick: shoot, className: "w-14 h-14 rounded-full bg-white text-black flex items-center justify-center shrink-0 border-4 border-white/30" }, /* @__PURE__ */ React.createElement(Icon, { name: "image", size: 20 }))));
 }
 const BT_COMMON_SERVICES = [
   ["6e400001-b5a3-f393-e0a9-e50e24dcca9e", "Nordic UART\uFF08\u5F88\u591A\u5F00\u53D1\u677F\u3001\u73A9\u5177\uFF09"],
