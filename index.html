@@ -101,6 +101,7 @@ button, input:where([type="button"], [type="reset"], [type="submit"]), ::file-se
 .right-4{right: calc(var(--spacing) * 4)}
 .right-16{right: calc(var(--spacing) * 16)}
 .right-\[5px\]{right: 5px}
+.-bottom-2{bottom: calc(var(--spacing) * -2)}
 .bottom-0{bottom: 0px}
 .bottom-1{bottom: var(--spacing)}
 .bottom-1\.5{bottom: calc(var(--spacing) * 1.5)}
@@ -293,6 +294,7 @@ button, input:where([type="button"], [type="reset"], [type="submit"]), ::file-se
 .max-w-xl{max-width: var(--container-xl)}
 .min-w-0{min-width: 0px}
 .min-w-5{min-width: calc(var(--spacing) * 5)}
+.min-w-9{min-width: calc(var(--spacing) * 9)}
 .min-w-\[18px\]{min-width: 18px}
 .flex-1{flex: 1}
 .shrink-0{flex-shrink: 0}
@@ -483,7 +485,6 @@ button, input:where([type="button"], [type="reset"], [type="submit"]), ::file-se
 .pr-1{padding-right: var(--spacing)}
 .pr-1\.5{padding-right: calc(var(--spacing) * 1.5)}
 .pr-2{padding-right: calc(var(--spacing) * 2)}
-.pr-3{padding-right: calc(var(--spacing) * 3)}
 .pr-9{padding-right: calc(var(--spacing) * 9)}
 .pb-1{padding-bottom: var(--spacing)}
 .pb-2{padding-bottom: calc(var(--spacing) * 2)}
@@ -517,6 +518,7 @@ button, input:where([type="button"], [type="reset"], [type="submit"]), ::file-se
 .text-sm{font-size: var(--text-sm);line-height: var(--tw-leading, var(--text-sm--line-height))}
 .text-xl{font-size: var(--text-xl);line-height: var(--tw-leading, var(--text-xl--line-height))}
 .text-xs{font-size: var(--text-xs);line-height: var(--tw-leading, var(--text-xs--line-height))}
+.text-\[9px\]{font-size: 9px}
 .text-\[10px\]{font-size: 10px}
 .text-\[11px\]{font-size: 11px}
 .text-\[12px\]{font-size: 12px}
@@ -524,6 +526,7 @@ button, input:where([type="button"], [type="reset"], [type="submit"]), ::file-se
 .text-\[17px\]{font-size: 17px}
 .leading-\[1\.9\]{--tw-leading: 1.9;line-height: 1.9}
 .leading-\[1\.95\]{--tw-leading: 1.95;line-height: 1.95}
+.leading-\[14px\]{--tw-leading: 14px;line-height: 14px}
 .leading-none{--tw-leading: 1;line-height: 1}
 .leading-relaxed{--tw-leading: var(--leading-relaxed);line-height: var(--leading-relaxed)}
 .leading-snug{--tw-leading: var(--leading-snug);line-height: var(--leading-snug)}
@@ -643,6 +646,7 @@ button, input:where([type="button"], [type="reset"], [type="submit"]), ::file-se
 @media (width >= 40rem){.sm\:bottom-8{bottom: calc(var(--spacing) * 8)}}
 @media (width >= 40rem){.sm\:bottom-\[calc\(26vh\+96px\)\]{bottom: calc(26vh + 96px)}}
 @media (width >= 40rem){.sm\:left-6{left: calc(var(--spacing) * 6)}}
+@media (width >= 40rem){.sm\:hidden{display: none}}
 @media (width >= 40rem){.sm\:inline{display: inline}}
 @media (width >= 40rem){.sm\:h-\[88vh\]{height: 88vh}}
 @media (width >= 40rem){.sm\:h-\[90vh\]{height: 90vh}}
@@ -666,8 +670,10 @@ button, input:where([type="button"], [type="reset"], [type="submit"]), ::file-se
 @media (width >= 40rem){.sm\:p-6{padding: calc(var(--spacing) * 6)}}
 @media (width >= 40rem){.sm\:p-7{padding: calc(var(--spacing) * 7)}}
 @media (width >= 40rem){.sm\:p-8{padding: calc(var(--spacing) * 8)}}
+@media (width >= 40rem){.sm\:px-3{padding-left:calc(var(--spacing) * 3);padding-right:calc(var(--spacing) * 3)}}
 @media (width >= 40rem){.sm\:px-8{padding-left:calc(var(--spacing) * 8);padding-right:calc(var(--spacing) * 8)}}
 @media (width >= 40rem){.sm\:pt-5{padding-top: calc(var(--spacing) * 5)}}
+@media (width >= 40rem){.sm\:pr-3{padding-right: calc(var(--spacing) * 3)}}
 @media (width >= 40rem){.sm\:pb-6{padding-bottom: calc(var(--spacing) * 6)}}
 @media (width >= 40rem){.sm\:text-4xl{font-size: var(--text-4xl);line-height: var(--tw-leading, var(--text-4xl--line-height))}}
 @media (width >= 40rem){.sm\:text-5xl{font-size: var(--text-5xl);line-height: var(--tw-leading, var(--text-5xl--line-height))}}
@@ -1408,7 +1414,7 @@ function Btn({ children, onClick, variant = "ghost", className = "", type = "but
 }
 function LeftPanel({ db, onLamp, onPickChar, onAdd, onEdit, onDelete, onMirror, onLight, onBluetooth, onClose, view, onProfile, onBgm }) {
   const bt = useBt();
-  const btOn = bt.status === "connected";
+  const btOn = bt.status === "connected" || INTI.status === "connected";
   const { module, currentCharId } = db.ui;
   const [menuFor, setMenuFor] = useState(null);
   useEffect(() => {
@@ -1525,7 +1531,8 @@ function LeftPanel({ db, onLamp, onPickChar, onAdd, onEdit, onDelete, onMirror, 
       )
     },
     /* @__PURE__ */ React.createElement(Icon, { name: "mirror", size: 18 }),
-    "\u6B21\u5143\u58C1"
+    "\u6B21\u5143\u58C1",
+    /* @__PURE__ */ React.createElement("span", { className: cx("ml-auto text-[10px] rounded-full border px-1.5", view === "mirror" ? "border-black/30 text-black/60" : "border-white/25 text-white/45") }, "\u5B9E\u9A8C")
   ), /* @__PURE__ */ React.createElement(
     "button",
     {
@@ -2170,6 +2177,11 @@ function App() {
   const [phoneInit, setPhoneInit] = useState(null);
   const [wardrobeInit, setWardrobeInit] = useState(null);
   const [memInit, setMemInit] = useState(null);
+  useEffect(() => {
+    const c = db.settings.bt;
+    if (c && c.mode === "intiface" && c.intiAuto) INTI.connect(c.intiUrl).catch(() => {
+    });
+  }, []);
   useEffect(() => {
     imgRememberHook = (key, c) => update((d) => {
       d.settings.api.image.detected = { key, kind: c.kind, url: c.url };
@@ -4879,7 +4891,17 @@ const IMG_RUN = {
     const mime = imgMime(b);
     if (mime) return saveBlobImage(new Blob([b], { type: mime }));
     if (b[0] === 80 && b[1] === 75) return saveBlobImage(await unzipFirstImage(buf));
+    for (let i = 1; i < Math.min(b.length - 8, 65536); i++) {
+      if (b[i] === 80 && b[i + 1] === 75 && b[i + 2] === 3 && b[i + 3] === 4) {
+        try {
+          return saveBlobImage(await unzipFirstImage(buf.slice(i)));
+        } catch (e) {
+        }
+      }
+      if (b[i] === 137 && b[i + 1] === 80 && b[i + 2] === 78 && b[i + 3] === 71) return saveBlobImage(new Blob([b.slice(i)], { type: "image/png" }));
+    }
     const text = new TextDecoder().decode(b.slice(0, 2e3));
+    if (/[\ufffd]{3}/.test(text)) throw new ApiError(`\u751F\u56FE\u63A5\u53E3\u8FD4\u56DE\u4E86\u4E00\u4E2A\u8BA4\u4E0D\u51FA\u6765\u7684\u6587\u4EF6\uFF08${b.length} \u5B57\u8282\uFF0C\u4E0D\u662F\u56FE\u7247\u4E5F\u4E0D\u662F ZIP\uFF09\u3002\u53EF\u80FD\u8FD9\u4E2A\u7AD9\u7684\u8BF7\u6C42\u683C\u5F0F\u548C\u9ED8\u8BA4\u7684\u4E0D\u4E00\u6837\uFF0C\u9700\u8981\u6293\u4E00\u4E0B\u7F51\u9875\u7684\u771F\u5B9E\u8BF7\u6C42\u3002`, false);
     if (/<html/i.test(text)) throw new NotHere("\u8FD4\u56DE\u7684\u662F\u7F51\u9875");
     throw new ApiError("\u751F\u56FE\u63A5\u53E3\u8FD4\u56DE\u7684\u4E0D\u662F\u56FE\u7247\uFF1A" + explainErr(text), false);
   },
@@ -8963,8 +8985,8 @@ function Mirror({ db, update, say, char: defChar, onBack, rightOpen }) {
     /* @__PURE__ */ React.createElement("div", { className: "absolute top-4 left-16 z-20 flex items-center gap-2", onClick: stop }, /* @__PURE__ */ React.createElement(IconBtn, { icon: "arrowLeft", title: "\u9000\u51FA\u6B21\u5143\u58C1", onClick: () => {
       stopCam();
       onBack();
-    }, className: "glass" }), /* @__PURE__ */ React.createElement("div", { className: "glass rounded-full pl-1.5 pr-3 py-1 flex items-center gap-2" }, /* @__PURE__ */ React.createElement(Avatar, { char, size: 28 }), /* @__PURE__ */ React.createElement("span", { className: "text-sm" }, char ? char.name : "\u2014"), /* @__PURE__ */ React.createElement("span", { className: "text-[10px] text-white/50" }, mode === "duo" ? "\u53CC\u4EBA" : "AR \u5408\u7167"))),
-    /* @__PURE__ */ React.createElement("div", { className: cx("absolute top-4 z-20 flex gap-1.5", rightOpen ? "right-4 sm:right-6" : "right-16"), onClick: stop }, /* @__PURE__ */ React.createElement(IconBtn, { icon: showLine ? "eye" : "eyeOff", title: showLine ? "\u9690\u85CF\u53F0\u8BCD\u6C14\u6CE1" : "\u663E\u793A\u53F0\u8BCD\u6C14\u6CE1", onClick: () => setM("bubble", !showLine), className: "glass" }), cam.state === "on" && /* @__PURE__ */ React.createElement("button", { type: "button", title: "\u5207\u6362\u524D / \u540E\u6444\u50CF\u5934", onClick: () => startCam(cam.facing === "user" ? "environment" : "user"), className: "glass rounded-full h-9 px-3 text-xs" }, cam.facing === "user" ? "\u524D\u7F6E" : "\u540E\u7F6E", " \u21C4"), /* @__PURE__ */ React.createElement("button", { type: "button", title: "\u8BBE\u7F6E", onClick: () => setPanel(!panel), className: cx("w-9 h-9 rounded-full flex items-center justify-center text-base", panel ? "bg-white text-black" : "glass") }, "\u2699")),
+    }, className: "glass" }), /* @__PURE__ */ React.createElement("div", { className: "relative glass rounded-full pl-1.5 pr-1.5 sm:pr-3 py-1 flex items-center gap-2" }, /* @__PURE__ */ React.createElement(Avatar, { char, size: 28 }), /* @__PURE__ */ React.createElement("span", { className: "sm:hidden absolute -bottom-2 left-1/2 -translate-x-1/2 rounded-full bg-white text-black px-1 text-[9px] leading-[14px] whitespace-nowrap" }, "\u5B9E\u9A8C"), /* @__PURE__ */ React.createElement("span", { className: "text-sm hidden sm:inline" }, char ? char.name : "\u2014"), /* @__PURE__ */ React.createElement("span", { className: "text-[10px] text-white/50 hidden sm:inline" }, mode === "duo" ? "\u53CC\u4EBA" : "AR \u5408\u7167")), /* @__PURE__ */ React.createElement("span", { title: "\u6B21\u5143\u58C1\u8FD8\u662F\u5B9E\u9A8C\u529F\u80FD\uFF1A\u62A0\u56FE\u3001\u955C\u5934\u7F29\u653E\u5728\u4E0D\u540C\u624B\u673A\u4E0A\u6548\u679C\u4E0D\u7A33\u5B9A", className: "hidden sm:inline rounded-full border border-white/40 bg-black/40 px-2 py-0.5 text-[10px] text-white/80 whitespace-nowrap" }, "\u5B9E\u9A8C")),
+    /* @__PURE__ */ React.createElement("div", { className: cx("absolute top-4 z-20 flex gap-1.5", rightOpen ? "right-4 sm:right-6" : "right-16"), onClick: stop }, /* @__PURE__ */ React.createElement(IconBtn, { icon: showLine ? "eye" : "eyeOff", title: showLine ? "\u9690\u85CF\u53F0\u8BCD\u6C14\u6CE1" : "\u663E\u793A\u53F0\u8BCD\u6C14\u6CE1", onClick: () => setM("bubble", !showLine), className: "glass" }), cam.state === "on" && /* @__PURE__ */ React.createElement("button", { type: "button", title: "\u5207\u6362\u524D / \u540E\u6444\u50CF\u5934", onClick: () => startCam(cam.facing === "user" ? "environment" : "user"), className: "glass rounded-full h-9 min-w-9 px-2.5 sm:px-3 text-xs" }, /* @__PURE__ */ React.createElement("span", { className: "hidden sm:inline" }, cam.facing === "user" ? "\u524D\u7F6E " : "\u540E\u7F6E "), "\u21C4"), /* @__PURE__ */ React.createElement("button", { type: "button", title: "\u8BBE\u7F6E", onClick: () => setPanel(!panel), className: cx("w-9 h-9 rounded-full flex items-center justify-center text-base", panel ? "bg-white text-black" : "glass") }, "\u2699")),
     panel && /* @__PURE__ */ React.createElement("div", { className: cx("absolute top-16 z-30 w-[min(300px,86vw)] glass-strong rounded-2xl p-4 space-y-3 pop-in", rightOpen ? "right-4 sm:right-6" : "right-16"), onClick: stop }, /* @__PURE__ */ React.createElement(Field, { label: "\u89D2\u8272" }, /* @__PURE__ */ React.createElement("select", { className: inputCls, value: char ? char.id : "", onChange: (e) => {
       setM("charId", e.target.value);
       setCut(null);
@@ -9220,7 +9242,25 @@ const BT = {
   onText(text, settings) {
     const cfg = (settings || {}).bt;
     this.settings = cfg;
-    if (!cfg || !cfg.enabled || !this.server || !this.server.connected) return;
+    if (!cfg || cfg.enabled === false) return;
+    if (cfg.mode === "intiface") {
+      if (INTI.status !== "connected") return;
+      const t2 = String(text || "");
+      const now2 = Date.now();
+      const hit = (cfg.triggers || []).find((x) => x.enabled !== false && x.act && String(x.words || "").split(/[,，、\s]+/).filter(Boolean).some((w) => t2.indexOf(w) >= 0) && now2 - (this.lastFire[x.id] || 0) >= (x.cooldown != null ? x.cooldown : 1500));
+      if (!hit) return;
+      this.lastFire[hit.id] = now2;
+      let steps;
+      try {
+        steps = parseAct(hit.act);
+      } catch (e) {
+        this.addLog("err", `\u300C${hit.words}\u300D\u7684\u52A8\u4F5C\u5199\u9519\u4E86\uFF1A${e.message}`);
+        return;
+      }
+      INTI.run(steps, cfg, `\u300C${String(hit.words).split(/[,，、\s]+/)[0]}\u300D`).catch((e) => this.addLog("err", e.message));
+      return;
+    }
+    if (!this.server || !this.server.connected) return;
     const t = String(text || "");
     const now = Date.now();
     const hits = (cfg.triggers || []).filter((x) => x.enabled !== false && x.hex && String(x.words || "").split(/[,，、\s]+/).filter(Boolean).some((w) => t.indexOf(w) >= 0));
@@ -9237,6 +9277,247 @@ const BT = {
       this.send(steps, cfg, `\u300C${String(x.words).split(/[,，、\s]+/)[0]}\u300D`).catch(() => {
       });
     });
+  }
+};
+function parseAct(str) {
+  const out = [];
+  const dur = (n, u) => Math.round(parseFloat(n) * (/^(s|秒)$/i.test(u || "") ? 1e3 : 1));
+  String(str || "").split("|").map((x) => x.trim()).filter(Boolean).forEach((x) => {
+    let m;
+    if (m = x.match(/^(?:wait|等待?|停顿|延迟)\s*(\d+(?:\.\d+)?)\s*(ms|毫秒|s|秒)?$/i)) {
+      out.push({ wait: Math.min(2e4, dur(m[1], m[2])) });
+      return;
+    }
+    if (/^(停|停止|stop|关|0\s*%?)$/i.test(x)) {
+      out.push({ stop: true });
+      return;
+    }
+    if (m = x.match(/^(?:脉冲|pulse|一下一下)\s*(\d{1,3})\s*%?\s*(\d{1,2})?\s*(?:次|下)?$/i)) {
+      const p = Math.min(100, +m[1]);
+      const n = Math.max(1, Math.min(20, +(m[2] || 3)));
+      for (let i = 0; i < n; i++) out.push({ vib: p }, { wait: 300 }, { stop: true }, { wait: 220 });
+      return;
+    }
+    if (m = x.match(/^(转|旋转|rotate|rot)\s*(\d{1,3})\s*%?(?:\s+(\d+(?:\.\d+)?)\s*(ms|毫秒|s|秒))?$/i)) {
+      out.push({ rot: Math.min(100, +m[2]) });
+      if (m[3]) out.push({ wait: dur(m[3], m[4]) }, { stop: true });
+      return;
+    }
+    if (m = x.match(/^(?:震动?|振动?|vibrate|vib|v)?\s*(\d{1,3})\s*%?(?:\s+(\d+(?:\.\d+)?)\s*(ms|毫秒|s|秒))?$/i)) {
+      const p = +m[1];
+      if (p > 100) throw new Error(`\u300C${x}\u300D\u5F3A\u5EA6\u6700\u5927 100`);
+      out.push({ vib: p });
+      if (m[2]) out.push({ wait: Math.min(2e4, dur(m[2], m[3] || "s")) }, { stop: true });
+      return;
+    }
+    throw new Error(`\u770B\u4E0D\u61C2\u300C${x}\u300D\u3002\u53EF\u4EE5\u5199\uFF1A60%\u300160% 2\u79D2\u3001\u505C\u3001wait 500\u3001\u8F6C 40\u3001\u8109\u51B2 80 3`);
+  });
+  if (!out.length) throw new Error("\u52A8\u4F5C\u662F\u7A7A\u7684");
+  return out;
+}
+const INTI = {
+  ws: null,
+  status: "idle",
+  error: "",
+  devices: [],
+  msgId: 1,
+  pending: /* @__PURE__ */ new Map(),
+  seq: 0,
+  autoTimer: 0,
+  pingTimer: 0,
+  url: "",
+  scanning: false,
+  emit() {
+    BT.emit();
+  },
+  log(kind, text) {
+    BT.addLog(kind, text);
+  },
+  set(st, err) {
+    this.status = st;
+    this.error = err || "";
+    this.emit();
+  },
+  send(type, body) {
+    if (!this.ws || this.ws.readyState !== 1) return Promise.reject(new Error("\u8FD8\u6CA1\u8FDE\u4E0A Intiface"));
+    const Id = this.msgId++;
+    return new Promise((res, rej) => {
+      this.pending.set(Id, { res, rej, t: setTimeout(() => {
+        this.pending.delete(Id);
+        rej(new Error(type + " \u6CA1\u6709\u56DE\u5E94"));
+      }, 8e3) });
+      this.ws.send(JSON.stringify([{ [type]: { Id, ...body || {} } }]));
+    });
+  },
+  addDevice(d) {
+    this.devices = this.devices.filter((x) => x.index !== d.DeviceIndex).concat([{ index: d.DeviceIndex, name: d.DeviceDisplayName || d.DeviceName, msgs: d.DeviceMessages || {} }]);
+    this.log("ok", `\u627E\u5230\u73A9\u5177\uFF1A${d.DeviceDisplayName || d.DeviceName}`);
+    this.emit();
+  },
+  onMessage(raw) {
+    let arr;
+    try {
+      arr = JSON.parse(raw);
+    } catch (e) {
+      return;
+    }
+    (Array.isArray(arr) ? arr : [arr]).forEach((m) => {
+      const type = Object.keys(m)[0];
+      const b = m[type] || {};
+      const p = this.pending.get(b.Id);
+      if (type === "DeviceAdded") this.addDevice(b);
+      else if (type === "DeviceRemoved") {
+        const d = this.devices.find((x) => x.index === b.DeviceIndex);
+        this.devices = this.devices.filter((x) => x.index !== b.DeviceIndex);
+        this.log("err", `\u73A9\u5177\u65AD\u5F00\uFF1A${d ? d.name : b.DeviceIndex}`);
+        this.emit();
+      } else if (type === "ScanningFinished") {
+        this.scanning = false;
+        this.emit();
+      }
+      if (p && b.Id) {
+        clearTimeout(p.t);
+        this.pending.delete(b.Id);
+        if (type === "Error") p.rej(new Error(b.ErrorMessage || "Intiface \u62A5\u9519"));
+        else p.res({ type, ...b });
+      } else if (type === "Error") this.log("err", "Intiface\uFF1A" + (b.ErrorMessage || ""));
+    });
+  },
+  connect(url) {
+    this.disconnect(true);
+    this.url = url = String(url || "ws://127.0.0.1:12345").trim();
+    this.set("connecting");
+    this.log("info", `\u8FDE\u63A5 Intiface\uFF1A${url}`);
+    return new Promise((resolve, reject) => {
+      let ws;
+      try {
+        ws = new WebSocket(url);
+      } catch (e) {
+        this.set("error", e.message);
+        reject(new Error("\u5730\u5740\u4E0D\u5BF9\uFF1A" + e.message));
+        return;
+      }
+      this.ws = ws;
+      let opened = false;
+      ws.onmessage = (ev) => this.onMessage(ev.data);
+      ws.onerror = () => {
+        if (!opened) {
+          this.set("error", "\u8FDE\u4E0D\u4E0A");
+          reject(new Error("\u8FDE\u4E0D\u4E0A Intiface\uFF1A\u786E\u8BA4 Intiface Central \u5DF2\u7ECF\u6253\u5F00\u5E76\u70B9\u4E86\u300CStart Server\u300D\uFF0C\u5730\u5740\u548C\u7AEF\u53E3\u4E00\u81F4\uFF08\u9ED8\u8BA4 ws://127.0.0.1:12345\uFF09"));
+        }
+      };
+      ws.onclose = () => {
+        clearInterval(this.pingTimer);
+        if (this.ws === ws) {
+          this.ws = null;
+          this.devices = [];
+          if (opened) {
+            this.set("idle");
+            this.log("err", "Intiface \u8FDE\u63A5\u65AD\u5F00\u4E86");
+          }
+        }
+      };
+      ws.onopen = async () => {
+        opened = true;
+        try {
+          const info = await this.send("RequestServerInfo", { ClientName: "\u6587\u6E38", MessageVersion: 3 });
+          if (info.MaxPingTime > 0) this.pingTimer = setInterval(() => this.send("Ping").catch(() => {
+          }), Math.max(200, info.MaxPingTime / 2));
+          const list = await this.send("RequestDeviceList");
+          (list.Devices || []).forEach((d) => this.addDevice(d));
+          this.set("connected");
+          this.log("ok", `\u5DF2\u8FDE\u4E0A ${info.ServerName || "Intiface"}\uFF0C\u73B0\u6709 ${this.devices.length} \u4E2A\u73A9\u5177`);
+          resolve();
+        } catch (e) {
+          this.set("error", e.message);
+          reject(e);
+        }
+      };
+    });
+  },
+  disconnect(silent) {
+    clearInterval(this.pingTimer);
+    clearTimeout(this.autoTimer);
+    if (this.ws) {
+      const w = this.ws;
+      this.ws = null;
+      try {
+        if (w.readyState === 1) w.send(JSON.stringify([{ StopAllDevices: { Id: this.msgId++ } }]));
+        w.close();
+      } catch (e) {
+      }
+    }
+    this.devices = [];
+    this.scanning = false;
+    if (!silent) {
+      this.set("idle");
+      this.log("info", "\u5DF2\u65AD\u5F00 Intiface");
+    }
+  },
+  async scan() {
+    this.scanning = true;
+    this.emit();
+    await this.send("StartScanning");
+    setTimeout(() => {
+      if (this.scanning) {
+        this.send("StopScanning").catch(() => {
+        });
+        this.scanning = false;
+        this.emit();
+      }
+    }, 1e4);
+  },
+  targets(cfg) {
+    const pick2 = cfg && cfg.intiDevices;
+    return this.devices.filter((d) => !pick2 || !pick2.length || pick2.indexOf(d.name) >= 0);
+  },
+  async apply(step, cfg) {
+    const max = Math.max(0, Math.min(100, cfg && cfg.maxPower != null ? cfg.maxPower : 70)) / 100;
+    const ds = this.targets(cfg);
+    if (!ds.length) throw new Error("\u6CA1\u6709\u53EF\u7528\u7684\u73A9\u5177\uFF08\u5728 Intiface \u91CC\u5148\u628A\u73A9\u5177\u8FDE\u4E0A\uFF09");
+    for (const d of ds) {
+      if (step.stop) {
+        await this.send("StopDeviceCmd", { DeviceIndex: d.index });
+        continue;
+      }
+      if (step.vib != null) {
+        const feats = (d.msgs.ScalarCmd || []).map((f, i) => ({ ...f, i })).filter((f) => /^(Vibrate|Oscillate)$/i.test(f.ActuatorType || "Vibrate"));
+        if (feats.length) await this.send("ScalarCmd", { DeviceIndex: d.index, Scalars: feats.map((f) => ({ Index: f.i, Scalar: +(step.vib / 100 * max).toFixed(3), ActuatorType: f.ActuatorType || "Vibrate" })) });
+        else if (d.msgs.VibrateCmd) await this.send("VibrateCmd", { DeviceIndex: d.index, Speeds: [{ Index: 0, Speed: +(step.vib / 100 * max).toFixed(3) }] });
+      }
+      if (step.rot != null && d.msgs.RotateCmd) await this.send("RotateCmd", { DeviceIndex: d.index, Rotations: (d.msgs.RotateCmd.length ? d.msgs.RotateCmd : [{}]).map((_, i) => ({ Index: i, Speed: +(step.rot / 100 * max).toFixed(3), Clockwise: true })) });
+    }
+  },
+  // 新的一串动作会打断上一串；跑完没停的话，到「最长持续」自动停
+  async run(steps, cfg, label) {
+    const my = ++this.seq;
+    clearTimeout(this.autoTimer);
+    let running = false;
+    for (const st of steps) {
+      if (my !== this.seq) return;
+      if (st.wait) {
+        await sleep(st.wait);
+        continue;
+      }
+      await this.apply(st, cfg);
+      running = !st.stop;
+      this.log("out", `${label ? label + " " : ""}${st.stop ? "\u505C" : st.vib != null ? `\u9707\u52A8 ${st.vib}%` : `\u65CB\u8F6C ${st.rot}%`}`);
+    }
+    if (running && my === this.seq) {
+      const ms = Math.max(500, (cfg && cfg.autoStop != null ? cfg.autoStop : 8) * 1e3);
+      this.autoTimer = setTimeout(() => {
+        if (my === this.seq) this.stopAll("\u81EA\u52A8\u505C");
+      }, ms);
+    }
+  },
+  stopAll(why) {
+    this.seq++;
+    clearTimeout(this.autoTimer);
+    if (this.ws && this.ws.readyState === 1) {
+      this.send("StopAllDevices").catch(() => {
+      });
+      this.log("out", why || "\u5168\u90E8\u505C\u6B62");
+    }
   }
 };
 function useBt() {
@@ -9313,8 +9594,78 @@ function BluetoothPanel({ db, update, say, onClose }) {
   });
   const triggers = cfg.triggers || [];
   const writable = bt.chars.filter((c) => c.props.write || c.props.writeWithoutResponse);
+  const inti = cfg.mode === "intiface";
+  const intiOn = INTI.status === "connected";
+  const [intiBusy, setIntiBusy] = useState(false);
+  const [manualAct, setManualAct] = useState("60% 1\u79D2");
+  const intiConnect = async () => {
+    setIntiBusy(true);
+    try {
+      await INTI.connect(cfg.intiUrl || "ws://127.0.0.1:12345");
+      setC((c) => {
+        c.intiAuto = true;
+      });
+    } catch (e) {
+      say(e.message);
+    }
+    setIntiBusy(false);
+  };
+  const runAct = async (str, label) => {
+    let st;
+    try {
+      st = parseAct(str);
+    } catch (e) {
+      say("\u52A8\u4F5C\u5199\u9519\u4E86\uFF1A" + e.message);
+      return;
+    }
+    try {
+      await INTI.run(st, cfg, label);
+    } catch (e) {
+      say("\u53D1\u9001\u5931\u8D25\uFF1A" + e.message);
+    }
+  };
   const propTxt = (p) => [p.read && "\u8BFB", p.write && "\u5199", p.writeWithoutResponse && "\u5FEB\u5199", p.notify && "\u901A\u77E5", p.indicate && "\u6307\u793A"].filter(Boolean).join(" \xB7 ");
-  return /* @__PURE__ */ React.createElement(Modal, { open: true, onClose, title: "\u84DD\u7259 \xB7 \u786C\u4EF6\u89E6\u53D1\u5668", width: "max-w-2xl" }, !bt.supported() && /* @__PURE__ */ React.createElement("div", { className: "rounded-xl border border-white/30 p-3 text-sm mb-4" }, "\u8FD9\u4E2A\u6D4F\u89C8\u5668\u4E0D\u652F\u6301 Web Bluetooth\u3002\u8BF7\u7528", /* @__PURE__ */ React.createElement("b", null, "\u7535\u8111\u6216\u5B89\u5353\u624B\u673A\u4E0A\u7684 Chrome / Edge"), " \u6253\u5F00\uFF1BFirefox \u548C iPhone \u4E0D\u652F\u6301\u3002"), /* @__PURE__ */ React.createElement("div", { className: "rounded-2xl border border-white/10 p-3" }, /* @__PURE__ */ React.createElement("div", { className: "flex items-center gap-2" }, /* @__PURE__ */ React.createElement("span", { className: cx("w-2.5 h-2.5 rounded-full", connected ? "bg-white bt-on" : "bg-white/25") }), /* @__PURE__ */ React.createElement("span", { className: "text-sm" }, bt.device ? bt.device.name || "\uFF08\u65E0\u540D\u8BBE\u5907\uFF09" : "\u6CA1\u6709\u8BBE\u5907"), /* @__PURE__ */ React.createElement("span", { className: "text-[11px] text-white/50" }, BT_STATUS[bt.status], bt.error ? "\uFF1A" + bt.error : ""), /* @__PURE__ */ React.createElement("div", { className: "ml-auto flex gap-1.5" }, connected ? /* @__PURE__ */ React.createElement(Btn, { className: "text-xs py-1.5", onClick: () => bt.disconnect() }, "\u65AD\u5F00") : /* @__PURE__ */ React.createElement(Btn, { variant: "solid", className: "text-xs py-1.5", onClick: connect, disabled: busy || !bt.supported() }, /* @__PURE__ */ React.createElement(Icon, { name: "bluetooth", size: 14 }), bt.device ? "\u91CD\u65B0\u8FDE\u63A5" : "\u641C\u7D22\u5E76\u8FDE\u63A5"), connected && /* @__PURE__ */ React.createElement(Btn, { className: "text-xs py-1.5", onClick: connect }, "\u6362\u8BBE\u5907"))), /* @__PURE__ */ React.createElement("details", { className: "mt-2" }, /* @__PURE__ */ React.createElement("summary", { className: "text-[11px] text-white/50 cursor-pointer" }, "\u641C\u7D22\u9009\u9879\uFF08\u641C\u4E0D\u5230\u8BBE\u5907 / \u8FDE\u4E0A\u4E86\u4F46\u6CA1\u6709\u53EF\u5199\u7684\u7279\u5F81\u65F6\u770B\u8FD9\u91CC\uFF09"), /* @__PURE__ */ React.createElement("div", { className: "mt-2 space-y-2" }, /* @__PURE__ */ React.createElement(Field, { label: "\u8BBE\u5907\u540D\u5F00\u5934\uFF08\u53EF\u9009\uFF0C\u586B\u4E86\u53EA\u5217\u51FA\u8FD9\u7C7B\u8BBE\u5907\uFF0C\u6BD4\u5982 Mi Band\u3001LOVE\uFF09" }, /* @__PURE__ */ React.createElement("input", { className: inputCls, value: cfg.namePrefix || "", onChange: (e) => {
+  return /* @__PURE__ */ React.createElement(Modal, { open: true, onClose, title: "\u84DD\u7259 \xB7 \u786C\u4EF6\u89E6\u53D1\u5668", width: "max-w-2xl" }, !bt.supported() && !inti && /* @__PURE__ */ React.createElement("div", { className: "rounded-xl border border-white/30 p-3 text-sm mb-4" }, "\u8FD9\u4E2A\u6D4F\u89C8\u5668\u4E0D\u652F\u6301 Web Bluetooth\u3002\u8BF7\u7528", /* @__PURE__ */ React.createElement("b", null, "\u7535\u8111\u6216\u5B89\u5353\u624B\u673A\u4E0A\u7684 Chrome / Edge"), " \u6253\u5F00\uFF1BFirefox \u548C iPhone \u4E0D\u652F\u6301\u3002\u73A9\u5177\u7684\u8BDD\u53EF\u4EE5\u6362\u4E0A\u9762\u7684\u300CIntiface \u4E2D\u63A7\u300D\uFF0C\u5B83\u5728 iPhone \u4E0A\u4E5F\u80FD\u7528\u3002"), /* @__PURE__ */ React.createElement("div", { className: "flex items-center gap-2 mb-3 flex-wrap" }, /* @__PURE__ */ React.createElement("span", { className: "text-[11px] text-white/50" }, "\u8FDE\u63A5\u65B9\u5F0F"), [["hex", "\u76F4\u8FDE\u84DD\u7259\uFF08Hex \u6307\u4EE4\uFF09"], ["intiface", "Intiface \u4E2D\u63A7\uFF08\u6210\u4EBA\u73A9\u5177\u63A8\u8350\uFF09"]].map(([k, l]) => /* @__PURE__ */ React.createElement("button", { key: k, type: "button", onClick: () => setC((c) => {
+    c.mode = k;
+  }), className: cx("text-xs rounded-full px-3 py-1 border", (cfg.mode || "hex") === k ? "bg-white text-black border-white" : "border-white/20 text-white/65 hover:text-white") }, l))), inti && /* @__PURE__ */ React.createElement("div", { className: "rounded-2xl border border-white/10 p-3 space-y-3" }, /* @__PURE__ */ React.createElement("p", { className: "text-[11px] text-white/50 leading-relaxed" }, "\u5148\u5728\u7535\u8111\u6216\u624B\u673A\u4E0A\u88C5 ", /* @__PURE__ */ React.createElement("b", { className: "text-white/80" }, "Intiface Central"), "\uFF08\u514D\u8D39\uFF0CWindows / Mac / \u5B89\u5353 / iPhone \u90FD\u6709\uFF09\uFF0C\u6253\u5F00\u540E\u70B9\u300CStart Server\u300D\uFF0C\u5728\u5B83\u91CC\u9762\u628A\u73A9\u5177\u8FDE\u4E0A\uFF1B\u518D\u56DE\u8FD9\u91CC\u70B9\u300C\u8FDE\u63A5\u300D\u3002\u5404\u5BB6\u73A9\u5177\u7684\u79C1\u6709\u534F\u8BAE\u90FD\u7531\u5B83\u5904\u7406\uFF0C\u8FD9\u91CC\u53EA\u7BA1\u9707\u591A\u5927\u3001\u591A\u4E45\u3002", /* @__PURE__ */ React.createElement("br", null), "Intiface \u548C\u8FD9\u4E2A\u9875\u9762\u6700\u597D\u5728\u540C\u4E00\u53F0\u8BBE\u5907\u4E0A\uFF08\u5730\u5740\u7528 127.0.0.1\uFF09\u3002\u9875\u9762\u6302\u5728 https \u7F51\u7AD9\uFF08\u6BD4\u5982 GitHub Pages\uFF09\u4E0A\u65F6\uFF0C\u6D4F\u89C8\u5668\u4E0D\u8BA9\u5B83\u8FDE\u522B\u7684\u8BBE\u5907\u7684 ws:// \u5730\u5740\uFF1B\u60F3\u7528\u624B\u673A\u7F51\u9875\u8FDE\u7535\u8111\u4E0A\u7684 Intiface\uFF0C\u8981\u7528\u7535\u8111\u672C\u5730\u6253\u5F00\u7684 html\u3002\u8FDE\u4E0A\u4E00\u6B21\u540E\uFF0C\u5237\u65B0\u9875\u9762\u4F1A\u81EA\u52A8\u91CD\u8FDE\u3002"), /* @__PURE__ */ React.createElement("div", { className: "flex items-center gap-2" }, /* @__PURE__ */ React.createElement("span", { className: cx("w-2.5 h-2.5 rounded-full shrink-0", intiOn ? "bg-white bt-on" : "bg-white/25") }), /* @__PURE__ */ React.createElement("input", { className: cx(inputCls, "font-mono text-xs flex-1"), value: cfg.intiUrl || "ws://127.0.0.1:12345", onChange: (e) => {
+    const v = e.target.value;
+    setC((c) => {
+      c.intiUrl = v;
+    });
+  } }), intiOn ? /* @__PURE__ */ React.createElement(Btn, { className: "text-xs py-1.5 shrink-0", onClick: () => {
+    INTI.disconnect();
+    setC((c) => {
+      c.intiAuto = false;
+    });
+  } }, "\u65AD\u5F00") : /* @__PURE__ */ React.createElement(Btn, { variant: "solid", className: "text-xs py-1.5 shrink-0", disabled: intiBusy, onClick: intiConnect }, intiBusy ? "\u8FDE\u63A5\u4E2D\u2026" : "\u8FDE\u63A5")), INTI.status === "error" && /* @__PURE__ */ React.createElement("div", { className: "text-[11px] text-white/70" }, INTI.error), intiOn && /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("div", null, /* @__PURE__ */ React.createElement("div", { className: "flex items-center gap-2 mb-1.5" }, /* @__PURE__ */ React.createElement("span", { className: "text-xs flex-1" }, "\u73A9\u5177\uFF08", INTI.devices.length, "\uFF09\xB7 \u4E0D\u9009 = \u5168\u90E8\u4E00\u8D77\u52A8"), /* @__PURE__ */ React.createElement(Btn, { className: "text-[11px] py-1", disabled: INTI.scanning, onClick: () => INTI.scan().catch((e) => say(e.message)) }, INTI.scanning ? "\u641C\u7D22\u4E2D\u2026" : "\u641C\u7D22\u65B0\u73A9\u5177")), INTI.devices.length ? /* @__PURE__ */ React.createElement("div", { className: "flex flex-wrap gap-1.5" }, INTI.devices.map((d) => {
+    const sel = (cfg.intiDevices || []).indexOf(d.name) >= 0;
+    return /* @__PURE__ */ React.createElement(
+      "button",
+      {
+        key: d.index,
+        type: "button",
+        onClick: () => setC((c) => {
+          const l = c.intiDevices || [];
+          c.intiDevices = sel ? l.filter((x) => x !== d.name) : l.concat([d.name]);
+        }),
+        className: cx("text-xs rounded-full px-3 py-1 border", sel ? "bg-white text-black border-white" : "border-white/20")
+      },
+      d.name,
+      /* @__PURE__ */ React.createElement("span", { className: "opacity-50 ml-1" }, [(d.msgs.ScalarCmd || d.msgs.VibrateCmd) && "\u9707", d.msgs.RotateCmd && "\u8F6C"].filter(Boolean).join("\xB7"))
+    );
+  })) : /* @__PURE__ */ React.createElement("div", { className: "text-[11px] text-white/40" }, "\u8FD8\u6CA1\u6709\u73A9\u5177\u3002\u5728 Intiface \u91CC\u8FDE\u4E0A\uFF0C\u6216\u70B9\u300C\u641C\u7D22\u65B0\u73A9\u5177\u300D\u3002")), /* @__PURE__ */ React.createElement("div", { className: "grid grid-cols-2 gap-3" }, /* @__PURE__ */ React.createElement(Field, { label: `\u5F3A\u5EA6\u4E0A\u9650 ${cfg.maxPower != null ? cfg.maxPower : 70}%\uFF08\u6240\u6709\u52A8\u4F5C\u90FD\u6309\u8FD9\u4E2A\u6BD4\u4F8B\u7F29\uFF09` }, /* @__PURE__ */ React.createElement("input", { type: "range", min: 5, max: 100, step: 5, className: "w-full accent-white", value: cfg.maxPower != null ? cfg.maxPower : 70, onChange: (e) => {
+    const v = Number(e.target.value);
+    setC((c) => {
+      c.maxPower = v;
+    });
+  } })), /* @__PURE__ */ React.createElement(Field, { label: `\u6700\u957F\u6301\u7EED ${cfg.autoStop != null ? cfg.autoStop : 8} \u79D2\uFF08\u6CA1\u5199\u300C\u505C\u300D\u4E5F\u4F1A\u81EA\u52A8\u505C\uFF09` }, /* @__PURE__ */ React.createElement("input", { type: "range", min: 1, max: 60, className: "w-full accent-white", value: cfg.autoStop != null ? cfg.autoStop : 8, onChange: (e) => {
+    const v = Number(e.target.value);
+    setC((c) => {
+      c.autoStop = v;
+    });
+  } }))), /* @__PURE__ */ React.createElement("div", { className: "flex gap-2" }, /* @__PURE__ */ React.createElement("input", { className: cx(inputCls, "text-xs"), value: manualAct, onChange: (e) => setManualAct(e.target.value), placeholder: "\u8BD5\u4E00\u4E0B\uFF1A60% 2\u79D2\u3001\u8109\u51B2 80 3", onKeyDown: (e) => {
+    if (e.key === "Enter") runAct(manualAct, "\u624B\u52A8");
+  } }), /* @__PURE__ */ React.createElement(Btn, { className: "shrink-0 text-xs", onClick: () => runAct(manualAct, "\u624B\u52A8") }, "\u8BD5"), /* @__PURE__ */ React.createElement(Btn, { variant: "solid", className: "shrink-0 text-xs", onClick: () => INTI.stopAll("\u5168\u90E8\u505C\u6B62") }, "\u5168\u90E8\u505C\u6B62")))), !inti && /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("div", { className: "rounded-2xl border border-white/10 p-3" }, /* @__PURE__ */ React.createElement("div", { className: "flex items-center gap-2" }, /* @__PURE__ */ React.createElement("span", { className: cx("w-2.5 h-2.5 rounded-full", connected ? "bg-white bt-on" : "bg-white/25") }), /* @__PURE__ */ React.createElement("span", { className: "text-sm" }, bt.device ? bt.device.name || "\uFF08\u65E0\u540D\u8BBE\u5907\uFF09" : "\u6CA1\u6709\u8BBE\u5907"), /* @__PURE__ */ React.createElement("span", { className: "text-[11px] text-white/50" }, BT_STATUS[bt.status], bt.error ? "\uFF1A" + bt.error : ""), /* @__PURE__ */ React.createElement("div", { className: "ml-auto flex gap-1.5" }, connected ? /* @__PURE__ */ React.createElement(Btn, { className: "text-xs py-1.5", onClick: () => bt.disconnect() }, "\u65AD\u5F00") : /* @__PURE__ */ React.createElement(Btn, { variant: "solid", className: "text-xs py-1.5", onClick: connect, disabled: busy || !bt.supported() }, /* @__PURE__ */ React.createElement(Icon, { name: "bluetooth", size: 14 }), bt.device ? "\u91CD\u65B0\u8FDE\u63A5" : "\u641C\u7D22\u5E76\u8FDE\u63A5"), connected && /* @__PURE__ */ React.createElement(Btn, { className: "text-xs py-1.5", onClick: connect }, "\u6362\u8BBE\u5907"))), /* @__PURE__ */ React.createElement("details", { className: "mt-2" }, /* @__PURE__ */ React.createElement("summary", { className: "text-[11px] text-white/50 cursor-pointer" }, "\u641C\u7D22\u9009\u9879\uFF08\u641C\u4E0D\u5230\u8BBE\u5907 / \u8FDE\u4E0A\u4E86\u4F46\u6CA1\u6709\u53EF\u5199\u7684\u7279\u5F81\u65F6\u770B\u8FD9\u91CC\uFF09"), /* @__PURE__ */ React.createElement("div", { className: "mt-2 space-y-2" }, /* @__PURE__ */ React.createElement(Field, { label: "\u8BBE\u5907\u540D\u5F00\u5934\uFF08\u53EF\u9009\uFF0C\u586B\u4E86\u53EA\u5217\u51FA\u8FD9\u7C7B\u8BBE\u5907\uFF0C\u6BD4\u5982 Mi Band\u3001LOVE\uFF09" }, /* @__PURE__ */ React.createElement("input", { className: inputCls, value: cfg.namePrefix || "", onChange: (e) => {
     const v = e.target.value;
     setC((c) => {
       c.namePrefix = v;
@@ -9350,12 +9701,14 @@ function BluetoothPanel({ db, update, say, onClose }) {
     setC((c) => {
       c.chunk = v;
     });
-  } }))))), /* @__PURE__ */ React.createElement("div", { className: "rounded-2xl border border-white/10 p-3 mt-3" }, /* @__PURE__ */ React.createElement("div", { className: "flex items-center gap-2" }, /* @__PURE__ */ React.createElement("span", { className: "text-sm flex-1" }, "\u89E6\u53D1\u8BCD\u7ED1\u5B9A"), /* @__PURE__ */ React.createElement("span", { className: "text-[11px] text-white/50" }, "\u5267\u60C5\u8BFB\u5230\u5C31\u81EA\u52A8\u53D1\u9001"), /* @__PURE__ */ React.createElement(Switch, { on: cfg.enabled !== false, label: "\u81EA\u52A8\u89E6\u53D1", onChange: (v) => setC((c) => {
+  } })))))), /* @__PURE__ */ React.createElement("div", { className: "rounded-2xl border border-white/10 p-3 mt-3" }, /* @__PURE__ */ React.createElement("div", { className: "flex items-center gap-2" }, /* @__PURE__ */ React.createElement("span", { className: "text-sm flex-1" }, "\u89E6\u53D1\u8BCD\u7ED1\u5B9A"), /* @__PURE__ */ React.createElement("span", { className: "text-[11px] text-white/50" }, "\u5267\u60C5\u8BFB\u5230\u5C31\u81EA\u52A8\u53D1\u9001"), /* @__PURE__ */ React.createElement(Switch, { on: cfg.enabled !== false, label: "\u81EA\u52A8\u89E6\u53D1", onChange: (v) => setC((c) => {
     c.enabled = v;
-  }) })), /* @__PURE__ */ React.createElement("p", { className: "text-[11px] text-white/40 mt-1 leading-relaxed" }, "\u591A\u4E2A\u89E6\u53D1\u8BCD\u7528\u9017\u53F7\u9694\u5F00\u3002\u6307\u4EE4\u53EF\u4EE5\u5206\u51E0\u6B65\uFF1A", /* @__PURE__ */ React.createElement("code", { className: "text-white/70" }, "A5 01 01 | wait 800 | A5 01 00"), "\uFF08\u5F00\u59CB\u9707\u52A8\uFF0C0.8 \u79D2\u540E\u505C\uFF09\u3002\u51B7\u5374\u65F6\u95F4\u5185\u540C\u4E00\u6761\u4E0D\u4F1A\u91CD\u590D\u89E6\u53D1\u3002\u4E92\u52A8\u3001\u4E16\u754C\u3001\u76F4\u64AD\u3001\u624B\u673A\u91CC\u8BFB\u5230\u90FD\u4F1A\u89E6\u53D1\u3002"), /* @__PURE__ */ React.createElement("div", { className: "mt-2 space-y-1.5" }, triggers.length > 0 && /* @__PURE__ */ React.createElement("div", { className: "grid grid-cols-[1fr_1.4fr_5.2rem_auto] gap-1.5 text-[10px] text-white/40 px-1" }, /* @__PURE__ */ React.createElement("span", null, "\u89E6\u53D1\u8BCD"), /* @__PURE__ */ React.createElement("span", null, "Hex \u6307\u4EE4"), /* @__PURE__ */ React.createElement("span", null, "\u51B7\u5374 ms"), /* @__PURE__ */ React.createElement("span", null)), triggers.map((t) => {
+  }) })), inti ? /* @__PURE__ */ React.createElement("p", { className: "text-[11px] text-white/40 mt-1 leading-relaxed" }, "\u591A\u4E2A\u89E6\u53D1\u8BCD\u7528\u9017\u53F7\u9694\u5F00\u3002\u52A8\u4F5C\u5199\u6CD5\uFF1A", /* @__PURE__ */ React.createElement("code", { className: "text-white/70" }, "60%"), "\uFF08\u9707 60%\uFF09\u3001", /* @__PURE__ */ React.createElement("code", { className: "text-white/70" }, "60% 2\u79D2"), "\uFF08\u9707 2 \u79D2\u540E\u505C\uFF09\u3001", /* @__PURE__ */ React.createElement("code", { className: "text-white/70" }, "\u8109\u51B2 80 3"), "\uFF08\u4E00\u4E0B\u4E00\u4E0B\u9707 3 \u6B21\uFF09\u3001", /* @__PURE__ */ React.createElement("code", { className: "text-white/70" }, "\u8F6C 40"), "\u3001", /* @__PURE__ */ React.createElement("code", { className: "text-white/70" }, "\u505C"), "\uFF1B\u591A\u6B65\u7528 | \u8FDE\u8D77\u6765\uFF0C\u5982 ", /* @__PURE__ */ React.createElement("code", { className: "text-white/70" }, "30% | wait 1000 | 80% 1\u79D2"), "\u3002\u65B0\u89E6\u53D1\u4F1A\u6253\u65AD\u4E0A\u4E00\u4E2A\u3002") : /* @__PURE__ */ React.createElement("p", { className: "text-[11px] text-white/40 mt-1 leading-relaxed" }, "\u591A\u4E2A\u89E6\u53D1\u8BCD\u7528\u9017\u53F7\u9694\u5F00\u3002\u6307\u4EE4\u53EF\u4EE5\u5206\u51E0\u6B65\uFF1A", /* @__PURE__ */ React.createElement("code", { className: "text-white/70" }, "A5 01 01 | wait 800 | A5 01 00"), "\uFF08\u5F00\u59CB\u9707\u52A8\uFF0C0.8 \u79D2\u540E\u505C\uFF09\u3002\u51B7\u5374\u65F6\u95F4\u5185\u540C\u4E00\u6761\u4E0D\u4F1A\u91CD\u590D\u89E6\u53D1\u3002\u4E92\u52A8\u3001\u4E16\u754C\u3001\u76F4\u64AD\u3001\u624B\u673A\u91CC\u8BFB\u5230\u90FD\u4F1A\u89E6\u53D1\u3002"), /* @__PURE__ */ React.createElement("div", { className: "mt-2 space-y-1.5" }, triggers.length > 0 && /* @__PURE__ */ React.createElement("div", { className: "grid grid-cols-[1fr_1.4fr_5.2rem_auto] gap-1.5 text-[10px] text-white/40 px-1" }, /* @__PURE__ */ React.createElement("span", null, "\u89E6\u53D1\u8BCD"), /* @__PURE__ */ React.createElement("span", null, inti ? "\u52A8\u4F5C" : "Hex \u6307\u4EE4"), /* @__PURE__ */ React.createElement("span", null, "\u51B7\u5374 ms"), /* @__PURE__ */ React.createElement("span", null)), triggers.map((t) => {
+    const fk = inti ? "act" : "hex";
     let ok = true;
     try {
-      parseSteps(t.hex);
+      if (inti) parseAct(t.act);
+      else parseSteps(t.hex);
     } catch (e) {
       ok = false;
     }
@@ -9364,25 +9717,25 @@ function BluetoothPanel({ db, update, say, onClose }) {
       patchT(t.id, (x) => {
         x.words = v;
       });
-    } }), /* @__PURE__ */ React.createElement("input", { className: cx(inputCls, "py-1.5 text-xs font-mono", !ok && t.hex && "border-white"), value: t.hex, placeholder: "0x01", title: ok ? "" : "\u6307\u4EE4\u683C\u5F0F\u4E0D\u5BF9", onChange: (e) => {
+    } }), /* @__PURE__ */ React.createElement("input", { className: cx(inputCls, "py-1.5 text-xs", !inti && "font-mono", !ok && t[fk] && "border-white"), value: t[fk] || "", placeholder: inti ? "60% 2\u79D2" : "0x01", title: ok ? "" : "\u683C\u5F0F\u4E0D\u5BF9", onChange: (e) => {
       const v = e.target.value;
       patchT(t.id, (x) => {
-        x.hex = v;
+        x[fk] = v;
       });
     } }), /* @__PURE__ */ React.createElement("input", { type: "number", min: 0, step: 100, className: cx(inputCls, "py-1.5 text-xs"), value: t.cooldown != null ? t.cooldown : 1500, onChange: (e) => {
       const v = Number(e.target.value) || 0;
       patchT(t.id, (x) => {
         x.cooldown = v;
       });
-    } }), /* @__PURE__ */ React.createElement("div", { className: "flex items-center gap-1" }, /* @__PURE__ */ React.createElement("button", { type: "button", title: "\u8BD5\u53D1", disabled: !connected || !ok, onClick: () => sendStr(t.hex, `\u300C${t.words}\u300D`), className: "w-7 h-7 rounded-lg border border-white/15 text-[11px] disabled:opacity-30" }, "\u25B6"), /* @__PURE__ */ React.createElement(Switch, { on: t.enabled !== false, label: "\u542F\u7528", onChange: (v) => patchT(t.id, (x) => {
+    } }), /* @__PURE__ */ React.createElement("div", { className: "flex items-center gap-1" }, /* @__PURE__ */ React.createElement("button", { type: "button", title: "\u8BD5\u53D1", disabled: (inti ? !intiOn : !connected) || !ok, onClick: () => inti ? runAct(t.act, `\u300C${t.words}\u300D`) : sendStr(t.hex, `\u300C${t.words}\u300D`), className: "w-7 h-7 rounded-lg border border-white/15 text-[11px] disabled:opacity-30" }, "\u25B6"), /* @__PURE__ */ React.createElement(Switch, { on: t.enabled !== false, label: "\u542F\u7528", onChange: (v) => patchT(t.id, (x) => {
       x.enabled = v;
     }) }), /* @__PURE__ */ React.createElement("button", { type: "button", title: "\u5220\u9664", onClick: () => setC((c) => {
       c.triggers = c.triggers.filter((x) => x.id !== t.id);
     }), className: "text-white/40 hover:text-white" }, /* @__PURE__ */ React.createElement(Icon, { name: "trash", size: 13 }))));
   })), /* @__PURE__ */ React.createElement("div", { className: "flex flex-wrap gap-2 mt-2" }, /* @__PURE__ */ React.createElement(Btn, { className: "text-xs py-1.5", onClick: () => setC((c) => {
-    c.triggers = (c.triggers || []).concat([{ id: uid("bt"), words: "", hex: "", cooldown: 1500, enabled: true }]);
-  }) }, /* @__PURE__ */ React.createElement(Icon, { name: "plus", size: 13 }), "\u6DFB\u52A0\u89E6\u53D1\u8BCD"), !triggers.length && /* @__PURE__ */ React.createElement(Btn, { className: "text-xs py-1.5", onClick: () => setC((c) => {
-    c.triggers = [{ id: uid("bt"), words: "\u62E5\u62B1\uFF0C\u62B1\u4F4F\uFF0C\u62B1\u7D27", hex: "0x01", cooldown: 2e3, enabled: true }, { id: uid("bt"), words: "\u8B66\u544A\uFF0C\u5371\u9669\uFF0C\u5C0F\u5FC3", hex: "0x02 | wait 300 | 0x02", cooldown: 3e3, enabled: true }];
+    c.triggers = (c.triggers || []).concat([{ id: uid("bt"), words: "", hex: "", act: "", cooldown: 1500, enabled: true }]);
+  }) }, /* @__PURE__ */ React.createElement(Icon, { name: "plus", size: 13 }), "\u6DFB\u52A0\u89E6\u53D1\u8BCD"), (!triggers.length || inti && !triggers.some((x) => x.act)) && /* @__PURE__ */ React.createElement(Btn, { className: "text-xs py-1.5", onClick: () => setC((c) => {
+    c.triggers = inti ? (c.triggers || []).filter((x) => x.act).concat([{ id: uid("bt"), words: "\u62E5\u62B1\uFF0C\u62B1\u4F4F\uFF0C\u62B1\u7D27", act: "30% 2\u79D2", cooldown: 2e3, enabled: true }, { id: uid("bt"), words: "\u4EB2\u543B\uFF0C\u543B\u4F4F", act: "\u8109\u51B2 60 3", cooldown: 3e3, enabled: true }, { id: uid("bt"), words: "\u54AC\uFF0C\u634F", act: "80% 0.8\u79D2", cooldown: 2e3, enabled: true }]) : [{ id: uid("bt"), words: "\u62E5\u62B1\uFF0C\u62B1\u4F4F\uFF0C\u62B1\u7D27", hex: "0x01", cooldown: 2e3, enabled: true }, { id: uid("bt"), words: "\u8B66\u544A\uFF0C\u5371\u9669\uFF0C\u5C0F\u5FC3", hex: "0x02 | wait 300 | 0x02", cooldown: 3e3, enabled: true }];
   }) }, "\u586B\u5165\u793A\u4F8B"))), /* @__PURE__ */ React.createElement("div", { className: "mt-3" }, /* @__PURE__ */ React.createElement("div", { className: "flex items-center text-[11px] text-white/45 mb-1" }, /* @__PURE__ */ React.createElement("span", { className: "flex-1" }, "\u65E5\u5FD7\uFF08\u8BBE\u5907\u56DE\u4F20\u7684\u6570\u636E\u4E5F\u4F1A\u663E\u793A\u5728\u8FD9\u91CC\uFF09"), /* @__PURE__ */ React.createElement("button", { type: "button", className: "underline", onClick: () => {
     bt.log = [];
     bt.emit();
